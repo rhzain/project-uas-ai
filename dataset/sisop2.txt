@@ -1,0 +1,170 @@
+OS Introduction: Definition and Role: Program/software controlling application execution.
+OS Introduction: Definition and Role: Interface between user and hardware.
+OS Introduction: Definition and Role: Provides environment for users to run programs.
+OS Introduction: Objectives: Convenience (makes computer system easier to use).
+OS Introduction: Objectives: Efficiency (allows efficient use of computer system resources).
+OS Introduction: Computer System Components: Relation between Hardware, Operating System, System Programs, and Application Programs.
+OS Introduction: OS Services: Providing user interface.
+OS Introduction: OS Services: Providing program execution.
+OS Introduction: OS Services: Providing I/O operations.
+OS Introduction: OS Services: Providing file-system manipulation.
+OS Introduction: OS Services: Providing system communications / networking.
+OS Introduction: OS Services: Error detection.
+OS Introduction: OS Services: Resource Sharing.
+OS Introduction: OS Services: Security.
+OS Introduction: OS Services: Accounting system.
+OS Introduction: Basic Functions: As 'Extended machine' or 'virtual machine'.
+OS Introduction: Basic Functions: Hides hardware complexities like disk access, interrupts, memory management.
+OS Introduction: Basic Functions: As 'Resources manager'.
+OS Introduction: Basic Functions: Manages computer resources like processor, memory, timer, disk, etc.
+OS Introduction: History: Generation I (1945-1955): Vacuum tube, plugboard, machine language, no OS.
+OS Introduction: History: Generation II (1955-1965): Transistor, batch system, punch card, FORTRAN/Assembly, tape drive, early OS (FMS, IBSYS), off-line printing.
+OS Introduction: History: Generation III (1965-1980): IC, multi programming (e.g., IBM System/360 with OS/360), disk usage, Spooling, MULTICS, origins of UNIX.
+OS Introduction: History: Generation IV (1980 onwards): PC, LSI/VLSI, MS DOS, UNIX, IBM PC, CISC/RISC processors, Network OS, Distributed OS, Uni/Multi processor systems, Families like Microsoft Windows, UNIX, Mac OS, Client Server Computing, OS for Smartphones.
+OS Introduction: Types of OS on Computers: Microsoft Windows family, Unix family, Mac OS.
+OS Introduction: Types of OS by Platform: Microcomputers, Mainframe, Supercomputer, Workstation/server, Networking, PDA, Smartphone.
+OS Introduction: Types of OS: Various Unix versions (AIX, A/UX, BSD, HP/UX, etc.).
+OS Introduction: Types of OS: Mobile OS (Symbian, Windows Mobile, Mobile Linux, BlackBerry, Palm, Java, Android, IOS).
+OS Introduction: Types of Computer Operation: Single Program Operation (mono programming).
+OS Introduction: Types of Computer Operation: Batch Processing.
+OS Introduction: Types of Computer Operation: Multi programming/multi tasking.
+OS Introduction: Types of Computer Operation: Multi access.
+OS Introduction: Ideal OS Structure Components: Nucleus.
+OS Introduction: Ideal OS Structure Components: Memory management.
+OS Introduction: Ideal OS Structure Components: I/O control.
+OS Introduction: Ideal OS Structure Components: Backing Store management.
+OS Introduction: Ideal OS Structure Components: Resource Allocation & Scheduling.
+OS Introduction: Ideal OS Structure Components: Protection.
+
+OS System Components: Process, Main Memory, I/O, File.
+OS Services Details: Programmer support.
+OS Services Details: Program Execution.
+OS Services Details: I/O Operations.
+OS Services Details: File Manipulation.
+OS Services Details: Communication.
+OS Services Details: Error detection.
+OS System Call: Definition: Extended instruction, API.
+OS System Call: Position: Between kernel and executable program.
+OS System Call: Categories: Process Control.
+OS System Call: Categories: File Manipulation.
+OS System Call: Categories: Device Manipulation.
+OS System Call: Categories: Environment Information.
+OS System Call: Categories: Communication.
+OS Communication Models: Message-passing model.
+OS Communication Models: Shared-memory model.
+OS System Programs: File manipulation.
+OS System Programs: Status Information.
+OS System Programs: File Modification.
+OS System Programs: Programming Language support.
+OS System Programs: Program Execution.
+OS System Programs: Communication.
+OS System Programs: Application programs.
+OS Structures: Simple Structure: Lack of structure, limited.
+OS Structures: Simple Structure: Examples include Minix kernel, Qemu.
+OS Structures: Monolithic System: Simple structure with dual-mode.
+OS Structures: Monolithic System: Uses trap instruction for system calls.
+OS Structures: Monolithic System: Examples include Unix, Linux, MS-DOS.
+OS Structures: Layered System: Divided into layers.
+OS Structures: Layered System: Lower layers provide services to higher layers.
+OS Structures: Layered System: Hardware at bottom, user interface at top.
+OS Structures: Layered System: Examples include THE, MULTICS, VENUS, OS/2.
+OS Structures: Virtual Machines: Simulates a real machine for each user.
+OS Structures: Virtual Machines: Provides illusion of having their own computer.
+OS Structures: Virtual Machines: Examples include CP/CMS, VM/370, VMWare.
+OS Structures: Client-Server Model: Server provides services.
+OS Structures: Client-Server Model: Client requests services via messages.
+
+Process Management: Concept of Process: Definition (Program in execution).
+Process Management: Concept of Process: Components (Program Counter, registers, variables).
+Process Management: Concept of Process: Resource needs (CPU time, memory, file, I/O).
+Process Management: Concept of Process: OS Role (Manage processes, allocate resources).
+Process Management: Concept of Process: Principles (Independent, One program at any instant).
+Process Management: Process Models: Multiprogramming/Multitasking (Managing many processes on one processor, pseudoparallelism).
+Process Management: Process Models: Multiprocessing (Managing many processes on a multiprocessor computer).
+Process Management: Process Models: Distributed processing (Managing processes on dispersed computers).
+Process Management: Process Status: New.
+Process Management: Process Status: Running.
+Process Management: Process Status: Waiting.
+Process Management: Process Status: Ready.
+Process Management: Process Status: Terminated.
+Process Management: Process Status Transitions: Ready to Running.
+Process Management: Process Status Transitions: Running to Blocked (Waiting).
+Process Management: Process Status Transitions: Running to Ready.
+Process Management: Process Status Transitions: Blocked (Waiting) to Ready.
+Process Management: Process Control Block (PCB): Representation of a process.
+Process Management: Process Control Block (PCB): Contains Process Status.
+Process Management: Process Control Block (PCB): Contains Program Counter.
+Process Management: Process Control Block (PCB): Contains CPU Registers.
+Process Management: Process Control Block (PCB): Contains Scheduling Information.
+Process Management: Process Control Block (PCB): Contains Memory Information.
+Process Management: Process Control Block (PCB): Contains Accounting Information.
+Process Management: Process Control Block (PCB): Contains I/O Status Information.
+Process Management: CPU Switch: Saving and restoring process status.
+Process Management: Process Scheduling Basics: Scheduling Queues (Job queue, Ready queue, Device queue).
+Process Management: Process Scheduling Basics: Schedulers (Long-term scheduler).
+Process Management: Process Scheduling Basics: Schedulers (Short-term scheduler / CPU scheduler).
+Process Management: Process Scheduling Basics: Context Switch (Process of saving/restoring state during switching).
+Process Management: Operations on Processes: Creation Steps: Giving identity.
+Process Management: Operations on Processes: Creation Steps: Inserting into process list.
+Process Management: Operations on Processes: Creation Steps: Setting priority.
+Process Management: Operations on Processes: Creation Steps: Creating PCB.
+Process Management: Operations on Processes: Creation Steps: Allocating resources.
+Process Management: Operations on Processes: Events Causing Creation: New job submission.
+Process Management: Operations on Processes: Events Causing Creation: User logon.
+Process Management: Operations on Processes: Events Causing Creation: Application response to a need.
+Process Management: Operations on Processes: Events Causing Creation: Process creating a child process.
+Process Management: Operations on Processes: Parent-Child Relationship: Parent creates child.
+Process Management: Operations on Processes: Parent-Child Relationship: Child can create more processes.
+Process Management: Operations on Processes: Parent-Child Relationship: Resource sharing options between parent and child.
+Process Management: Operations on Processes: Parent-Child Relationship: Execution options (parent waits or runs concurrently).
+Process Management: Operations on Processes: Parent-Child Relationship: Address space options (child duplicates parent or has new program).
+Process Management: Operations on Processes: Parent-Child Relationship: Examples UNIX FORK, MS-DOS process creation.
+Process Management: Inter-Process Communication (IPC): Direct Communication: send/receive to/from specific process.
+Process Management: Inter-Process Communication (IPC): Direct Communication: Connection properties.
+Process Management: Inter-Process Communication (IPC): Indirect Communication: send/receive via mailbox.
+Process Management: Inter-Process Communication (IPC): Indirect Communication: Connection properties.
+Process Management: Inter-Process Communication (IPC): Indirect Communication: Mailbox operations (create, send/receive, destroy).
+Process Management: Inter-Process Communication (IPC): Buffering: Temporary message storage.
+Process Management: Inter-Process Communication (IPC): Buffering Implementation: Zero Capacity (sender waits for receiver).
+Process Management: Inter-Process Communication (IPC): Buffering Implementation: Bounded Capacity (sender waits if buffer full).
+Process Management: Inter-Process Communication (IPC): Buffering Implementation: Unbounded Capacity (sender never waits).
+
+CPU Scheduling: Basic Concepts: Multiprogramming/Multitasking role in CPU scheduling.
+CPU Scheduling: Basic Concepts: CPU-I/O Burst Cycle (process execution consists of a cycle of CPU execution and I/O wait).
+CPU Scheduling: Role of Short-term scheduler (CPU scheduler): Selects next process for CPU.
+CPU Scheduling: States Triggering Scheduling: Process switches from Running to Waiting state.
+CPU Scheduling: States Triggering Scheduling: Process switches from Running to Ready state.
+CPU Scheduling: States Triggering Scheduling: Process switches from Waiting to Ready state.
+CPU Scheduling: States Triggering Scheduling: Process Termination.
+CPU Scheduling: Preemptive Scheduling: CPU can be taken away from a running process.
+CPU Scheduling: Non-preemptive Scheduling: Process keeps CPU until it releases it (terminates or switches to waiting).
+CPU Scheduling: Criteria: CPU utilization (keep CPU as busy as possible).
+CPU Scheduling: Criteria: Throughput (number of processes completed per time unit).
+CPU Scheduling: Criteria: Turnaround time (time from submission to completion).
+CPU Scheduling: Criteria: Waiting time (time a process spends in the ready queue).
+CPU Scheduling: Criteria: Response time (time from submission until first response is produced).
+CPU Scheduling: Criteria: Fairness (all processes get fair share of CPU).
+CPU Scheduling: Criteria: Average Waiting Time (AWT) as a performance metric.
+CPU Scheduling: Algorithm: First-Come First-Served (FCFS): Processes served in order of request.
+CPU Scheduling: Algorithm: FCFS: Example calculation.
+CPU Scheduling: Algorithm: Shortest Job First (SJF): Process with smallest CPU burst served first.
+CPU Scheduling: Algorithm: SJF Schemes: Non-preemptive SJF.
+CPU Scheduling: Algorithm: SJF Schemes: Preemptive SJF (Shortest Remaining Time First - SRTF).
+CPU Scheduling: Algorithm: SJF: Examples and AWT calculation.
+CPU Scheduling: Algorithm: SJF Implementation: Difficulty in predicting next CPU burst time.
+CPU Scheduling: Algorithm: SJF Prediction: Using Exponential Average of previous CPU bursts.
+CPU Scheduling: Algorithm: Priority Scheduling: Based on integer priority (lower integer usually higher priority).
+CPU Scheduling: Algorithm: Priority Scheduling Schemes: Non-preemptive Priority.
+CPU Scheduling: Algorithm: Priority Scheduling Schemes: Preemptive Priority.
+CPU Scheduling: Algorithm: Priority Scheduling: Example calculation.
+CPU Scheduling: Algorithm: Round Robin (RR): Designed for time-sharing systems.
+CPU Scheduling: Algorithm: Round Robin (RR): Preemptive FCFS with a time quantum (time slice).
+CPU Scheduling: Algorithm: Round Robin (RR): Advantages (uniform time distribution).
+CPU Scheduling: Algorithm: Round Robin (RR): Disadvantages (overhead with very small quantum).
+CPU Scheduling: Algorithm: Round Robin (RR) Rules: Process runs for quantum or until burst finishes.
+CPU Scheduling: Algorithm: Round Robin (RR) Rules: If burst > quantum, process preempted and put at end of ready queue.
+CPU Scheduling: Algorithm: Round Robin (RR) Rules: If process blocks for I/O before quantum expires, it's moved to I/O queue.
+CPU Scheduling: Algorithm: Round Robin (RR): Example calculation of scheduling order.
+CPU Scheduling: Algorithm: Round Robin (RR): Turnaround Time (TA) = Waiting Time + Execution Time.
+CPU Scheduling: Algorithm: Round Robin (RR): TA relation to quantum size (larger quantum can lead to FCFS behavior, smaller quantum more context switches).
+CPU Scheduling: Algorithm: Round Robin (RR): Example calculation with Average Turnaround Time (ATAT).
