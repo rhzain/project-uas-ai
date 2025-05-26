@@ -6,7 +6,7 @@ import json
 import faiss
 import numpy as np
 import os
-import re # Untuk parsing outline jika diperlukan lebih lanjut
+import re
 from dotenv import load_dotenv
 import google.generativeai as genai
 from sentence_transformers import SentenceTransformer
@@ -28,22 +28,12 @@ except Exception as e:
 
 # --- Variabel Global & Path Konfigurasi ---
 # Sesuaikan dengan nama model embedding yang Anda gunakan di prepare_data_for_rag.py
-EMBEDDING_MODEL_NAME = 'all-MiniLM-L6-v2' # Dimensi 384
+EMBEDDING_MODEL_NAME = 'all-MiniLM-L6-v2'
 
-# Mengatur BASE_DATA_DIR berdasarkan struktur yang umum atau yang tersirat dari error log.
-# Asumsi: app.py berada di direktori root proyek, dan data ada di dalam 'dataset/SistemOperasi'
-# Jika struktur Anda berbeda, sesuaikan path ini.
-# Misalnya, jika app.py ada di dalam folder 'SistemOperasi', BASE_DATA_DIR bisa "."
 CURRENT_WORKING_DIRECTORY = os.getcwd()
 print(f"Direktori Kerja Saat Ini (CWD): {CURRENT_WORKING_DIRECTORY}")
 
-# Path ini harus menunjuk ke folder yang berisi outline_operating_systems.txt, 
-# vector_store.index, dan processed_chunks_with_metadata.json
-# Berdasarkan error log Anda, sepertinya path relatifnya adalah "dataset/SistemOperasi"
-# dari CWD Anda.
 BASE_DATA_DIR = os.path.join("dataset", "SistemOperasi") 
-# Jika Anda ingin menggunakan path absolut, ganti baris di atas dengan path absolut Anda, contoh:
-# BASE_DATA_DIR = r"D:\chalkid\Uni\Academic\Sem 4\Artificial Intelligence\UAS\dataset\SistemOperasi"
 
 print(f"BASE_DATA_DIR diatur ke (relatif terhadap CWD atau absolut): {BASE_DATA_DIR}")
 print(f"Path absolut yang akan digunakan untuk BASE_DATA_DIR: {os.path.abspath(BASE_DATA_DIR)}")
@@ -54,7 +44,7 @@ TEXT_CHUNKS_FILEPATH = os.path.join(BASE_DATA_DIR, "processed_chunks_with_metada
 OUTLINE_FILEPATH = os.path.join(BASE_DATA_DIR, "outline_operating_systems.txt")
 
 # Model LLM Gemini yang akan digunakan
-LLM_MODEL_NAME = "gemini-1.5-flash-latest" # Atau model lain yang mendukung generasi konten panjang
+LLM_MODEL_NAME = "gemini-1.5-flash-latest"
 
 # --- 1. Pemuatan Resources Utama (Menggunakan Cache Streamlit) ---
 @st.cache_resource
@@ -85,7 +75,6 @@ def load_all_application_resources():
 
     if not all_paths_exist:
         st.warning("Satu atau lebih file data penting tidak ditemukan. Aplikasi mungkin tidak berfungsi dengan benar. Harap periksa path di atas dan pastikan file ada.")
-        # Mengembalikan dictionary dengan nilai None agar pengecekan di bawahnya tidak error fatal segera
         return {key: None for key in resources}
 
     try:
@@ -104,12 +93,10 @@ def load_all_application_resources():
             content = f.read()
         
         if content.strip().startswith("MATAKULIAH:"):
-            # Ambil nama matakuliah
-            # Gunakan try-except untuk menghindari error jika st.session_state belum siap sepenuhnya saat @st.cache_resource pertama kali dijalankan
             try:
                 st.session_state.nama_matakuliah = content.splitlines()[0].split(":",1)[1].strip()
-            except Exception: # Menangkap error jika st.session_state tidak tersedia
-                 pass # Abaikan jika session_state belum ada (akan di-set nanti)
+            except Exception: 
+                 pass
 
 
         pertemuan_blocks = re.split(r'\nPERTEMUAN:', '\n' + content.split('PERTEMUAN:', 1)[-1] if 'PERTEMUAN:' in content else '')
@@ -130,7 +117,7 @@ def load_all_application_resources():
                         key_clean = key.strip().lower().replace(" ", "_")
                         value_clean = value.strip()
                         
-                        if key_clean == "pertemuan" and 'id' not in current_pertemuan: # Jika ID belum ter-parse
+                        if key_clean == "pertemuan" and 'id' not in current_pertemuan:
                              id_match_val = re.match(r'^\s*(\d+)', value_clean)
                              if id_match_val:
                                  current_pertemuan['id'] = int(id_match_val.group(1))
@@ -138,9 +125,9 @@ def load_all_application_resources():
                             if key_clean == 'judul' and line_idx == 0 and 'id' in current_pertemuan:
                                 # Khusus untuk kasus "ID JUDUL: Isi Judul"
                                 current_pertemuan[key_clean] = value_clean.split(":",1)[-1].strip() if ":" in value_clean and value_clean.startswith(str(current_pertemuan['id'])) else value_clean
-                            elif key_clean == 'judul' and lines[0].strip().startswith(str(current_pertemuan.get('id','')) + " " + key.strip()) : # Misal "1 JUDUL: Pengenalan"
+                            elif key_clean == 'judul' and lines[0].strip().startswith(str(current_pertemuan.get('id','')) + " " + key.strip()) :
                                 current_pertemuan[key_clean] = value_clean
-                            elif key_clean != 'pertemuan': # Jangan timpa ID
+                            elif key_clean != 'pertemuan':
                                 current_pertemuan[key_clean] = value_clean
             
             if 'id' in current_pertemuan and 'judul' in current_pertemuan:
@@ -259,12 +246,10 @@ JAWABAN ANDA:
 """
     try:
         response = llm_chat_model.generate_content(prompt_to_send)
-        # Akses teks respons yang lebih aman
         if response.parts:
             return "".join(part.text for part in response.parts)
-        elif hasattr(response, 'text') and response.text: # Fallback untuk beberapa model/versi
+        elif hasattr(response, 'text') and response.text:
             return response.text
-        # Cek jika ada masalah dengan prompt (misalnya diblokir karena safety)
         elif hasattr(response, 'prompt_feedback') and response.prompt_feedback:
             feedback_info = response.prompt_feedback
             print(f"Feedback dari LLM untuk prompt: {feedback_info}")
@@ -413,7 +398,7 @@ with st.sidebar:
                     st.session_state.current_pertemuan_judul = judul
                     st.session_state.quiz_mode = None 
                     st.session_state.chat_history = [] 
-                    st.session_state.last_processed_query = None # Reset query terakhir yang diproses
+                    st.session_state.last_processed_query = None
                     st.rerun()
 
     st.divider()
@@ -437,7 +422,7 @@ else:
     col1, col2 = st.columns(2)
     with col1:
         if st.button("💬 Tanya Jawab Materi Ini", use_container_width=True, disabled=(st.session_state.quiz_mode is not None and st.session_state.quiz_mode != "quiz_results_chat_forward")):
-            if st.session_state.quiz_mode != None: # Jika sedang dalam mode kuis atau hasil, reset
+            if st.session_state.quiz_mode != None:
                 st.session_state.quiz_mode = None
                 st.session_state.chat_history = []
                 st.session_state.last_processed_query = None
@@ -450,7 +435,6 @@ else:
             st.rerun()
     st.divider()
 
-    # Logika Tampilan berdasarkan Mode
     if st.session_state.quiz_mode == "quiz_generating":
         with st.spinner("Sedang membuat soal untuk Anda... Mohon tunggu sebentar. ⏳"):
             st.session_state.quiz_questions = generate_mcq_from_llm(st.session_state.current_pertemuan_id, num_questions=3)
@@ -462,12 +446,12 @@ else:
             else:
                 st.error("Gagal membuat soal kuis atau format soal tidak valid. Silakan coba lagi atau pilih pertemuan lain.")
                 st.session_state.quiz_mode = None
-            st.rerun() # Selalu rerun setelah selesai generating atau error
+            st.rerun()
     
     elif st.session_state.quiz_mode == "quiz_ongoing":
         st.subheader("✍️ Kuis Pemahaman")
         if not st.session_state.quiz_questions or st.session_state.current_question_index >= len(st.session_state.quiz_questions):
-            st.session_state.quiz_mode = "quiz_results" # Pindah ke hasil jika tidak ada soal lagi
+            st.session_state.quiz_mode = "quiz_results"
             st.rerun()
         else:
             q_idx = st.session_state.current_question_index
@@ -481,7 +465,6 @@ else:
             
             if not option_items:
                 st.error("Opsi jawaban tidak tersedia untuk soal ini.")
-                # Tombol untuk skip soal atau batalkan kuis bisa ditambahkan di sini
                 if st.button("Lanjut ke Soal Berikutnya (jika ada)"):
                     if q_idx < len(st.session_state.quiz_questions) - 1:
                         st.session_state.current_question_index +=1
@@ -492,19 +475,18 @@ else:
 
             user_choice_for_current_q = st.session_state.user_answers.get(q_idx)
             
-            # Default index untuk radio button
             default_radio_index = None
             if user_choice_for_current_q:
                 try:
                     default_radio_index = [item[0] for item in option_items].index(user_choice_for_current_q)
                 except ValueError:
-                    default_radio_index = None # Jika pilihan tersimpan tidak valid lagi
+                    default_radio_index = None
 
             selected_option_key = st.radio(
                 "Pilih jawaban Anda:",
                 options=[item[0] for item in option_items],
                 format_func=lambda key: f"{key}. {options.get(key, 'Opsi tidak valid')}",
-                key=f"quiz_q_{st.session_state.current_pertemuan_id}_{q_idx}", # Key lebih unik
+                key=f"quiz_q_{st.session_state.current_pertemuan_id}_{q_idx}",
                 index=default_radio_index
             )
             
@@ -573,9 +555,8 @@ else:
                 for topik, count in topik_salah_dict.items():
                     st.markdown(f"- **{topik}** ({count} kesalahan)")
                     if st.button(f"💬 Tanya tentang: {topik}", key=f"learn_{st.session_state.current_pertemuan_id}_{topik.replace(' ','_')}"):
-                        st.session_state.chat_history = [] # Reset chat
-                        st.session_state.quiz_mode = "quiz_results_chat_forward" # Mode baru untuk menandai
-                        # Simpan prompt untuk dikirim otomatis
+                        st.session_state.chat_history = [] 
+                        st.session_state.quiz_mode = "quiz_results_chat_forward" 
                         st.session_state.auto_send_prompt = f"Tolong jelaskan lebih detail mengenai topik '{topik}' dari Pertemuan {st.session_state.current_pertemuan_id} ({st.session_state.current_pertemuan_judul})."
                         st.rerun()
             st.markdown("---")
@@ -602,7 +583,6 @@ else:
 
     # Mode Tanya Jawab RAG (default atau setelah forwarding dari hasil kuis)
     else: 
-        # Tampilkan histori chat
         for message_entry in st.session_state.chat_history:
             with st.chat_message(message_entry["role"]):
                 st.markdown(message_entry["content"])
@@ -610,13 +590,11 @@ else:
         # Logika untuk auto-send prompt setelah kuis
         if st.session_state.quiz_mode == "quiz_results_chat_forward" and "auto_send_prompt" in st.session_state:
             auto_query = st.session_state.auto_send_prompt
-            del st.session_state.auto_send_prompt # Hapus setelah digunakan
-            st.session_state.quiz_mode = None # Kembali ke mode chat normal
+            del st.session_state.auto_send_prompt 
+            st.session_state.quiz_mode = None
 
             st.session_state.chat_history.append({"role": "user", "content": auto_query})
-            # Tidak perlu st.chat_message("user") di sini karena akan ditampilkan oleh loop di atas pada rerun berikutnya
             
-            # Langsung proses query ini
             query_vector = get_embedding_for_query(auto_query)
             if query_vector is not None:
                 relevant_chunks = search_relevant_chunks(query_vector, current_pertemuan_id=st.session_state.current_pertemuan_id)
@@ -626,14 +604,12 @@ else:
             
             st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
             st.session_state.last_processed_query = auto_query
-            st.rerun() # Rerun untuk menampilkan pesan user dan asisten dari auto_query
+            st.rerun() 
 
         # Terima input chat dari pengguna
         if user_chat_input := st.chat_input("Ketik pertanyaan Anda di sini..."):
             st.session_state.chat_history.append({"role": "user", "content": user_chat_input})
-            # Tidak perlu st.chat_message("user") di sini karena akan ditampilkan oleh loop di atas pada rerun berikutnya
             
-            # Proses query ini
             query_vector = get_embedding_for_query(user_chat_input)
             if query_vector is not None:
                 relevant_chunks = search_relevant_chunks(query_vector, current_pertemuan_id=st.session_state.current_pertemuan_id)
@@ -643,10 +619,9 @@ else:
             
             st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
             st.session_state.last_processed_query = user_chat_input
-            st.rerun() # Rerun untuk menampilkan pesan user dan asisten yang baru
+            st.rerun() 
 
 
-# Fallback jika resource tidak termuat
 if not all(app_resources.values()):
     st.error("Beberapa resource penting gagal dimuat. Aplikasi tidak dapat berjalan. Silakan cek konsol server untuk detail dan coba 'Reset Aplikasi'.")
     st.stop()
