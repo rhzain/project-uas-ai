@@ -1,0 +1,70 @@
+# Pertemuan 2: OS Components, Services, and Structure
+
+## Komponen Sistem (System Components) [18]
+Sistem operasi mengelola berbagai komponen sistem komputasi. Komponen utama yang sering dibahas meliputi:
+- **Manajemen Proses (Process Management):** Proses adalah program yang sedang dieksekusi. OS bertanggung jawab untuk membuat dan menghapus proses, menunda dan melanjutkan proses, menyediakan mekanisme untuk sinkronisasi proses, komunikasi proses, dan penanganan deadlock.
+- **Manajemen Memori Utama (Main Memory Management):** Memori utama adalah tempat penyimpanan data dan instruksi yang diakses langsung oleh CPU. OS mengelola bagian mana dari memori yang sedang digunakan dan oleh siapa, memutuskan proses mana yang akan dimuat ke memori ketika ada ruang tersedia, serta mengalokasikan dan mendealokasikan ruang memori sesuai kebutuhan.
+- **Manajemen I/O (I/O System Management):** OS menyembunyikan kekhasan perangkat keras tertentu dari pengguna. Sistem I/O terdiri dari sistem buffer-caching, antarmuka device-driver umum, dan driver untuk perangkat keras spesifik.
+- **Manajemen File (File Management):** File adalah kumpulan informasi terkait yang didefinisikan oleh pembuatnya. OS bertanggung jawab untuk membuat dan menghapus file dan direktori, mendukung manipulasi file dan direktori (membaca, menulis, mengganti nama, dll.), memetakan file ke penyimpanan sekunder, dan mencadangkan file pada media penyimpanan yang stabil.
+
+## Layanan Sistem Operasi (OS Services) [17, 18]
+Sistem operasi menyediakan layanan yang membantu pengguna dan program. Layanan ini dapat dikategorikan sebagai berikut:
+- **Dukungan untuk Programmer (Programmer Support) / Pengembangan Program:** Menyediakan utilitas seperti editor, debugger, compiler, linker, interpreter. [17, 18]
+- **Eksekusi Program (Program Execution):** Memuat program ke memori dan menjalankannya. Program harus dapat mengakhiri eksekusinya, baik secara normal maupun abnormal (menunjukkan error). [17, 18]
+- **Operasi I/O (I/O Operations):** Program yang berjalan mungkin memerlukan I/O, yang melibatkan file atau perangkat I/O. OS harus menyediakan cara untuk melakukan I/O. [17, 18]
+- **Manipulasi Sistem File (File-system Manipulation):** Program perlu membaca dan menulis file dan direktori, membuat dan menghapusnya, mencari mereka, dan mengatur informasi izin. [17, 18]
+- **Komunikasi (Communication):** Pertukaran informasi antara proses, baik pada komputer yang sama atau melalui jaringan. Komunikasi dapat diimplementasikan melalui shared memory atau message passing. [17, 18]
+- **Deteksi Error (Error Detection):** OS perlu terus-menerus menyadari kemungkinan error (pada CPU dan memori, perangkat I/O, program pengguna). Untuk setiap jenis error, OS harus mengambil tindakan yang sesuai untuk memastikan komputasi yang benar dan konsisten. [17, 18]
+
+## System Call [17, 19, 20]
+- **Definisi:** System call adalah antarmuka yang disediakan oleh sistem operasi kepada program yang berjalan. Ini sering dianggap sebagai "instruksi yang diperluas" atau API (Application Programming Interface) ke kernel. [17]
+  System call memungkinkan program pengguna untuk meminta layanan dari sistem operasi.
+- **Posisi:** System call berada di antara program yang dapat dieksekusi (executable program) dan kernel sistem operasi. [17]
+  Ketika sebuah program memerlukan layanan kernel, ia melakukan system call, yang menyebabkan trap ke mode kernel, dan kernel kemudian mengeksekusi permintaan tersebut.
+- **Kategori System Call:** System call dapat dikelompokkan ke dalam beberapa kategori utama: [19, 20]
+  1.  **Kontrol Proses (Process Control):** Membuat, mengakhiri, memuat, mengeksekusi proses; mendapatkan/mengatur atribut proses; menunggu waktu atau event; mengalokasikan/membebaskan memori.
+  2.  **Manipulasi File (File Manipulation):** Membuat, menghapus, membuka, menutup, membaca, menulis, memposisikan ulang file; mendapatkan/mengatur atribut file.
+  3.  **Manipulasi Perangkat (Device Manipulation):** Meminta, melepaskan, membaca, menulis, memposisikan ulang perangkat; mendapatkan/mengatur atribut perangkat; melampirkan/melepaskan perangkat secara logis.
+  4.  **Informasi Lingkungan (Environment Information):** Mendapatkan/mengatur waktu atau tanggal; mendapatkan/mengatur data sistem; mendapatkan/mengatur atribut proses, file, atau perangkat.
+  5.  **Komunikasi (Communication):** Membuat/menghapus koneksi komunikasi; mengirim/menerima pesan; mentransfer informasi status; melampirkan/melepaskan perangkat jarak jauh.
+
+## Model Komunikasi Antar Proses [20, 21]
+Dua model dasar komunikasi antar proses (Inter-Process Communication - IPC):
+- **Model Pertukaran Pesan (Message-passing Model):** [20, 21]
+  Proses berkomunikasi dengan bertukar pesan. Tidak ada variabel bersama. Mudah diimplementasikan tetapi bisa lebih lambat karena melibatkan pemanggilan kernel.
+- **Model Memori Bersama (Shared-memory Model):** [21]
+  Proses berkomunikasi dengan membaca dan menulis ke area memori yang dibagikan. Lebih cepat karena tidak ada pemanggilan kernel setelah setup, tetapi programmer bertanggung jawab atas sinkronisasi untuk menghindari konflik.
+
+## Program Sistem (System Programs) [21, 22]
+Program sistem menyediakan lingkungan yang nyaman untuk pengembangan dan eksekusi program. Beberapa kategori program sistem adalah:
+- **Manipulasi File:** Membuat, menghapus, menyalin, mengganti nama, mencetak, membuang, mendaftar, dan umumnya memanipulasi file dan direktori.
+- **Informasi Status:** Beberapa program hanya meminta sistem untuk informasi tentang tanggal, waktu, jumlah memori atau disk yang tersedia, jumlah pengguna, atau informasi status serupa.
+- **Modifikasi File:** Beberapa editor teks tersedia untuk membuat dan memodifikasi konten file yang disimpan di disk atau tape.
+- **Dukungan Bahasa Pemrograman:** Compiler, assembler, debugger, dan interpreter untuk bahasa pemrograman umum sering disediakan bersama OS.
+- **Eksekusi Program:** OS menyediakan loader untuk memuat program ke memori dan linker untuk menggabungkan pustaka.
+- **Komunikasi:** Program ini menyediakan mekanisme untuk membuat koneksi virtual di antara proses, pengguna, dan sistem komputer yang berbeda.
+- **Program Aplikasi:** Selain program sistem, sebagian besar sistem operasi juga dilengkapi dengan program aplikasi yang berguna bagi pengguna (misalnya, browser web, email client, game).
+
+## Struktur Sistem Operasi [22-30]
+Struktur internal sistem operasi dapat sangat bervariasi:
+- **Struktur Sederhana (Simple Structure):** [22, 23]
+  Banyak sistem operasi komersial tidak memiliki struktur yang terdefinisi dengan baik. Sistem dimulai sebagai sistem kecil, sederhana, dan terbatas, lalu tumbuh melampaui cakupan aslinya.
+  Contoh: MS-DOS (ditulis untuk menyediakan fungsionalitas paling banyak dalam ruang paling sedikit, tidak terlalu terbagi menjadi modul). Kernel Minix, Qemu.
+- **Sistem Monolitik (Monolithic System):** [23-25]
+  Ini adalah struktur yang paling umum. Kernel adalah program besar dan tunggal yang berisi semua layanan OS. Meskipun ada beberapa struktur internal (misalnya, pemisahan rutin layanan, rutin utilitas), semua komponen berjalan dalam mode kernel.
+  Fitur: Menggunakan mode ganda (dual-mode operation) untuk proteksi. System call diimplementasikan menggunakan instruksi trap.
+  Contoh: UNIX tradisional, Linux, MS-DOS (meskipun tidak sepenuhnya monolitik dalam arti modern).
+- **Sistem Berlapis (Layered System):** [25-28]
+  Sistem operasi dibagi menjadi beberapa lapisan (layer), masing-masing dibangun di atas lapisan yang lebih rendah. Lapisan terbawah adalah perangkat keras; lapisan teratas adalah antarmuka pengguna.
+  Keuntungan: Modularitas, penyederhanaan debugging dan verifikasi sistem.
+  Kekurangan: Sulit untuk mendefinisikan lapisan-lapisan dengan benar, cenderung kurang efisien karena overhead antar lapisan.
+  Contoh: Sistem THE (Edsger Dijkstra), MULTICS, VENUS, OS/2.
+- **Mesin Virtual (Virtual Machines):** [28, 29]
+  Pendekatan ini mengambil konsep layered ke kesimpulan logisnya. Ia memperlakukan perangkat keras dan antarmuka kernel seolah-olah keduanya adalah perangkat keras.
+  OS membuat ilusi beberapa proses, masing-masing menjalankan prosesornya sendiri dengan memorinya sendiri (virtual). Setiap pengguna diberikan simulasi mesin nyata.
+  Contoh: CP/CMS pada IBM, VM/370, VMware, VirtualBox.
+- **Model Klien-Server (Client-Server Model):** [29, 30]
+  Struktur ini memindahkan sebanyak mungkin fungsionalitas dari kernel ke dalam proses pengguna (server). Kernel hanya menyediakan mekanisme komunikasi dasar antar klien dan server.
+  Klien meminta layanan, dan server menyediakan layanan tersebut. Komunikasi biasanya melalui pertukaran pesan.
+  Keuntungan: Modularitas, kernel lebih kecil (mikrokernel), lebih mudah diperluas.
+  Contoh: Sistem operasi berbasis mikrokernel seperti Mach, QNX.

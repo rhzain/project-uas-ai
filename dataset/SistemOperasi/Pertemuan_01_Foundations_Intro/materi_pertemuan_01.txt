@@ -1,0 +1,102 @@
+# Pertemuan 1: Foundations & Overview of Operating Systems
+
+## Pengenalan Sistem Operasi [1-16]
+
+### Definisi dan Peran Sistem Operasi [1]
+Sistem Operasi (Operating System/OS) adalah sebuah program atau perangkat lunak yang mengontrol eksekusi aplikasi. [1]
+OS bertindak sebagai antarmuka (interface) antara pengguna (user) dan perangkat keras (hardware) komputer. [1]
+OS menyediakan lingkungan di mana pengguna dapat menjalankan program-programnya dengan nyaman dan efisien. [1]
+
+### Tujuan Sistem Operasi [1]
+Tujuan utama dari sistem operasi adalah:
+- **Kenyamanan (Convenience):** Membuat sistem komputer lebih mudah untuk digunakan oleh pengguna. [1]
+- **Efisiensi (Efficiency):** Memungkinkan penggunaan sumber daya sistem komputer (seperti CPU, memori, perangkat I/O) secara efisien. [1]
+
+### Komponen Sistem Komputer [2]
+Secara umum, sistem komputer terdiri dari beberapa komponen yang saling berinteraksi:
+1.  **Perangkat Keras (Hardware):** Menyediakan sumber daya komputasi dasar (CPU, memori, perangkat I/O).
+2.  **Sistem Operasi (Operating System):** Mengontrol dan mengkoordinasikan penggunaan perangkat keras di antara berbagai program aplikasi untuk berbagai pengguna.
+3.  **Program Sistem (System Programs):** Membantu dalam pengelolaan dan operasi sistem komputer (misalnya, compiler, assembler, editor teks, utilitas sistem).
+4.  **Program Aplikasi (Application Programs):** Program yang digunakan oleh pengguna untuk menyelesaikan tugas-tugas komputasi spesifik (misalnya, word processor, spreadsheet, game, browser web).
+Hubungan antar komponen ini menunjukkan OS sebagai lapisan penting yang menjembatani perangkat keras dengan perangkat lunak lainnya. [2]
+
+### Layanan Sistem Operasi (OS Services) [2, 3]
+Sistem operasi menyediakan berbagai layanan untuk kenyamanan pengguna dan efisiensi eksekusi program:
+- **Menyediakan Antarmuka Pengguna (User Interface):** Bisa berupa Command-Line Interface (CLI), Batch interface, atau Graphical User Interface (GUI). [2]
+- **Menyediakan Eksekusi Program:** Memuat program ke memori dan menjalankannya, serta menangani terminasi program baik secara normal maupun abnormal. [2]
+- **Menyediakan Operasi Input/Output (I/O):** Pengguna tidak dapat mengontrol perangkat I/O secara langsung, OS menyediakan mekanisme untuk melakukan operasi I/O. [2]
+- **Menyediakan Manipulasi Sistem File:** Membaca, menulis, membuat, dan menghapus file dan direktori, serta mengatur hak akses. [2]
+- **Menyediakan Komunikasi Sistem / Jaringan:** Memungkinkan komunikasi antar proses, baik dalam satu komputer maupun antar komputer melalui jaringan. [2]
+- **Deteksi Error:** OS secara konstan memeriksa kemungkinan error pada CPU, memori, perangkat I/O, atau program pengguna, dan mengambil tindakan yang sesuai. [2, 17]
+- **Pembagian Sumber Daya (Resource Sharing):** Mengalokasikan sumber daya seperti CPU cycle, memori, dan perangkat I/O kepada berbagai pengguna atau job yang berjalan bersamaan. [2]
+- **Keamanan (Security):** Melindungi informasi dan sumber daya sistem dari akses yang tidak sah. [2]
+- **Sistem Akuntansi (Accounting System):** Mencatat penggunaan sumber daya oleh pengguna atau job. [3]
+
+### Fungsi Dasar Sistem Operasi [3, 4]
+Dua pandangan utama mengenai fungsi OS:
+- **Sebagai 'Mesin yang Diperluas' (Extended Machine) atau 'Mesin Virtual' (Virtual Machine):** [3]
+  OS menyediakan antarmuka yang lebih sederhana dan abstrak kepada pengguna dibandingkan dengan perangkat keras yang sebenarnya. OS menyembunyikan detail dan kompleksitas perangkat keras seperti bagaimana data ditulis ke disk, penanganan interupsi, dan manajemen memori. [3]
+- **Sebagai 'Manajer Sumber Daya' (Resources Manager):** [4]
+  OS bertugas mengelola semua sumber daya komputer. Sumber daya ini meliputi prosesor (CPU), memori utama, timer, disk, printer, antarmuka jaringan, dan lainnya. OS memutuskan bagaimana sumber daya ini dialokasikan ke program dan pengguna secara adil dan efisien. [4]
+
+### Sejarah Sistem Operasi (Generasi) [5-7]
+Perkembangan sistem operasi dapat dibagi menjadi beberapa generasi:
+- **Generasi I (1945-1955): Tabung Vakum dan Plugboard** [5]
+  - Karakteristik: Komputer menggunakan tabung vakum, pemrograman dilakukan dengan plugboard atau bahasa mesin murni.
+  - Tidak ada konsep sistem operasi. Pengguna berinteraksi langsung dengan perangkat keras.
+- **Generasi II (1955-1965): Transistor dan Sistem Batch** [5, 6]
+  - Karakteristik: Transistor menggantikan tabung vakum. Muncul sistem batch dimana pekerjaan dengan kebutuhan serupa dikumpulkan dan dijalankan bersama.
+  - Input: Punch card. Bahasa pemrograman: FORTRAN, Assembly. Penyimpanan: Tape drive.
+  - OS Awal: FMS (Fortran Monitor System), IBSYS (IBM's operating system untuk komputer 709x).
+  - Fitur: Off-line printing (data hasil diprint ke tape dulu, baru diprint oleh komputer lain).
+- **Generasi III (1965-1980): IC dan Multiprogramming** [6]
+  - Karakteristik: Penggunaan Integrated Circuits (IC) memungkinkan komputer lebih kecil, cepat, dan murah.
+  - Konsep Multiprogramming: Beberapa job disimpan di memori secara bersamaan, dan CPU beralih antar job tersebut untuk meningkatkan utilisasi.
+  - Contoh: IBM System/360 dengan OS/360.
+  - Fitur: Penggunaan disk untuk penyimpanan online, Spooling (Simultaneous Peripheral Operations On-Line), MULTICS (Multiplexed Information and Computing Service) yang menjadi inspirasi UNIX.
+- **Generasi IV (1980 dan seterusnya): Komputer Pribadi dan Jaringan** [7]
+  - Karakteristik: Munculnya Personal Computers (PC) berkat teknologi LSI (Large Scale Integration) dan VLSI (Very Large Scale Integration).
+  - OS Populer: MS-DOS, UNIX (dan variannya), IBM PC dengan PC-DOS.
+  - Prosesor: CISC (Complex Instruction Set Computer) dan RISC (Reduced Instruction Set Computer).
+  - Perkembangan: Sistem Operasi Jaringan (Network OS), Sistem Operasi Terdistribusi (Distributed OS), sistem uni/multi prosesor.
+  - Keluarga OS Modern: Microsoft Windows, varian UNIX (Linux, macOS), Mac OS.
+  - Komputasi: Client-Server Computing.
+  - OS untuk Perangkat Mobile: OS untuk Smartphone.
+
+### Jenis-Jenis Sistem Operasi [7-11]
+Sistem operasi dapat diklasifikasikan berdasarkan berbagai kriteria:
+- **Berdasarkan Komputer yang Digunakan:** [7, 8]
+  - Keluarga Microsoft Windows (Windows XP, Vista, 7, 8, 10, 11, Windows Server).
+  - Keluarga Unix (Termasuk Linux, Solaris, FreeBSD, dll.).
+  - Mac OS (Sekarang macOS).
+- **Berdasarkan Platform:** [9]
+  - OS untuk Mikrokomputer (PC).
+  - OS untuk Mainframe.
+  - OS untuk Superkomputer.
+  - OS untuk Workstation/Server.
+  - OS Jaringan.
+  - OS untuk PDA (Personal Digital Assistant).
+  - OS untuk Smartphone.
+- **Berbagai Versi Unix:** [9, 10]
+  AIX (IBM), A/UX (Apple), BSD (Berkeley Software Distribution), HP/UX (Hewlett-Packard), Solaris (Sun Microsystems, sekarang Oracle), IRIX (Silicon Graphics), Linux (berbagai distribusi seperti Ubuntu, Fedora, Debian).
+- **OS Mobile (Sistem Operasi untuk Perangkat Bergerak):** [10, 11]
+  Symbian OS, Windows Mobile (kemudian Windows Phone), Mobile Linux (misalnya Maemo, MeeGo), BlackBerry OS, Palm OS, Java ME, Android (Google), iOS (Apple).
+
+### Jenis Operasi Komputer (Cara OS Menjalankan Program) [12, 13]
+- **Operasi Program Tunggal (Mono-programming):** [12]
+  Hanya satu program yang dapat berjalan pada satu waktu. CPU sering idle menunggu I/O selesai.
+- **Pemrosesan Batch (Batch Processing):** [12]
+  Job-job dengan kebutuhan serupa dikumpulkan dan dijalankan secara berurutan tanpa intervensi pengguna.
+- **Multi-programming / Multi-tasking:** [12]
+  Beberapa program berada di memori pada saat yang sama. CPU beralih dari satu program ke program lain, memberikan ilusi bahwa semua program berjalan bersamaan. Meningkatkan utilisasi CPU.
+- **Multi-access (Time-sharing):** [13]
+  Variasi dari multiprogramming di mana banyak pengguna dapat berinteraksi dengan programnya masing-masing secara bersamaan melalui terminal. Setiap pengguna mendapatkan irisan waktu CPU (time slice).
+
+### Komponen Struktur OS Ideal (Pengenalan) [13-16]
+Meskipun struktur OS bervariasi, beberapa komponen fungsional inti umumnya ada:
+- **Nukleus (Kernel):** [13, 14] Inti dari sistem operasi yang menangani fungsi paling dasar.
+- **Manajemen Memori:** [13, 14] Mengatur alokasi dan dealokasi ruang memori.
+- **Kontrol I/O:** [13, 14] Mengelola komunikasi dengan perangkat keras I/O.
+- **Manajemen Backing Store (Penyimpanan Sekunder):** [13, 15] Mengatur penyimpanan data permanen di disk.
+- **Alokasi Sumber Daya & Penjadwalan:** [13, 15, 16] Mengalokasikan sumber daya (CPU, memori, dll.) dan menjadwalkan penggunaannya.
+- **Proteksi:** [13, 16] Mengontrol akses ke sumber daya sistem untuk menjaga integritas dan keamanan.

@@ -1,0 +1,105 @@
+# Pertemuan 3: Process Management
+
+## Konsep Proses [31, 32]
+- **Definisi Proses:** Proses adalah program yang sedang dalam eksekusi. [31] Ini lebih dari sekadar kode program (kadang disebut text section); ia juga mencakup aktivitas saat ini, yang direpresentasikan oleh nilai program counter dan isi register prosesor.
+- **Komponen Proses:** Sebuah proses umumnya mencakup: [31]
+  - Program Counter: Menunjukkan instruksi berikutnya yang akan dieksekusi.
+  - Isi Register CPU: Nilai-nilai register saat itu.
+  - Stack Proses: Berisi data sementara (parameter fungsi, alamat kembali, variabel lokal).
+  - Data Section: Berisi variabel global.
+  - Heap: Memori yang dialokasikan secara dinamis selama runtime proses.
+- **Kebutuhan Sumber Daya:** Proses membutuhkan sumber daya tertentu untuk menyelesaikan tugasnya, seperti waktu CPU, memori, file, dan perangkat I/O. [31]
+- **Peran OS dalam Manajemen Proses:** Sistem operasi bertanggung jawab untuk mengelola proses-proses ini dan mengalokasikan sumber daya yang mereka butuhkan. [31]
+- **Prinsip-Prinsip Proses:** [31, 32]
+  - Proses adalah entitas yang independen.
+  - Pada satu instan waktu, hanya satu program (bagian dari proses) yang dapat dieksekusi pada satu prosesor.
+
+## Model Proses [32, 35, 36]
+Model bagaimana OS menangani banyak proses:
+- **Multiprogramming / Multitasking (pada satu prosesor):** [32-34]
+  OS mengelola banyak proses di memori secara bersamaan. CPU beralih antar proses dengan cepat (biasanya puluhan atau ratusan kali per detik). Ini memberikan ilusi paralelisme (pseudoparallelism) pada sistem dengan satu CPU. Tujuannya adalah untuk memaksimalkan utilisasi CPU dengan selalu memiliki sesuatu untuk dijalankan.
+- **Multiprocessing (pada komputer multiprosesor):** [35]
+  OS mengelola banyak proses pada komputer yang memiliki lebih dari satu CPU (multiprocessor). Ini memungkinkan paralelisme sejati, di mana beberapa proses dapat berjalan secara bersamaan pada CPU yang berbeda.
+- **Distributed Processing (Pemrosesan Terdistribusi):** [36]
+  OS mengelola proses-proses yang berjalan pada komputer-komputer yang terpisah secara fisik dan terhubung melalui jaringan.
+
+## Status Proses (Process Status) [36]
+Selama eksekusinya, sebuah proses dapat berada dalam salah satu dari beberapa status berikut:
+- **New (Baru):** Proses sedang dibuat.
+- **Running (Berjalan):** Instruksi sedang dieksekusi pada CPU.
+- **Waiting (Menunggu) / Blocked:** Proses sedang menunggu suatu event terjadi (misalnya, penyelesaian I/O atau penerimaan sinyal).
+- **Ready (Siap):** Proses sedang menunggu untuk dialokasikan ke prosesor oleh scheduler.
+- **Terminated (Selesai):** Proses telah selesai dieksekusi.
+
+## Transisi Status Proses [36-38]
+Proses berpindah antar status selama siklus hidupnya:
+- **New -> Ready:** Setelah proses dibuat dan OS siap untuk menerimanya, ia masuk ke antrian ready.
+- **Ready -> Running:** Scheduler memilih proses dari antrian ready untuk dieksekusi di CPU.
+- **Running -> Waiting (Blocked):** Proses meminta I/O, atau menunggu event lain.
+- **Running -> Ready:** Jatah waktu (quantum) proses habis (pada sistem time-sharing), atau proses dengan prioritas lebih tinggi datang (pada sistem preemptive).
+- **Running -> Terminated:** Proses selesai eksekusi atau dihentikan oleh OS.
+- **Waiting -> Ready:** Event yang ditunggu oleh proses telah terjadi (misalnya, I/O selesai).
+
+## Process Control Block (PCB) [38, 39]
+Setiap proses direpresentasikan dalam sistem operasi oleh Process Control Block (PCB), juga dikenal sebagai Task Control Block. PCB berisi banyak informasi yang terkait dengan proses spesifik, termasuk:
+- **Status Proses:** Status saat ini (New, Ready, Running, Waiting, Terminated). [38]
+- **Program Counter:** Alamat instruksi berikutnya yang akan dieksekusi untuk proses ini. [38]
+- **Register CPU:** Isi semua register CPU yang terkait dengan proses (accumulator, index registers, stack pointers, general-purpose registers, dll.). [38]
+- **Informasi Penjadwalan CPU (CPU-Scheduling Information):** Prioritas proses, pointer ke antrian penjadwalan, dan parameter penjadwalan lainnya. [38]
+- **Informasi Manajemen Memori (Memory-Management Information):** Informasi seperti nilai register batas dan dasar, tabel page, atau tabel segmen, tergantung pada sistem memori yang digunakan oleh OS. [38]
+- **Informasi Akuntansi (Accounting Information):** Jumlah CPU dan waktu riil yang digunakan, batas waktu, nomor akun, nomor job atau proses, dll. [38]
+- **Informasi Status I/O (I/O Status Information):** Daftar perangkat I/O yang dialokasikan ke proses, daftar file yang terbuka, dll. [38]
+PCB berfungsi sebagai repositori untuk setiap informasi yang mungkin bervariasi dari proses ke proses. [39]
+
+## CPU Switch (Peralihan CPU dari Proses ke Proses) [40]
+Ketika CPU beralih dari satu proses ke proses lain, OS harus menyimpan status proses lama (dari PCB-nya) dan memuat status proses baru yang disimpan (ke PCB-nya). Operasi ini dikenal sebagai context switch.
+
+## Dasar-Dasar Penjadwalan Proses [40, 41]
+- **Antrian Penjadwalan (Scheduling Queues):** [40]
+  - **Job queue:** Semua proses dalam sistem.
+  - **Ready queue:** Proses-proses yang berada di memori utama, siap dan menunggu untuk dieksekusi. Antrian ini umumnya disimpan sebagai linked list.
+  - **Device queues:** Daftar proses yang menunggu perangkat I/O tertentu. Setiap perangkat memiliki antrian perangkatnya sendiri.
+- **Schedulers (Penjadwal):** [41]
+  - **Long-term scheduler (atau job scheduler):** Memilih proses dari job pool (di disk) dan memuatnya ke memori untuk dieksekusi (ke ready queue). Mengontrol tingkat multiprogramming. Jarang dieksekusi.
+  - **Short-term scheduler (atau CPU scheduler):** Memilih proses dari ready queue dan mengalokasikan CPU ke salah satunya. Harus sangat cepat karena sering dieksekusi.
+- **Context Switch:** [41]
+  Proses peralihan CPU ke proses lain memerlukan penyimpanan state proses saat ini dan pemulihan state proses berikutnya. Waktu context switch adalah overhead murni, karena sistem tidak melakukan pekerjaan yang berguna selama peralihan. Kecepatan context switch sangat bervariasi dari mesin ke mesin.
+
+## Operasi pada Proses: Pembuatan Proses (Process Creation) [41-45]
+- **Langkah-langkah Pembuatan Proses:** [41, 42]
+  1. Memberikan identitas unik (Process ID).
+  2. Memasukkan proses ke dalam daftar proses sistem.
+  3. Menentukan prioritas awal proses.
+  4. Membuat Process Control Block (PCB).
+  5. Mengalokasikan sumber daya awal untuk proses.
+- **Event yang Menyebabkan Pembuatan Proses:** [42, 43]
+  - Pengiriman job batch baru.
+  - Login pengguna interaktif.
+  - Respons sistem operasi terhadap aplikasi (misalnya, mencetak file, OS membuat proses untuk itu).
+  - Sebuah proses menciptakan proses lain (child process).
+- **Hubungan Parent-Child:** [43-45]
+  Proses yang membuat proses baru disebut parent process, dan proses baru disebut child process. Child process sendiri dapat membuat proses lain, membentuk pohon proses.
+  - **Pembagian Sumber Daya:** Parent dan child dapat berbagi semua sumber daya, atau child hanya berbagi sebagian sumber daya parent, atau tidak berbagi sama sekali.
+  - **Opsi Eksekusi:** Parent melanjutkan eksekusi secara bersamaan dengan child, atau parent menunggu hingga child selesai.
+  - **Opsi Ruang Alamat:** Child merupakan duplikat dari parent (memiliki program dan data yang sama), atau child memiliki program baru yang dimuat ke dalamnya.
+  - Contoh di UNIX: System call `fork()` membuat child process yang merupakan duplikat parent. `exec()` kemudian bisa digunakan oleh child untuk mengganti image memorinya dengan program baru. Parent bisa menunggu child selesai dengan `wait()`.
+  - Contoh di MS-DOS: Tidak ada konsep parent-child yang jelas; proses memuat program lain dan memberikan kontrol padanya.
+
+## Inter-Process Communication (IPC) [45-48]
+Mekanisme bagi proses untuk berkomunikasi dan mensinkronkan tindakan mereka.
+- **Komunikasi Langsung (Direct Communication):** [45, 46]
+  Setiap proses yang ingin berkomunikasi harus secara eksplisit menamai penerima atau pengirim komunikasi.
+  - `send(P, message)` – kirim pesan ke proses P.
+  - `receive(Q, message)` – terima pesan dari proses Q.
+  - **Properti Koneksi:** Koneksi dibuat secara otomatis, terkait dengan tepat dua proses, dan hanya ada satu koneksi antara setiap pasangan proses.
+- **Komunikasi Tidak Langsung (Indirect Communication):** [46, 47]
+  Pesan dikirim ke dan diterima dari mailbox (juga disebut port). Mailbox adalah objek tempat pesan dapat ditempatkan oleh proses dan dari mana pesan dapat dihapus.
+  - `send(A, message)` – kirim pesan ke mailbox A.
+  - `receive(A, message)` – terima pesan dari mailbox A.
+  - **Properti Koneksi:** Koneksi dibuat hanya jika proses berbagi mailbox bersama, dapat dikaitkan dengan lebih dari dua proses, dan beberapa koneksi berbeda dapat ada antara setiap pasangan proses (masing-masing sesuai dengan satu mailbox).
+  - **Operasi Mailbox:** Membuat mailbox baru, mengirim/menerima pesan melalui mailbox, menghapus mailbox.
+- **Buffering:** [47, 48]
+  Tempat penyimpanan sementara untuk pesan yang dipertukarkan. Implementasi antrian buffer:
+  - **Zero Capacity (Kapasitas Nol):** Pengirim harus menunggu hingga penerima siap (rendezvous). Tidak ada pesan yang di-buffer.
+  - **Bounded Capacity (Kapasitas Terbatas):** Buffer memiliki panjang n. Pengirim dapat mengirim hingga n pesan; jika buffer penuh, pengirim harus menunggu.
+  - **Unbounded Capacity (Kapasitas Tidak Terbatas):** Pengirim tidak pernah menunggu. Buffer secara teoretis tidak terbatas.

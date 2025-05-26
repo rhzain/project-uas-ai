@@ -1,0 +1,133 @@
+# Pertemuan 4: CPU Scheduling Concepts and Algorithms
+
+## Konsep Dasar Penjadwalan CPU [49, 50]
+- **Multiprogramming/Multitasking:** Tujuan utama penjadwalan CPU adalah untuk meningkatkan utilisasi CPU dengan menjaga CPU sesibuk mungkin. Dalam sistem multiprogramming, selalu ada beberapa proses di memori. Ketika satu proses harus menunggu (misalnya, untuk I/O), OS mengambil CPU dari proses itu dan memberikannya ke proses lain. [49]
+- **Siklus CPU-I/O Burst (CPU-I/O Burst Cycle):** Eksekusi proses terdiri dari siklus eksekusi CPU (CPU burst) dan penungguan I/O (I/O burst). Proses bergantian antara dua state ini. Eksekusi proses dimulai dengan CPU burst, diikuti oleh I/O burst, lalu CPU burst lagi, dan seterusnya, hingga CPU burst terakhir yang mengakhiri eksekusi. [49, 50] Durasi CPU burst sangat bervariasi antar proses dan antar program.
+
+## Penjadwalan CPU (CPU Scheduling) [50, 51]
+- **Peran Short-term Scheduler (CPU Scheduler):** Setiap kali CPU menjadi idle, sistem operasi harus memilih salah satu proses di ready queue untuk dieksekusi. Prosedur pemilihan dilakukan oleh short-term scheduler (atau CPU scheduler). Scheduler memilih dari antara proses-proses di memori yang siap untuk dieksekusi dan mengalokasikan CPU ke salah satunya. [50]
+- **Kapan Penjadwalan Terjadi (Triggers for Scheduling):** Keputusan penjadwalan CPU dapat terjadi dalam keadaan berikut: [50, 51]
+  1.  Ketika sebuah proses beralih dari state Running ke state Waiting (misalnya, sebagai hasil dari permintaan I/O, atau pemanggilan `wait()` untuk terminasi salah satu child process).
+  2.  Ketika sebuah proses beralih dari state Running ke state Ready (misalnya, ketika terjadi interupsi timer).
+  3.  Ketika sebuah proses beralih dari state Waiting ke state Ready (misalnya, pada penyelesaian I/O).
+  4.  Ketika sebuah proses terminasi.
+
+## Penjadwalan Preemptive dan Non-preemptive [51]
+Berdasarkan kapan keputusan penjadwalan terjadi (merujuk pada 4 trigger di atas):
+- **Non-preemptive Scheduling (Kooperatif):** Jika penjadwalan hanya terjadi pada kondisi 1 dan 4. Sekali CPU telah dialokasikan ke sebuah proses, proses tersebut akan memegang CPU sampai ia melepaskannya, baik dengan terminasi atau dengan beralih ke state Waiting.
+- **Preemptive Scheduling:** Jika penjadwalan dapat terjadi pada keempat kondisi. Ini berarti CPU dapat diambil dari proses yang sedang berjalan (misalnya, karena ada proses dengan prioritas lebih tinggi yang masuk ke ready queue, atau karena jatah waktu proses saat ini habis). Preemption memerlukan mekanisme untuk menangani akses data bersama.
+
+## Kriteria Penjadwalan (Scheduling Criteria) [51-53]
+Beberapa kriteria berbeda digunakan untuk membandingkan algoritma penjadwalan CPU. Kriteria mana yang dipilih bergantung pada tujuan sistem.
+- **CPU Utilization (Utilisasi CPU):** [51] Menjaga CPU sesibuk mungkin. Secara konseptual, utilisasi CPU dapat berkisar dari 0 hingga 100 persen. Dalam sistem nyata, seharusnya berkisar dari 40% (untuk sistem lightly loaded) hingga 90% (untuk sistem heavily used).
+- **Throughput:** [51] Ukuran kerja yang dilakukan. Jumlah proses yang selesai dieksekusi per unit waktu. Untuk proses panjang, throughput mungkin satu proses per jam; untuk proses pendek, throughput mungkin puluhan proses per detik.
+- **Turnaround Time:** [52] Waktu yang dibutuhkan untuk mengeksekusi proses tertentu. Ini adalah interval dari waktu pengiriman (submission) proses hingga waktu penyelesaian proses. Turnaround time adalah jumlah periode yang dihabiskan untuk menunggu masuk ke memori, menunggu di ready queue, dieksekusi di CPU, dan melakukan I/O.
+- **Waiting Time (Waktu Tunggu):** [52] Jumlah waktu sebuah proses menunggu di ready queue. Algoritma penjadwalan CPU tidak mempengaruhi jumlah waktu proses dieksekusi atau melakukan I/O; ia hanya mempengaruhi jumlah waktu yang dihabiskan proses menunggu di ready queue.
+- **Response Time (Waktu Respons):** [52] Dalam sistem interaktif (time-sharing), turnaround time mungkin bukan metrik terbaik. Metrik yang lebih baik adalah waktu dari pengiriman permintaan hingga respons pertama dihasilkan (bukan output akhir). Ini adalah waktu yang dibutuhkan untuk mulai merespons, bukan waktu yang dibutuhkan untuk mengeluarkan respons tersebut.
+- **Fairness (Keadilan):** [52, 53] Memastikan bahwa setiap proses mendapatkan bagian yang adil dari waktu CPU dan tidak ada proses yang mengalami starvation (tidak pernah dijalankan).
+Umumnya, diinginkan untuk memaksimalkan utilisasi CPU dan throughput, dan meminimalkan turnaround time, waiting time, dan response time. Seringkali, optimasi satu kriteria dapat menurunkan performa kriteria lain.
+- **Average Waiting Time (AWT):** [53] Seringkali menjadi metrik utama untuk evaluasi, yaitu rata-rata waktu tunggu semua proses.
+
+## Algoritma Penjadwalan Spesifik [53]
+Berikut adalah beberapa algoritma penjadwalan yang umum:
+- First-Come, First-Served (FCFS)
+- Shortest-Job-First (SJF)
+- Priority Scheduling
+- Round-Robin (RR)
+
+### First-Come, First-Served (FCFS) [53, 54]
+- **Konsep:** Proses yang meminta CPU pertama kali akan dilayani pertama kali. [53, 54] Implementasi paling sederhana menggunakan antrian FIFO (First-In, First-Out). Ketika sebuah proses masuk ke ready queue, PCB-nya ditautkan ke akhir antrian. Ketika CPU bebas, ia dialokasikan ke proses di awal antrian.
+- **Sifat:** Non-preemptive. Sekali CPU diberikan ke suatu proses, proses tersebut akan menjalankannya hingga selesai atau melakukan permintaan I/O.
+- **Kelemahan:** Average waiting time (AWT) seringkali cukup panjang. Efek konvoi (convoy effect) dapat terjadi jika proses dengan burst time panjang datang lebih dulu dan membuat proses-proses pendek di belakangnya menunggu lama. Tidak cocok untuk sistem time-sharing.
+- **Contoh Perhitungan FCFS:** [54]
+  Misalkan proses datang dalam urutan P1, P2, P3 pada waktu 0 dengan burst time:
+  P1: 24 ms
+  P2: 3 ms
+  P3: 3 ms
+  Gantt Chart:
+  | P1 (0-24) | P2 (24-27) | P3 (27-30) |
+  Waiting time: P1 = 0; P2 = 24; P3 = 27
+  Average Waiting Time (AWT) = (0 + 24 + 27) / 3 = 17 ms.
+  Jika proses datang dalam urutan P2, P3, P1:
+  Gantt Chart:
+  | P2 (0-3) | P3 (3-6) | P1 (6-30) |
+  Waiting time: P2 = 0; P3 = 3; P1 = 6
+  AWT = (0 + 3 + 6) / 3 = 3 ms. (Hasil jauh lebih baik)
+
+### Shortest-Job-First (SJF) [54-57]
+- **Konsep:** Algoritma ini mengasosiasikan setiap proses dengan panjang CPU burst berikutnya. Ketika CPU bebas, ia dialokasikan ke proses yang memiliki CPU burst berikutnya terkecil. Jika dua proses memiliki panjang burst berikutnya yang sama, penjadwalan FCFS digunakan. [54]
+- **Optimalitas:** SJF optimal dalam arti ia memberikan average waiting time minimum untuk sekumpulan proses tertentu.
+- **Skema:** [55]
+  - **Non-preemptive SJF:** Sekali CPU diberikan ke proses, ia tidak dapat di-preempt hingga CPU burst-nya selesai.
+  - **Preemptive SJF (Shortest-Remaining-Time-First - SRTF):** Jika proses baru tiba di ready queue dengan panjang CPU burst berikutnya lebih pendek dari sisa waktu proses yang sedang dieksekusi saat ini, proses yang sedang berjalan di-preempt.
+- **Contoh Perhitungan SJF (Non-preemptive):** [55]
+  Proses | Waktu Kedatangan | Burst Time
+  ------- | ----------------- | ----------
+  P1      | 0.0               | 7
+  P2      | 2.0               | 4
+  P3      | 4.0               | 1
+  P4      | 5.0               | 4
+  Gantt Chart:
+  | P1 (0-7) | P3 (7-8) | P2 (8-12) | P4 (12-16) |
+  Waiting time: P1=0, P2=(8-2)=6, P3=(7-4)=3, P4=(12-5)=7
+  AWT = (0+6+3+7)/4 = 4 ms.
+- **Contoh Perhitungan SRTF (Preemptive SJF):** [56]
+  Proses | Waktu Kedatangan | Burst Time
+  ------- | ----------------- | ----------
+  P1      | 0                 | 8
+  P2      | 1                 | 4
+  P3      | 2                 | 9
+  P4      | 3                 | 5
+  Gantt Chart:
+  | P1(0-1) | P2(1-5) | P4(5-10) | P1(10-17) | P3(17-26) |
+  Waiting time: P1=(10-1)=9, P2=(1-1)=0, P3=(17-2)=15, P4=(5-3)=2
+  AWT = (9+0+15+2)/4 = 6.5 ms.
+- **Kesulitan Implementasi SJF:** Kesulitan utama adalah mengetahui panjang CPU burst berikutnya. Untuk penjadwalan short-term, tidak ada cara untuk mengetahui panjang CPU burst berikutnya. [56]
+- **Prediksi CPU Burst Berikutnya:** Salah satu pendekatan adalah dengan mencoba memprediksi. Ini dapat dilakukan dengan menggunakan panjang CPU burst sebelumnya. Pendekatan yang umum adalah **exponential average** dari CPU burst sebelumnya. [56, 57]
+  Formula: τ<sub>n+1</sub> = α * t<sub>n</sub> + (1 - α) * τ<sub>n</sub>
+  Di mana t<sub>n</sub> adalah panjang CPU burst ke-n, dan τ<sub>n+1</sub> adalah nilai prediksi untuk CPU burst berikutnya. α adalah parameter (0 ≤ α ≤ 1) yang mengontrol bobot relatif dari histori terkini dan histori masa lalu.
+
+### Priority Scheduling [57-59]
+- **Konsep:** Setiap proses diasosiasikan dengan sebuah prioritas, dan CPU dialokasikan ke proses dengan prioritas tertinggi. Proses dengan prioritas sama dijadwalkan dengan FCFS. [57, 58] Prioritas biasanya direpresentasikan dengan angka integer (misalnya, angka kecil = prioritas tinggi).
+- **Skema:** [58]
+  - **Non-preemptive Priority Scheduling.**
+  - **Preemptive Priority Scheduling:** Jika proses baru tiba dengan prioritas lebih tinggi dari proses yang sedang berjalan, CPU akan di-preempt.
+- **Masalah Utama:** Starvation (atau indefinite blocking) – proses dengan prioritas rendah mungkin tidak pernah dieksekusi.
+- **Solusi untuk Starvation:** Aging – secara bertahap meningkatkan prioritas proses yang telah menunggu lama di sistem.
+- **Contoh Perhitungan (Non-preemptive):** [58, 59]
+  Proses | Burst Time | Prioritas
+  ------- | ---------- | ---------
+  P1      | 10         | 3
+  P2      | 1          | 1 (Tertinggi)
+  P3      | 2          | 4
+  P4      | 1          | 5 (Terendah)
+  P5      | 5          | 2
+  Gantt Chart (P2->P5->P1->P3->P4):
+  | P2(0-1) | P5(1-6) | P1(6-16) | P3(16-18) | P4(18-19) |
+  AWT = (6+0+16+18+1)/5 = 8.2 ms.
+
+### Round Robin (RR) [60-66]
+- **Konsep Dasar:** Dirancang khusus untuk sistem time-sharing. Mirip FCFS, tetapi preemption ditambahkan untuk beralih antar proses. [60] Sebuah unit waktu kecil, disebut time quantum atau time slice (biasanya 10-100 milidetik), didefinisikan. Ready queue diperlakukan sebagai antrian sirkular. CPU scheduler berkeliling ready queue, mengalokasikan CPU ke setiap proses untuk interval waktu hingga 1 time quantum.
+- **Cara Kerja:** [60, 61]
+  - Proses baru ditambahkan ke akhir ready queue.
+  - CPU scheduler mengambil proses pertama dari ready queue, mengatur timer untuk berinterupsi setelah 1 quantum, dan menjalankan proses.
+  - Dua kemungkinan:
+    1. Proses memiliki CPU burst < 1 quantum: Proses melepaskan CPU secara sukarela. Scheduler melanjutkan ke proses berikutnya di ready queue.
+    2. Proses memiliki CPU burst > 1 quantum: Timer akan mati dan menyebabkan interupsi ke OS. Context switch akan dilakukan, dan proses yang berjalan dipindahkan ke akhir ready queue. Scheduler memilih proses berikutnya.
+- **Kelebihan:** Memberikan waktu respons yang baik untuk pengguna interaktif.
+- **Kekurangan:** Performa sangat bergantung pada ukuran time quantum. [60]
+  - Quantum terlalu besar: RR menjadi seperti FCFS.
+  - Quantum terlalu kecil: Overhead context switch menjadi signifikan.
+- **Aturan Algoritma (untuk menangani burst time vs quantum, dan I/O):** [60, 61] Aturan di atas sudah mencakup ini.
+- **Contoh Perhitungan:** [61, 62]
+  Proses | Burst Time | Quantum = 20 ms
+  ------- | ---------- |
+  P1      | 53         |
+  P2      | 17         |
+  P3      | 68         |
+  P4      | 24         |
+  Gantt Chart:
+  |P1(0-20)|P2(20-37)|P3(37-57)|P4(57-77)|P1(77-97)|P3(97-117)|P4(117-121)|P1(121-134)|P3(134-154)|P3(154-162)|
+  AWT bisa dihitung.
+- **Turnaround Time (TA) dan Quantum:** [62, 63] Turnaround time juga bergantung pada ukuran quantum. Rata-rata turnaround time tidak selalu membaik dengan quantum yang lebih kecil. Secara umum, turnaround time lebih baik jika sebagian besar proses menyelesaikan CPU burst berikutnya dalam satu time quantum.
+- **Contoh Perhitungan dengan ATAT (Average Turn Around Time):** [64-66] (Teks asli mungkin merujuk pada tabel atau contoh spesifik yang tidak sepenuhnya ada di sini, tapi prinsipnya adalah menghitung TA = Waktu Selesai - Waktu Kedatangan, lalu dirata-rata).

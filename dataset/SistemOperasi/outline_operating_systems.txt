@@ -1,0 +1,25 @@
+MATAKULIAH: Operating Systems
+
+PERTEMUAN: 1
+JUDUL: Foundations & Overview of Operating Systems
+DESKRIPSI: Mencakup definisi, peran, tujuan OS, komponen sistem komputer, layanan dasar OS, fungsi dasar (Extended Machine, Resource Manager), sejarah OS (Generasi I-IV), berbagai jenis OS (berdasarkan komputer, platform, mobile), jenis operasi komputer, dan komponen struktur OS ideal (pengenalan).
+FILE_MATERI: Pertemuan_01_Foundations_Intro/materi_pertemuan_01.txt
+# FILE_SOAL: Pertemuan_01_Foundations_Intro/soal_01.txt
+
+PERTEMUAN: 2
+JUDUL: OS Components, Services, and Structure
+DESKRIPSI: Membahas secara detail Komponen Sistem (Proses, Memori Utama, I/O, File), Layanan Sistem Operasi, konsep System Call (Definisi, Posisi, Kategori), Model Komunikasi antar proses (Message-passing, Shared-memory), System Programs, dan berbagai Struktur Sistem Operasi (Simple, Monolithic, Layered, Virtual Machines, Client-Server).
+FILE_MATERI: Pertemuan_02_Structure_Services_Interaction/materi_pertemuan_02.txt
+# FILE_SOAL: Pertemuan_02_Structure_Services_Interaction/soal_02.txt
+
+PERTEMUAN: 3
+JUDUL: Process Management
+DESKRIPSI: Meliputi konsep Proses (Definisi, Komponen, Kebutuhan Sumber Daya, Peran OS, Prinsip), Model Proses (Multiprogramming, Multiprocessing, Distributed), Status Proses dan Transisinya, Process Control Block (PCB), CPU Switch, Dasar Penjadwalan Proses (Antrian, Schedulers, Context Switch), Operasi pada Proses (Pembuatan, Hubungan Parent-Child), dan Inter-Process Communication (IPC) (Direct, Indirect, Buffering).
+FILE_MATERI: Pertemuan_03_Process_Management/materi_pertemuan_03.txt
+# FILE_SOAL: Pertemuan_03_Process_Management/soal_03.txt
+
+PERTEMUAN: 4
+JUDUL: CPU Scheduling Algorithms
+DESKRIPSI: Mencakup Konsep Dasar Penjadwalan (Multiprogramming, Siklus CPU-I/O Burst), Penjadwalan CPU (Peran Short-term scheduler, Pemicu Penjadwalan), Penjadwalan Preemptive dan Non-preemptive, Kriteria Penjadwalan (utilisasi, throughput, turnaround time, waiting time, response time, fairness, AWT), dan detail Algoritma Penjadwalan Spesifik: FCFS, SJF (Non-preemptive, Preemptive/SRTF, Prediksi Burst Time), Priority Scheduling, dan Round Robin (Konsep, Aturan, Quantum Time, Turnaround Time, contoh perhitungan).
+FILE_MATERI: Pertemuan_04_CPU_Scheduling/materi_pertemuan_04.txt
+# FILE_SOAL: Pertemuan_04_CPU_Scheduling/soal_04.txt

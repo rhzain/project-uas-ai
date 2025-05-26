@@ -5,7 +5,7 @@ import numpy as np
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
-from sentence_transformers import SentenceTransformer # Model embedding yang sama
+from sentence_transformers import SentenceTransformer
 
 # --- 0. Konfigurasi Awal & Muat Model ---
 load_dotenv()
@@ -21,8 +21,8 @@ genai.configure(api_key=GEMINI_API_KEY)
 MODEL_EMBEDDING_NAME = 'all-MiniLM-L6-v2' # Dimensi 384
 
 # Path ke file hasil Fase 1
-FAISS_INDEX_PATH = "my_faiss_index.index"
-TEXT_CHUNKS_PATH = "text_chunks.json"
+FAISS_INDEX_PATH = "vector_store.index"
+TEXT_CHUNKS_PATH = "processed_chunks_with_metadata.json"
 
 @st.cache_resource # Cache resource agar tidak load ulang terus
 def load_all_resources():
