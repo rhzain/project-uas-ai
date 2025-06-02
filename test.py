@@ -1,3 +1,4 @@
+from datetime import datetime
 import streamlit as st
 
 st.set_page_config(page_title="Chatbot Edukasi AI", layout="wide")
@@ -10,6 +11,10 @@ import re
 from dotenv import load_dotenv
 import google.generativeai as genai
 from sentence_transformers import SentenceTransformer
+from feedback_system import FeedbackCollector
+from gemini_fine_tuning import GeminiFinetuner
+from embedding_fine_tuning import EmbeddingFineTuner
+from rl_training import RLTrainer, create_rl_batches
 
 # --- 0. Konfigurasi Awal & Pemuatan Variabel Lingkungan ---
 load_dotenv()
@@ -197,9 +202,8 @@ def search_relevant_chunks(query_embedding_vector, current_pertemuan_id=None, to
             st.error(f"Dimensi embedding query ({query_np_array.shape[1]}) tidak cocok dengan index FAISS ({faiss_search_index.d}).")
             return []
 
-        # Ambil lebih banyak jika perlu filter, terutama jika current_pertemuan_id tidak None
         num_to_search = top_k * 5 if current_pertemuan_id is not None else top_k 
-        num_to_search = min(num_to_search, faiss_search_index.ntotal) # Jangan cari lebih dari total vektor
+        num_to_search = min(num_to_search, faiss_search_index.ntotal)
 
         distances, global_indices = faiss_search_index.search(query_np_array, num_to_search)
 
@@ -207,11 +211,14 @@ def search_relevant_chunks(query_embedding_vector, current_pertemuan_id=None, to
         for i in global_indices[0]:
             if i != -1 and 0 <= i < len(loaded_text_chunks_with_metadata):
                 chunk_data = loaded_text_chunks_with_metadata[i]
-                # Filter berdasarkan ID pertemuan JIKA current_pertemuan_id diberikan
                 if current_pertemuan_id is None or chunk_data.get("pertemuan_id") == current_pertemuan_id:
                     retrieved_chunks_texts.append(chunk_data["chunk_text"]) 
-                    if len(retrieved_chunks_texts) == top_k: # Jika sudah cukup (baik dengan filter atau tanpa)
+                    if len(retrieved_chunks_texts) == top_k:
                         break 
+        
+        # Store context for feedback
+        st.session_state.last_context = "\n\n---\n\n".join(retrieved_chunks_texts)
+        
         return retrieved_chunks_texts
     except Exception as e:
         print(f"Error saat search_relevant_chunks: {e}")
@@ -371,8 +378,57 @@ if "pemahaman_mahasiswa" not in st.session_state: st.session_state.pemahaman_mah
 if "nama_matakuliah" not in st.session_state: st.session_state.nama_matakuliah = "Mata Kuliah Anda" # Default
 if "last_processed_query" not in st.session_state: st.session_state.last_processed_query = None
 
+# --- 4. Feedback System ---
+feedback_collector = FeedbackCollector()
 
-# --- 4. Antarmuka Pengguna (UI) Streamlit ---
+def trigger_retraining():
+    """Trigger model retraining based on collected feedback"""
+    with st.spinner("Retraining models with your feedback..."):
+        
+        # 1. Fine-tune embedding model
+        if len(feedback_collector.feedback_db) >= 10:  # Minimum feedback threshold
+            retrain_embedding_model()
+        
+        # 2. Update LLM with RL
+        if len(feedback_collector.feedback_db) >= 20:
+            retrain_llm_with_rl()
+        
+        st.success("Models updated successfully!")
+
+def retrain_embedding_model():
+    """Retrain embedding model with user feedback"""
+    # Prepare training data from feedback
+    training_data = feedback_collector.prepare_embedding_training_data()
+    
+    # Fine-tune model
+    embedding_trainer = EmbeddingFineTuner(EMBEDDING_MODEL_NAME)
+    updated_model = embedding_trainer.fine_tune(
+        training_data, 
+        output_path=f"models/updated_embedding_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    )
+    
+    # Update global model
+    global query_embedding_model
+    query_embedding_model = updated_model
+
+def retrain_llm_with_rl():
+    """Retrain LLM using reinforcement learning"""
+    rl_data = feedback_collector.prepare_rl_dataset()
+    
+    # Initialize RL trainer
+    rl_trainer = RLTrainer(LLM_MODEL_NAME)
+    
+    # Training loop
+    for batch in create_rl_batches(rl_data):
+        questions = [item['state']['question'] for item in batch]
+        contexts = [item['state']['context'] for item in batch]
+        answers = [item['action'] for item in batch]
+        rewards = [item['reward'] for item in batch]
+        
+        stats = rl_trainer.train_step(questions, contexts, answers, rewards)
+        print(f"RL Training stats: {stats}")
+
+# --- 5. Antarmuka Pengguna (UI) Streamlit ---
 
 # Sidebar untuk Navigasi Pertemuan
 with st.sidebar:
@@ -411,6 +467,27 @@ with st.sidebar:
             if key in st.session_state:
                 del st.session_state[key]
         st.rerun()
+        
+    st.divider()
+    with st.sidebar.expander("🤖 AI Training Status"):
+        stats = feedback_collector.get_feedback_stats()
+        
+        st.metric("Total Feedback", stats.get('total_feedback', 0))
+        if stats.get('avg_rating'):
+            st.metric("Average Rating", f"{stats['avg_rating']:.2f}/5")
+        
+        # Show when models can be retrained
+        if stats.get('total_feedback', 0) >= 10:
+            st.success("✅ Ready for embedding fine-tuning")
+        else:
+            needed = 10 - stats.get('total_feedback', 0)
+            st.info(f"Need {needed} more feedback for embedding training")
+        
+        if stats.get('total_feedback', 0) >= 20:
+            st.success("✅ Ready for RL training")
+        else:
+            needed = 20 - stats.get('total_feedback', 0)
+            st.info(f"Need {needed} more feedback for RL training")
 
 # Tampilan Utama Aplikasi
 if st.session_state.current_pertemuan_id is None:
@@ -560,6 +637,57 @@ else:
                         st.session_state.auto_send_prompt = f"Tolong jelaskan lebih detail mengenai topik '{topik}' dari Pertemuan {st.session_state.current_pertemuan_id} ({st.session_state.current_pertemuan_judul})."
                         st.rerun()
             st.markdown("---")
+            
+            if st.session_state.chat_history and st.session_state.last_processed_query:
+                last_message = st.session_state.chat_history[-1]
+                
+                if last_message["role"] == "assistant":
+                    st.markdown("---")
+                    st.subheader("📝 Rate this answer:")
+                    
+                    feedback_col1, feedback_col2, feedback_col3 = st.columns([3, 1, 1])
+                    
+                    with feedback_col1:
+                        rating = st.selectbox(
+                            "How helpful was this answer?",
+                            [1, 2, 3, 4, 5],
+                            index=2,  # Default to 3 (neutral)
+                            format_func=lambda x: f"{x} ⭐ - {['Very Poor', 'Poor', 'Average', 'Good', 'Excellent'][x-1]}",
+                            key=f"rating_{len(st.session_state.chat_history)}"
+                        )
+                        
+                        feedback_explanation = st.text_input(
+                            "Optional: Explain your rating",
+                            placeholder="What could be improved?",
+                            key=f"feedback_text_{len(st.session_state.chat_history)}"
+                        )
+                    
+                    with feedback_col2:
+                        if st.button("Submit Feedback", key=f"submit_feedback_{len(st.session_state.chat_history)}"):
+                            # Collect feedback
+                            context_used = st.session_state.get('last_context', '')
+                            
+                            feedback_collector.collect_answer_feedback(
+                                question=st.session_state.last_processed_query,
+                                answer=last_message["content"],
+                                context=context_used,
+                                rating=rating,
+                                explanation=feedback_explanation if feedback_explanation else None
+                            )
+                            
+                            st.success("Thank you for your feedback!")
+                            
+                            # Show feedback stats
+                            stats = feedback_collector.get_feedback_stats()
+                            st.info(f"Total feedback collected: {stats['total_feedback']}")
+                    
+                    with feedback_col3:
+                        # Show option to retrain models if enough feedback
+                        stats = feedback_collector.get_feedback_stats()
+                        if stats['total_feedback'] >= 5:  # Minimum threshold
+                            if st.button("🔄 Update Models", key=f"retrain_{len(st.session_state.chat_history)}"):
+                                trigger_retraining()
+            
             st.markdown("#### Detail Jawaban:")
             for idx, q_data in enumerate(st.session_state.quiz_questions):
                 with st.expander(f"Soal {idx+1}: {q_data.get('pertanyaan','N/A')}"):
