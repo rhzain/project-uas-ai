@@ -1,0 +1,226 @@
+[
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Pengenalan Struktur Data, Tipe Data, dan Array",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 1: Pengenalan Struktur Data, Tipe Data, dan Array",
+    "chunk_id": "p1_s0_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Pengenalan Struktur Data, Tipe Data, dan Array",
+    "original_heading": "### Tipe Data Abstrak (Abstract Data Type - ADT)",
+    "chunk_text": "ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik) dari sudut pandang pengguna, yaitu dalam hal operasi yang mungkin dilakukan pada data tersebut, tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan. Contoh: ADT List mendefinisikan operasi seperti `add_item`, `remove_item`, `get_item`, tanpa menjelaskan bagaimana data disimpan (misalnya dalam array atau linked list).",
+    "chunk_id": "p1_s1_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Pengenalan Struktur Data, Tipe Data, dan Array",
+    "original_heading": "### Struktur Data",
+    "chunk_text": "Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT. Pilihan struktur data yang tepat dapat membuat program berjalan lebih cepat dan menggunakan lebih sedikit memori.",
+    "chunk_id": "p1_s2_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Pengenalan Struktur Data, Tipe Data, dan Array",
+    "original_heading": "### Algoritma",
+    "chunk_text": "Algoritma adalah serangkaian instruksi atau langkah-langkah terbatas yang didefinisikan dengan baik untuk menyelesaikan suatu masalah atau melakukan suatu tugas. Efisiensi sebuah algoritma seringkali sangat bergantung pada struktur data yang digunakan.",
+    "chunk_id": "p1_s3_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Pengenalan Struktur Data, Tipe Data, dan Array",
+    "original_heading": "## Tipe Data",
+    "chunk_text": "- **Primitif:** Tipe data dasar yang disediakan oleh bahasa pemrograman (contoh: integer, float, char, boolean).\n- **Komposit:** Tipe data yang dibentuk dari tipe data primitif atau komposit lainnya (contoh: struct, class, array).",
+    "chunk_id": "p1_s4_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Pengenalan Struktur Data, Tipe Data, dan Array",
+    "original_heading": "## Array",
+    "chunk_text": "Array adalah struktur data linear yang menyimpan kumpulan elemen dengan tipe data yang sama dalam lokasi memori yang berdekatan. Setiap elemen diidentifikasi oleh sebuah indeks (atau kunci).\n\n- **Karakteristik:**\n  - **Ukuran Tetap (Statis):** Ukuran array ditentukan saat deklarasi dan tidak dapat diubah.\n  - **Akses Cepat:** Elemen dapat diakses langsung menggunakan indeksnya dalam waktu konstan, O(1).\n  - **Tipe Data Homogen:** Semua elemen harus memiliki tipe data yang sama.\n\n- **Operasi Dasar pada Array:**\n  1.  **Traversal:** Mengunjungi setiap elemen dalam array, biasanya untuk menampilkan atau memprosesnya. Kompleksitas: O(n).\n  2.  **Insertion (Penyisipan):** Menambahkan elemen baru ke dalam array. Jika array penuh, ini tidak mungkin dilakukan. Jika menyisipkan di tengah, elemen-elemen setelahnya harus digeser. Kompleksitas: O(n).\n  3.  **Deletion (Penghapusan):** Menghapus elemen dari array. Elemen-elemen setelahnya mungkin perlu digeser untuk mengisi ruang kosong. Kompleksita",
+    "chunk_id": "p1_s5_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Stack (Tumpukan) dan Queue (Antrian)",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 2: Stack (Tumpukan) dan Queue (Antrian)",
+    "chunk_id": "p2_s0_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Stack (Tumpukan) dan Queue (Antrian)",
+    "original_heading": "## Stack (Tumpukan)",
+    "chunk_text": "Stack adalah struktur data linear yang mengikuti prinsip **LIFO (Last-In, First-Out)**. Artinya, elemen terakhir yang dimasukkan adalah elemen pertama yang akan dikeluarkan. Analogi di dunia nyata adalah tumpukan piring; piring terakhir yang diletakkan di atas adalah yang pertama kali diambil.",
+    "chunk_id": "p2_s1_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Stack (Tumpukan) dan Queue (Antrian)",
+    "original_heading": "### Operasi Dasar Stack:",
+    "chunk_text": "1.  **push(elemen):** Menambahkan sebuah elemen ke puncak (top) dari stack.\n2.  **pop():** Menghapus dan mengembalikan elemen dari puncak stack. Error terjadi jika stack kosong (underflow).\n3.  **peek() atau top():** Mengembalikan nilai elemen di puncak stack tanpa menghapusnya.\n4.  **isEmpty():** Memeriksa apakah stack kosong.\n5.  **isFull():** (Jika diimplementasikan dengan array) Memeriksa apakah stack penuh.",
+    "chunk_id": "p2_s2_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Stack (Tumpukan) dan Queue (Antrian)",
+    "original_heading": "### Aplikasi Stack:",
+    "chunk_text": "- **Fungsi Undo/Redo:** Menyimpan status sebelumnya dalam stack.\n- **Navigasi Browser:** Tombol \"back\" menyimpan URL sebelumnya di stack.\n- **Pemanggilan Fungsi (Call Stack):** Melacak fungsi yang sedang aktif dalam sebuah program.\n- **Pengecekan Tanda Kurung Seimbang:** `{[()]}`, `()[]`.",
+    "chunk_id": "p2_s3_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Stack (Tumpukan) dan Queue (Antrian)",
+    "original_heading": "## Queue (Antrian)",
+    "chunk_text": "Queue adalah struktur data linear yang mengikuti prinsip **FIFO (First-In, First-Out)**. Artinya, elemen pertama yang dimasukkan adalah elemen pertama yang akan dikeluarkan. Analogi di dunia nyata adalah antrian orang di loket tiket.",
+    "chunk_id": "p2_s4_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Stack (Tumpukan) dan Queue (Antrian)",
+    "original_heading": "### Operasi Dasar Queue:",
+    "chunk_text": "1.  **enqueue(elemen):** Menambahkan sebuah elemen ke bagian belakang (rear/tail) dari antrian.\n2.  **dequeue():** Menghapus dan mengembalikan elemen dari bagian depan (front/head) dari antrian. Error terjadi jika antrian kosong.\n3.  **peek() atau front():** Mengembalikan nilai elemen di depan antrian tanpa menghapusnya.\n4.  **isEmpty():** Memeriksa apakah antrian kosong.\n5.  **isFull():** (Jika diimplementasikan dengan array) Memeriksa apakah antrian penuh.",
+    "chunk_id": "p2_s5_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Stack (Tumpukan) dan Queue (Antrian)",
+    "original_heading": "### Aplikasi Queue:",
+    "chunk_text": "- **Penjadwalan Tugas:** Penjadwalan proses CPU.\n- **Antrian Cetak (Print Queue):** Mengelola dokumen yang akan dicetak.\n- **Sistem Pesan:** Mengelola pesan yang masuk secara berurutan.\n- **Breadth-First Search (BFS):** Algoritma pencarian pada graph atau tree.",
+    "chunk_id": "p2_s6_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 3: Linked List (Senarai Berantai)",
+    "chunk_id": "p3_s0_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "## Pengenalan Linked List",
+    "chunk_text": "Linked List adalah struktur data linear yang terdiri dari serangkaian node, di mana setiap node berisi data dan sebuah pointer (atau referensi) ke node berikutnya dalam urutan. Berbeda dengan array, linked list tidak menyimpan elemen di lokasi memori yang berdekatan.",
+    "chunk_id": "p3_s1_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### Perbandingan Array vs. Linked List:",
+    "chunk_text": "- **Array:** Ukuran statis, alokasi memori berurutan, akses elemen cepat (O(1)), penyisipan/penghapusan lambat (O(n)).\n- **Linked List:** Ukuran dinamis, alokasi memori acak, akses elemen lambat (O(n)), penyisipan/penghapusan cepat (O(1) jika posisi node diketahui).",
+    "chunk_id": "p3_s2_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### 1. Singly Linked List (Senarai Berantai Tunggal)",
+    "chunk_text": "Setiap node memiliki dua bagian: data dan sebuah pointer `next` yang menunjuk ke node berikutnya. Node terakhir menunjuk ke NULL. Navigasi hanya bisa dilakukan ke satu arah (maju).",
+    "chunk_id": "p3_s3_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### 2. Doubly Linked List (Senarai Berantai Ganda)",
+    "chunk_text": "Setiap node memiliki tiga bagian: data, pointer `next` ke node berikutnya, dan pointer `prev` ke node sebelumnya. Ini memungkinkan navigasi dua arah (maju dan mundur).",
+    "chunk_id": "p3_s4_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### 3. Circular Linked List (Senarai Berantai Melingkar)",
+    "chunk_text": "Variasi dari singly atau doubly linked list di mana pointer `next` dari node terakhir menunjuk kembali ke node pertama (head), membentuk sebuah lingkaran. Tidak ada node yang menunjuk ke NULL.",
+    "chunk_id": "p3_s5_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### 1. Traversal (Penelusuran)",
+    "chunk_text": "Mengunjungi setiap node dalam list, mulai dari head hingga akhir (NULL).",
+    "chunk_id": "p3_s6_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### 2. Insertion (Penyisipan)",
+    "chunk_text": "- **Di Awal (Insert at Beginning):** Node baru menjadi head baru, dan pointernya menunjuk ke head lama.\n- **Di Akhir (Insert at End):** Lakukan traversal hingga node terakhir, lalu ubah pointer `next`-nya untuk menunjuk ke node baru.\n- **Di Tengah (Insert at Middle):** Menyisipkan node baru setelah node tertentu.",
+    "chunk_id": "p3_s7_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### 3. Deletion (Penghapusan)",
+    "chunk_text": "- **Dari Awal:** Menggeser head ke node kedua.\n- **Dari Akhir:** Lakukan traversal ke node kedua dari belakang, lalu atur pointer `next`-nya ke NULL.\n- **Dari Tengah:** Menghapus node dengan nilai tertentu dengan mengubah pointer dari node sebelumnya.",
+    "chunk_id": "p3_s8_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Linked List (Senarai Berantai)",
+    "original_heading": "### 4. Search (Pencarian)",
+    "chunk_text": "Mencari sebuah elemen dengan melakukan traversal dari head dan membandingkan nilai setiap node.",
+    "chunk_id": "p3_s9_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 4: Tree (Pohon) dan Binary Tree",
+    "chunk_id": "p4_s0_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "## Pengenalan Tree",
+    "chunk_text": "Tree adalah struktur data non-linear yang merepresentasikan data dalam bentuk hierarki. Struktur ini terdiri dari node-node yang terhubung oleh edge (sisi).",
+    "chunk_id": "p4_s1_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "### Terminologi Dasar Tree:",
+    "chunk_text": "- **Node:** Entitas utama dalam tree yang berisi data.\n- **Root:** Node teratas dalam tree. Sebuah tree hanya memiliki satu root.\n- **Edge:** Koneksi antara dua node.\n- **Parent:** Node yang memiliki satu atau lebih node turunan.\n- **Child:** Node yang merupakan turunan dari node lain.\n- **Leaf:** Node yang tidak memiliki child (node paling bawah).\n- **Internal Node:** Node yang memiliki setidaknya satu child.\n- **Height:** Jumlah edge pada jalur terpanjang dari node ke leaf. Height dari tree adalah height dari root-nya.\n- **Depth:** Jumlah edge dari root ke suatu node.",
+    "chunk_id": "p4_s2_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "## Binary Tree (Pohon Biner)",
+    "chunk_text": "Binary Tree adalah jenis tree di mana setiap node dapat memiliki paling banyak dua child, yang disebut sebagai **left child** dan **right child**.",
+    "chunk_id": "p4_s3_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "### Jenis-jenis Binary Tree:",
+    "chunk_text": "- **Full Binary Tree:** Setiap node memiliki 0 atau 2 child.\n- **Complete Binary Tree:** Semua level terisi penuh, kecuali mungkin level terakhir, dan semua node di level terakhir berada sejauh mungkin ke kiri.\n- **Perfect Binary Tree:** Sebuah full binary tree di mana semua leaf berada pada level yang sama.\n- **Skewed Binary Tree:** Tree di mana setiap node hanya memiliki satu child (semua left child atau semua right child), menyerupai linked list.",
+    "chunk_id": "p4_s4_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "## Tree Traversal (Penelusuran Pohon)",
+    "chunk_text": "Traversal adalah proses mengunjungi (memproses) setiap node dalam tree tepat satu kali. Ada tiga metode traversal utama pada binary tree:",
+    "chunk_id": "p4_s5_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "### 1. In-order Traversal (Kiri - Akar - Kanan)",
+    "chunk_text": "- Kunjungi subtree kiri.\n- Kunjungi root.\n- Kunjungi subtree kanan.\n- **Hasil:** Menghasilkan elemen-elemen yang terurut (jika tree tersebut adalah Binary Search Tree).",
+    "chunk_id": "p4_s6_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "### 2. Pre-order Traversal (Akar - Kiri - Kanan)",
+    "chunk_text": "- Kunjungi root.\n- Kunjungi subtree kiri.\n- Kunjungi subtree kanan.\n- **Aplikasi:** Digunakan untuk menyalin (copy) sebuah tree atau untuk mendapatkan ekspresi prefix dari expression tree.",
+    "chunk_id": "p4_s7_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Tree (Pohon) dan Binary Tree",
+    "original_heading": "### 3. Post-order Traversal (Kiri - Kanan - Akar)",
+    "chunk_text": "- Kunjungi subtree kiri.\n- Kunjungi subtree kanan.\n- Kunjungi root.\n- **Aplikasi:** Digunakan untuk menghapus (delete) sebuah tree dari memori atau untuk mendapatkan ekspresi postfix.",
+    "chunk_id": "p4_s8_sc0"
+  }
+]

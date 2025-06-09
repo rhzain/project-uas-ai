@@ -1,0 +1,45 @@
+# Pertemuan 4: Tree (Pohon) dan Binary Tree
+
+## Pengenalan Tree
+Tree adalah struktur data non-linear yang merepresentasikan data dalam bentuk hierarki. Struktur ini terdiri dari node-node yang terhubung oleh edge (sisi).
+
+### Terminologi Dasar Tree:
+- **Node:** Entitas utama dalam tree yang berisi data.
+- **Root:** Node teratas dalam tree. Sebuah tree hanya memiliki satu root.
+- **Edge:** Koneksi antara dua node.
+- **Parent:** Node yang memiliki satu atau lebih node turunan.
+- **Child:** Node yang merupakan turunan dari node lain.
+- **Leaf:** Node yang tidak memiliki child (node paling bawah).
+- **Internal Node:** Node yang memiliki setidaknya satu child.
+- **Height:** Jumlah edge pada jalur terpanjang dari node ke leaf. Height dari tree adalah height dari root-nya.
+- **Depth:** Jumlah edge dari root ke suatu node.
+
+## Binary Tree (Pohon Biner)
+Binary Tree adalah jenis tree di mana setiap node dapat memiliki paling banyak dua child, yang disebut sebagai **left child** dan **right child**.
+
+### Jenis-jenis Binary Tree:
+- **Full Binary Tree:** Setiap node memiliki 0 atau 2 child.
+- **Complete Binary Tree:** Semua level terisi penuh, kecuali mungkin level terakhir, dan semua node di level terakhir berada sejauh mungkin ke kiri.
+- **Perfect Binary Tree:** Sebuah full binary tree di mana semua leaf berada pada level yang sama.
+- **Skewed Binary Tree:** Tree di mana setiap node hanya memiliki satu child (semua left child atau semua right child), menyerupai linked list.
+
+## Tree Traversal (Penelusuran Pohon)
+Traversal adalah proses mengunjungi (memproses) setiap node dalam tree tepat satu kali. Ada tiga metode traversal utama pada binary tree:
+
+### 1. In-order Traversal (Kiri - Akar - Kanan)
+- Kunjungi subtree kiri.
+- Kunjungi root.
+- Kunjungi subtree kanan.
+- **Hasil:** Menghasilkan elemen-elemen yang terurut (jika tree tersebut adalah Binary Search Tree).
+
+### 2. Pre-order Traversal (Akar - Kiri - Kanan)
+- Kunjungi root.
+- Kunjungi subtree kiri.
+- Kunjungi subtree kanan.
+- **Aplikasi:** Digunakan untuk menyalin (copy) sebuah tree atau untuk mendapatkan ekspresi prefix dari expression tree.
+
+### 3. Post-order Traversal (Kiri - Kanan - Akar)
+- Kunjungi subtree kiri.
+- Kunjungi subtree kanan.
+- Kunjungi root.
+- **Aplikasi:** Digunakan untuk menghapus (delete) sebuah tree dari memori atau untuk mendapatkan ekspresi postfix.

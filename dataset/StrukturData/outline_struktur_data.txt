@@ -1,0 +1,21 @@
+MATAKULIAH: Struktur Data
+
+PERTEMUAN: 1
+JUDUL: Pengenalan Struktur Data, Tipe Data, dan Array
+DESKRIPSI: Mencakup definisi Tipe Data Abstrak (ADT), Struktur Data, dan Algoritma. Membahas tipe data primitif dan komposit. Fokus pada struktur data linear statis: Array, beserta operasinya (traversal, insertion, deletion, search).
+FILE_MATERI: Pertemuan_01_DS_Intro/materi_pertemuan_01_ds.txt
+
+PERTEMUAN: 2
+JUDUL: Stack (Tumpukan) dan Queue (Antrian)
+DESKRIPSI: Membahas dua struktur data linear dinamis. Stack dengan prinsip LIFO (Last-In, First-Out), operasinya (push, pop, peek), dan aplikasinya (undo, pemanggilan fungsi). Queue dengan prinsip FIFO (First-In, First-Out), operasinya (enqueue, dequeue), dan aplikasinya (antrian cetak, penjadwalan CPU).
+FILE_MATERI: Pertemuan_02_DS_StackQueue/materi_pertemuan_02_ds.txt
+
+PERTEMUAN: 3
+JUDUL: Linked List (Senarai Berantai)
+DESKRIPSI: Pengenalan Linked List sebagai alternatif dinamis dari array. Membahas jenis-jenisnya: Singly Linked List, Doubly Linked List, dan Circular Linked List. Meliputi operasi dasar seperti penyisipan (di awal, tengah, akhir), penghapusan, dan pencarian data.
+FILE_MATERI: Pertemuan_03_DS_LinkedList/materi_pertemuan_03_ds.txt
+
+PERTEMUAN: 4
+JUDUL: Tree (Pohon) dan Binary Tree
+DESKRIPSI: Pengenalan struktur data non-linear: Tree. Membahas terminologi dasar (root, node, leaf, parent, child, height, depth). Fokus pada Binary Tree dan jenis-jenisnya (Full, Complete, Skewed). Mempelajari metode penelusuran (traversal): Pre-order, In-order, dan Post-order.
+FILE_MATERI: Pertemuan_04_DS_Tree/materi_pertemuan_04_ds.txt

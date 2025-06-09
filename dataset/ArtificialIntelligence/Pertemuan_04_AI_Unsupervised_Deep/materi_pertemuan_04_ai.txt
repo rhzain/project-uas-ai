@@ -1,0 +1,47 @@
+# Pertemuan 4: Machine Learning: Unsupervised Learning & Deep Learning
+
+## Unsupervised Learning (Pembelajaran Tak Terarah)
+
+Berbeda dengan supervised learning, unsupervised learning bekerja dengan data yang **tidak memiliki label**. Tujuannya adalah untuk menemukan struktur atau pola tersembunyi dalam data. Algoritma ini mencoba untuk belajar dengan sendirinya, tanpa "guru" yang memberikan jawaban yang benar.
+
+Aplikasi utama dari unsupervised learning adalah **clustering**.
+
+### Clustering (Pengelompokan)
+Clustering adalah tugas mengelompokkan sekumpulan objek sedemikian rupa sehingga objek dalam kelompok yang sama (disebut cluster) lebih mirip satu sama lain daripada dengan objek di kelompok lain.
+- **Aplikasi:** Segmentasi pelanggan, deteksi anomali, pengorganisasian data.
+
+#### Algoritma K-Means Clustering
+K-Means adalah salah satu algoritma clustering yang paling populer dan sederhana.
+- **Tujuan:** Mempartisi 'n' pengamatan ke dalam 'k' cluster di mana setiap pengamatan termasuk dalam cluster dengan *mean* (rata-rata) terdekat, yang berfungsi sebagai prototipe dari cluster tersebut.
+- **Cara Kerja:**
+  1.  **Inisialisasi:** Pilih 'k' titik data secara acak sebagai pusat cluster awal (centroid).
+  2.  **Assignment Step:** Tetapkan setiap titik data ke centroid terdekat.
+  3.  **Update Step:** Hitung ulang posisi centroid sebagai rata-rata dari semua titik data yang termasuk dalam clusternya.
+  4.  **Iterasi:** Ulangi langkah 2 dan 3 sampai posisi centroid tidak lagi berubah secara signifikan.
+
+## Pengenalan Deep Learning
+
+Deep Learning adalah sub-bidang dari machine learning yang didasarkan pada **Jaringan Saraf Tiruan (Artificial Neural Networks - ANN)**. Istilah "deep" (dalam) mengacu pada penggunaan banyak lapisan (layer) dalam jaringan, yang memungkinkan model untuk mempelajari hierarki fitur dari data, mulai dari yang sederhana hingga yang sangat kompleks.
+
+### Jaringan Saraf Tiruan (Artificial Neural Networks)
+ANN terinspirasi oleh struktur dan fungsi otak manusia. Mereka terdiri dari node-node yang saling terhubung yang disebut **neuron**, yang diatur dalam lapisan-lapisan.
+- **Input Layer:** Menerima data awal.
+- **Hidden Layers:** Lapisan perantara tempat sebagian besar komputasi terjadi. Jaringan dengan lebih dari satu hidden layer dianggap "deep".
+- **Output Layer:** Menghasilkan hasil akhir (prediksi atau klasifikasi).
+
+Setiap koneksi antar neuron memiliki **bobot (weight)** yang disesuaikan selama proses pelatihan. Pelatihan ini biasanya dilakukan menggunakan algoritma yang disebut **backpropagation**.
+
+## Arsitektur Deep Learning Populer
+
+### 1. Convolutional Neural Networks (CNN)
+CNN adalah arsitektur yang sangat efektif untuk tugas-tugas yang melibatkan data grid-like, terutama **data gambar (computer vision)**.
+- **Fitur Kunci:** Lapisan Konvolusi (*Convolutional Layer*). Lapisan ini menggunakan filter (atau kernel) untuk memindai gambar dan mendeteksi fitur-fitur spesifik seperti tepi, sudut, tekstur, dan bentuk.
+- **Proses:** CNN secara otomatis belajar hierarki fitur; lapisan awal mendeteksi fitur sederhana seperti garis, dan lapisan yang lebih dalam menggabungkannya untuk mendeteksi fitur kompleks seperti mata, wajah, atau objek utuh.
+- **Aplikasi:** Klasifikasi gambar, deteksi objek, segmentasi gambar.
+
+### 2. Recurrent Neural Networks (RNN)
+RNN adalah arsitektur yang dirancang khusus untuk menangani **data sekuensial atau data deret waktu (time series)**.
+- **Fitur Kunci:** Koneksi Berulang (*Recurrent Connections*). RNN memiliki "memori" yang memungkinkan informasi untuk bertahan dari satu langkah waktu ke langkah berikutnya. Output dari langkah sebelumnya digunakan sebagai input untuk langkah saat ini.
+- **Kelemahan:** Cenderung mengalami masalah *vanishing gradient* atau *exploding gradient* saat menangani sekuens yang sangat panjang.
+- **Aplikasi:** Pemrosesan bahasa alami (NLP) seperti terjemahan mesin dan analisis sentimen, pengenalan ucapan, dan prediksi pasar saham.
+- **Varian Populer:** Long Short-Term Memory (LSTM) dan Gated Recurrent Unit (GRU) dikembangkan untuk mengatasi kelemahan RNN standar.

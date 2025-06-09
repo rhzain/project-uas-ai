@@ -1,0 +1,35 @@
+# Pertemuan 2: Peran Strategis dan Jenis Sistem Informasi dalam Organisasi
+
+## Peran Strategis Sistem Informasi
+Di era digital, sistem informasi bukan hanya alat bantu operasional, tetapi juga merupakan aset strategis untuk mencapai keunggulan kompetitif. Peran strategis SI meliputi:
+- **Efisiensi Operasional:** Mengotomatisasi proses bisnis untuk mengurangi biaya dan waktu.
+- **Pengambilan Keputusan:** Menyediakan informasi yang akurat dan tepat waktu untuk manajer.
+- **Inovasi Produk dan Layanan:** Menciptakan produk baru berbasis teknologi (misalnya, mobile banking).
+- **Mendukung Strategi Kompetitif:** Membantu perusahaan bersaing melalui strategi seperti biaya rendah (low-cost leadership) atau diferensiasi produk.
+
+## Jenis-jenis Sistem Informasi Berdasarkan Level Organisasi
+Sistem informasi dapat diklasifikasikan berdasarkan level manajerial yang dilayaninya, membentuk sebuah piramida.
+
+### 1. Transaction Processing System (TPS)
+- **Level:** Operasional.
+- **Pengguna:** Staf operasional, pekerja garis depan.
+- **Tujuan:** Merekam dan memproses data transaksi rutin harian yang penting untuk menjalankan bisnis.
+- **Contoh:** Sistem kasir (Point-of-Sale), sistem pemesanan tiket, sistem absensi.
+
+### 2. Management Information System (MIS)
+- **Level:** Manajerial / Taktis.
+- **Pengguna:** Manajer menengah.
+- **Tujuan:** Menyediakan laporan dan ringkasan dari data yang berasal dari TPS untuk memantau kinerja dan memprediksi tren. Laporan bersifat periodik dan terstruktur.
+- **Contoh:** Laporan penjualan bulanan, analisis anggaran tahunan.
+
+### 3. Decision Support System (DSS)
+- **Level:** Manajerial / Taktis.
+- **Pengguna:** Manajer, analis bisnis.
+- **Tujuan:** Membantu pengambilan keputusan untuk masalah yang bersifat semi-terstruktur atau tidak rutin. DSS memungkinkan analisis "what-if" dengan model analitis.
+- **Contoh:** Sistem simulasi untuk menentukan lokasi gudang baru, analisis dampak kenaikan harga.
+
+### 4. Executive Support System (ESS) atau Executive Information System (EIS)
+- **Level:** Strategis / Eksekutif.
+- **Pengguna:** Eksekutif senior (CEO, CFO).
+- **Tujuan:** Menyediakan ringkasan informasi tingkat tinggi dari berbagai sumber internal dan eksternal untuk mendukung pengambilan keputusan strategis jangka panjang. Fokus pada visualisasi (grafik, dashboard).
+- **Contoh:** Dashboard yang menampilkan Key Performance Indicators (KPI) perusahaan, analisis pesaing, dan tren pasar global.

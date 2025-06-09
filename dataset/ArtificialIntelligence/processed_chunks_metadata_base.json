@@ -1,0 +1,240 @@
+[
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Fondasi & Pengenalan Kecerdasan Buatan",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 1: Fondasi & Pengenalan Kecerdasan Buatan",
+    "chunk_id": "p1_s0_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Fondasi & Pengenalan Kecerdasan Buatan",
+    "original_heading": "### Definisi dan Ruang Lingkup AI [1]",
+    "chunk_text": "Kecerdasan Buatan (Artificial Intelligence/AI) adalah cabang ilmu komputer yang luas yang berfokus pada pembuatan mesin cerdas yang mampu melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia. [2] AI memungkinkan sistem untuk belajar dari pengalaman, menyesuaikan diri dengan input baru, dan melakukan tugas-tugas seperti manusia. Ruang lingkupnya mencakup berbagai sub-bidang seperti Machine Learning, Natural Language Processing (NLP), Computer Vision, dan Robotika. [4]",
+    "chunk_id": "p1_s1_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Fondasi & Pengenalan Kecerdasan Buatan",
+    "original_heading": "### Tujuan dan Pendekatan AI [2]",
+    "chunk_text": "Secara umum, tujuan AI adalah untuk menciptakan teknologi yang dapat berpikir dan bertindak secara cerdas. Ada empat pendekatan utama yang sering menjadi acuan dalam pengembangan AI:\n1.  **Thinking Humanly (Berpikir Seperti Manusia):** Pendekatan ini berfokus pada pemodelan kognitif. Tujuannya adalah membuat sistem yang meniru cara manusia berpikir, misalnya melalui Jaringan Saraf Tiruan (Artificial Neural Networks).\n2.  **Acting Humanly (Bertindak Seperti Manusia):** Pendekatan ini dikenal sebagai \"Turing Test\". Sebuah sistem dianggap cerdas jika mampu berinteraksi dan tidak bisa dibedakan dari manusia. Contohnya termasuk chatbot canggih dan pemrosesan bahasa alami.\n3.  **Thinking Rationally (Berpikir Rasional):** Pendekatan ini menggunakan \"hukum pemikiran\" atau logika. Sistem dibangun untuk melakukan penalaran logis yang benar untuk sampai pada kesimpulan yang tepat. Contohnya adalah sistem pakar (expert systems).\n4.  **Act Rationally (Bertindak Rasional):** Ini adalah pendekatan do",
+    "chunk_id": "p1_s2_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Fondasi & Pengenalan Kecerdasan Buatan",
+    "original_heading": "### Sejarah Singkat Perkembangan AI [21, 22]",
+    "chunk_text": "Perkembangan AI adalah perjalanan panjang yang penuh dengan optimisme dan tantangan:\n- **Awal Mula (1943-1955):** Fondasi awal diletakkan dengan model neuron buatan oleh McCulloch dan Pitts. Alan Turing menerbitkan artikel \"Computing Machinery and Intelligence\" (1950) yang mengusulkan Uji Turing.\n- **Kelahiran AI (1956):** Istilah \"Artificial Intelligence\" secara resmi dicetuskan pada lokakarya di Dartmouth College, yang dihadiri oleh para pionir AI seperti John McCarthy, Marvin Minsky, dan Claude Shannon.\n- **Era Emas (1956-1974):** Periode optimisme besar dengan pengembangan program-program awal yang mengesankan. Pemerintah memberikan dana besar untuk penelitian.\n- **Musim Dingin AI Pertama (1974-1980):** Kemajuan melambat, dan janji-janji besar tidak terwujud. Keterbatasan komputasi menjadi kendala utama, yang menyebabkan pemotongan dana penelitian secara signifikan.\n- **Kebangkitan & Sistem Pakar (1980-1987):** AI bangkit kembali dengan kesuksesan komersial sistem pakar, yaitu prog",
+    "chunk_id": "p1_s3_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Fondasi & Pengenalan Kecerdasan Buatan",
+    "original_heading": "### Jenis-Jenis Kecerdasan Buatan [31, 32]",
+    "chunk_text": "Berdasarkan kapabilitasnya, AI dapat diklasifikasikan menjadi tiga kategori:\n- **Artificial Narrow Intelligence (ANI) / AI Lemah:** Ini adalah satu-satunya jenis AI yang berhasil direalisasikan hingga saat ini. ANI dirancang untuk melakukan tugas spesifik dengan sangat baik, seperti pengenalan suara (Siri), sistem rekomendasi (Netflix), atau mengemudikan mobil. AI ini beroperasi dalam jangkauan yang terbatas dan tidak memiliki kesadaran. [31]\n- **Artificial General Intelligence (AGI) / AI Kuat:** Ini adalah AI setingkat manusia yang dapat memahami, belajar, dan menerapkan kecerdasannya untuk menyelesaikan masalah apa pun yang dapat dilakukan manusia. AGI masih bersifat teoretis dan menjadi tujuan utama para peneliti AI. [32]\n- **Artificial Superintelligence (ASI) / Super AI:** Ini adalah AI hipotetis yang kecerdasannya jauh melampaui manusia terpintar dalam hampir semua bidang, termasuk kreativitas, pemecahan masalah, dan kearifan sosial. Konsep ini sering dieksplorasi dalam fiksi ilmi",
+    "chunk_id": "p1_s4_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Fondasi & Pengenalan Kecerdasan Buatan",
+    "original_heading": "### Cabang dan Aplikasi AI [61, 62]",
+    "chunk_text": "AI telah diterapkan di hampir setiap industri melalui berbagai cabangnya:\n- **Machine Learning (ML):** Memberi sistem kemampuan untuk belajar dan meningkatkan kinerja dari data tanpa diprogram secara eksplisit.\n- **Deep Learning:** Sub-bidang ML yang menggunakan jaringan saraf berlapis untuk menganalisis berbagai faktor dalam data. Ini adalah kekuatan di balik aplikasi AI yang paling canggih.\n- **Natural Language Processing (NLP):** Memungkinkan mesin untuk memahami dan merespons bahasa manusia. Digunakan dalam chatbot, terjemahan, dan analisis sentimen.\n- **Computer Vision:** Melatih komputer untuk menafsirkan dan memahami dunia visual. Digunakan dalam pengenalan wajah, analisis citra medis, dan mobil otonom.\n- **Robotika:** Merancang dan membangun robot yang dapat melakukan tugas di dunia fisik.\n- **Aplikasi Sehari-hari:** Mesin pencari (Google), asisten virtual (Siri, Alexa), M-Banking (deteksi penipuan), dan algoritma media sosial. [61, 62]",
+    "chunk_id": "p1_s5_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 2: Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "chunk_id": "p2_s0_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "## Agen Cerdas (Intelligent Agents)",
+    "chunk_text": "Agen cerdas (intelligent agent) adalah entitas apa pun yang dapat mengamati lingkungannya melalui sensor dan bertindak atas lingkungan tersebut melalui aktuator.\n\n- **Sensor:** Komponen yang digunakan agen untuk menerima input dari lingkungan (misalnya, kamera, mikrofon, sensor suhu).\n- **Aktuator:** Komponen yang digunakan agen untuk melakukan tindakan (misalnya, lengan robot, motor, layar tampilan).\n- **Lingkungan (Environment):** Dunia tempat agen beroperasi.\n- **Rasionalitas:** Agen yang rasional adalah agen yang bertindak untuk memaksimalkan ukuran kinerjanya, berdasarkan bukti yang diberikan oleh histori persepsinya dan pengetahuan bawaan yang dimiliki agen.",
+    "chunk_id": "p2_s1_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "## Formulasi Masalah",
+    "chunk_text": "Sebelum sebuah agen dapat mulai mencari solusi, masalah harus didefinisikan dengan baik. Sebuah masalah dapat didefinisikan secara formal oleh lima komponen:\n1.  **Initial State:** Keadaan awal tempat agen memulai.\n2.  **Actions:** Kumpulan tindakan yang mungkin dilakukan oleh agen.\n3.  **Transition Model:** Deskripsi tentang apa yang dilakukan setiap tindakan.\n4.  **Goal Test:** Tes untuk menentukan apakah suatu keadaan adalah keadaan tujuan (goal state).\n5.  **Path Cost:** Fungsi yang memberikan biaya numerik untuk setiap jalur.",
+    "chunk_id": "p2_s2_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "## Teknik Pencarian Tak-Informasi (Uninformed/Blind Search)",
+    "chunk_text": "Teknik pencarian ini tidak memiliki informasi tambahan tentang masalah selain dari definisi masalah itu sendiri. Strategi ini hanya dapat menghasilkan suksesor dan membedakan keadaan tujuan dari keadaan non-tujuan.",
+    "chunk_id": "p2_s3_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "### 1. Breadth-First Search (BFS)",
+    "chunk_text": "BFS melakukan pencarian dengan mengunjungi semua node pada level kedalaman yang sama sebelum melanjutkan ke level berikutnya.\n- **Proses:** Menggunakan antrian (queue) dengan struktur FIFO (First-In, First-Out).\n- **Karakteristik:**\n  - **Completeness:** Lengkap (dijamin menemukan solusi jika ada).\n  - **Optimality:** Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - **Time & Space Complexity:** Keduanya adalah O(b^d), di mana 'b' adalah faktor percabangan (branching factor) dan 'd' adalah kedalaman solusi. Ini membutuhkan banyak memori.",
+    "chunk_id": "p2_s4_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "### 2. Depth-First Search (DFS)",
+    "chunk_text": "DFS menjelajahi sejauh mungkin di sepanjang setiap cabang sebelum melakukan backtracking.\n- **Proses:** Menggunakan tumpukan (stack) dengan struktur LIFO (Last-In, First-Out).\n- **Karakteristik:**\n  - **Completeness:** Tidak lengkap jika ada loop tak terbatas. Lengkap pada ruang keadaan yang terbatas.\n  - **Optimality:** Tidak optimal.\n  - **Time Complexity:** O(b^m), di mana 'm' adalah kedalaman maksimum dari ruang keadaan.\n  - **Space Complexity:** O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS.",
+    "chunk_id": "p2_s5_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "## Teknik Pencarian Terinformasi (Informed/Heuristic Search)",
+    "chunk_text": "Teknik pencarian ini menggunakan pengetahuan spesifik tentang masalah di luar definisi masalah itu sendiri untuk memandu pencarian secara lebih efisien. Pengetahuan ini diberikan dalam bentuk **fungsi heuristik h(n)**, yang mengestimasi biaya dari keadaan 'n' ke tujuan.",
+    "chunk_id": "p2_s6_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "### 1. Greedy Best-First Search",
+    "chunk_text": "Algoritma ini mencoba memperluas node yang paling dekat dengan tujuan, berdasarkan estimasi fungsi heuristik h(n).\n- **Proses:** Memilih node yang memiliki nilai h(n) terendah untuk dieksplorasi selanjutnya.\n- **Karakteristik:**\n  - **Completeness:** Tidak lengkap (bisa terjebak dalam loop).\n  - **Optimality:** Tidak optimal.\n  - **Kelebihan:** Cenderung menemukan solusi dengan cepat, meskipun bukan yang paling optimal.",
+    "chunk_id": "p2_s7_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "### 2. A* Search",
+    "chunk_text": "A* Search adalah algoritma pencarian terbaik dan paling populer. Algoritma ini menggabungkan keunggulan dari Uniform Cost Search (biaya sebenarnya) dan Greedy Best-First Search (biaya estimasi).\n- **Fungsi Evaluasi:** f(n) = g(n) + h(n)\n  - **g(n):** Biaya jalur dari keadaan awal ke keadaan 'n'.\n  - **h(n):** Estimasi biaya heuristik dari keadaan 'n' ke tujuan.\n- **Karakteristik:**\n  - **Completeness:** Lengkap.\n  - **Optimality:** Optimal, jika fungsi heuristik h(n) bersifat *admissible* (tidak pernah melebih-lebihkan biaya sebenarnya untuk mencapai tujuan) dan konsisten.\n  - **Kelemahan:** Membutuhkan banyak memori karena menyimpan semua node yang telah digenerasi.",
+    "chunk_id": "p2_s8_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Pemecahan Masalah dengan Pencarian (Problem Solving & Search)",
+    "original_heading": "## Aplikasi dalam Game (Game Playing)",
+    "chunk_text": "Algoritma pencarian adalah inti dari AI untuk permainan (misalnya catur, Go, tic-tac-toe).\n- **Adversarial Search:** Jenis pencarian di mana agen bersaing satu sama lain.\n- **Minimax Algorithm:** Algoritma dasar untuk permainan dua pemain dengan giliran. Tujuannya adalah untuk menemukan langkah optimal dengan meminimalkan kemungkinan kerugian maksimum (memilih langkah yang memaksimalkan nilai untuk MAX dan meminimalkan nilai untuk MIN).\n- **Alpha-Beta Pruning:** Optimalisasi dari algoritma Minimax. Ini mengurangi jumlah node yang perlu dievaluasi dalam pohon pencarian dengan \"memangkas\" cabang-cabang yang tidak akan memengaruhi keputusan akhir.",
+    "chunk_id": "p2_s9_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 3: Machine Learning: Supervised Learning",
+    "chunk_id": "p3_s0_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "## Konsep Dasar Machine Learning",
+    "chunk_text": "Machine Learning adalah cabang dari Kecerdasan Buatan (AI) yang fokus pada pengembangan algoritma yang memungkinkan komputer untuk belajar dari dan membuat prediksi atau keputusan berdasarkan data. Terdapat tiga jenis utama pembelajaran mesin:\n\n1.  **Supervised Learning (Pembelajaran Terarah):** Model belajar dari data yang telah diberi label.\n2.  **Unsupervised Learning (Pembelajaran Tak Terarah):** Model belajar dari data yang tidak memiliki label.\n3.  **Reinforcement Learning (Pembelajaran Penguatan):** Model belajar melalui sistem coba-coba dengan umpan balik berupa hadiah (rewards) dan hukuman (punishments).",
+    "chunk_id": "p3_s1_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "## Supervised Learning",
+    "chunk_text": "Dalam supervised learning, kita memberikan algoritma data input (fitur) beserta output yang benar (label). Tujuan algoritma adalah untuk mempelajari \"aturan\" atau fungsi pemetaan yang dapat memprediksi output dari data input baru.\n\nProsesnya melibatkan dua tahap utama:\n1.  **Training (Pelatihan):** Model \"belajar\" dari dataset pelatihan (training dataset) untuk membangun fungsi prediksi.\n2.  **Testing (Pengujian):** Kinerja model dievaluasi menggunakan dataset pengujian (testing dataset) yang belum pernah dilihat sebelumnya.\n\nMasalah dalam supervised learning dapat dibagi menjadi dua kategori utama: **Klasifikasi** dan **Regresi**.",
+    "chunk_id": "p3_s2_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "## Klasifikasi (Classification)",
+    "chunk_text": "Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Contoh: memprediksi apakah email adalah \"spam\" atau \"bukan spam\", atau mengidentifikasi gambar sebagai \"kucing\", \"anjing\", atau \"burung\".",
+    "chunk_id": "p3_s3_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "### Algoritma Klasifikasi Populer:",
+    "chunk_text": "1.  **K-Nearest Neighbors (KNN):** Algoritma yang sangat sederhana namun kuat. KNN mengklasifikasikan titik data baru berdasarkan mayoritas label dari 'K' tetangga terdekatnya dalam ruang fitur.\n2.  **Decision Tree (Pohon Keputusan):** Model seperti diagram alur di mana setiap node internal merepresentasikan \"tes\" pada sebuah atribut, setiap cabang merepresentasikan hasil tes, dan setiap daun merepresentasikan label kelas. Sangat mudah untuk diinterpretasikan.\n3.  **Support Vector Machine (SVM):** Algoritma yang mencari *hyperplane* atau batas keputusan terbaik yang memisahkan data ke dalam kelas-kelas yang berbeda dengan margin semaksimal mungkin. Sangat efektif dalam ruang berdimensi tinggi.",
+    "chunk_id": "p3_s4_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "## Regresi (Regression)",
+    "chunk_text": "Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik). Contoh: memprediksi harga rumah berdasarkan luas tanah dan jumlah kamar, atau memperkirakan suhu besok.",
+    "chunk_id": "p3_s5_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "### Algoritma Regresi Populer:",
+    "chunk_text": "1.  **Regresi Linear (Linear Regression):** Algoritma paling dasar yang mencoba menemukan hubungan linear antara variabel input (independen) dan variabel output (dependen) dengan mencocokkan garis lurus terbaik ke data.\n2.  **Regresi Polinomial (Polynomial Regression):** Perluasan dari regresi linear yang memodelkan hubungan antara variabel input dan output sebagai polinomial derajat 'n'. Ini memungkinkan model untuk menangkap hubungan yang lebih kompleks dan non-linear.",
+    "chunk_id": "p3_s6_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "## Metrik Evaluasi Model",
+    "chunk_text": "Untuk mengetahui seberapa baik kinerja sebuah model, kita perlu menggunakan metrik evaluasi.",
+    "chunk_id": "p3_s7_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "### Metrik untuk Klasifikasi:",
+    "chunk_text": "- **Confusion Matrix:** Tabel yang merangkum hasil prediksi model klasifikasi.\n- **Akurasi (Accuracy):** Persentase prediksi yang benar dari total prediksi. `(TP+TN)/(TP+TN+FP+FN)`. Tidak cocok untuk dataset yang tidak seimbang (imbalanced).\n- **Presisi (Precision):** Dari semua yang diprediksi positif, berapa banyak yang benar-benar positif. `TP/(TP+FP)`. Penting ketika biaya False Positive tinggi.\n- **Recall (Sensitivity):** Dari semua yang sebenarnya positif, berapa banyak yang berhasil diprediksi positif. `TP/(TP+FN)`. Penting ketika biaya False Negative tinggi.\n- **F1-Score:** Rata-rata harmonik dari Presisi dan Recall. Metrik yang baik untuk dataset yang tidak seimbang. `2 * (Precision * Recall) / (Precision + Recall)`.",
+    "chunk_id": "p3_s8_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Machine Learning: Supervised Learning",
+    "original_heading": "### Metrik untuk Regresi:",
+    "chunk_text": "- **Mean Absolute Error (MAE):** Rata-rata dari nilai absolut selisih antara nilai aktual dan prediksi.\n- **Mean Squared Error (MSE):** Rata-rata dari kuadrat selisih antara nilai aktual dan prediksi. Memberi bobot lebih besar pada kesalahan besar.\n- **Root Mean Squared Error (RMSE):** Akar kuadrat dari MSE. Kembali ke unit yang sama dengan variabel output.",
+    "chunk_id": "p3_s9_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 4: Machine Learning: Unsupervised Learning & Deep Learning",
+    "chunk_id": "p4_s0_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "## Unsupervised Learning (Pembelajaran Tak Terarah)",
+    "chunk_text": "Berbeda dengan supervised learning, unsupervised learning bekerja dengan data yang **tidak memiliki label**. Tujuannya adalah untuk menemukan struktur atau pola tersembunyi dalam data. Algoritma ini mencoba untuk belajar dengan sendirinya, tanpa \"guru\" yang memberikan jawaban yang benar.\n\nAplikasi utama dari unsupervised learning adalah **clustering**.",
+    "chunk_id": "p4_s1_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "### Clustering (Pengelompokan)",
+    "chunk_text": "Clustering adalah tugas mengelompokkan sekumpulan objek sedemikian rupa sehingga objek dalam kelompok yang sama (disebut cluster) lebih mirip satu sama lain daripada dengan objek di kelompok lain.\n- **Aplikasi:** Segmentasi pelanggan, deteksi anomali, pengorganisasian data.\n\n#",
+    "chunk_id": "p4_s2_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "### Algoritma K-Means Clustering",
+    "chunk_text": "K-Means adalah salah satu algoritma clustering yang paling populer dan sederhana.\n- **Tujuan:** Mempartisi 'n' pengamatan ke dalam 'k' cluster di mana setiap pengamatan termasuk dalam cluster dengan *mean* (rata-rata) terdekat, yang berfungsi sebagai prototipe dari cluster tersebut.\n- **Cara Kerja:**\n  1.  **Inisialisasi:** Pilih 'k' titik data secara acak sebagai pusat cluster awal (centroid).\n  2.  **Assignment Step:** Tetapkan setiap titik data ke centroid terdekat.\n  3.  **Update Step:** Hitung ulang posisi centroid sebagai rata-rata dari semua titik data yang termasuk dalam clusternya.\n  4.  **Iterasi:** Ulangi langkah 2 dan 3 sampai posisi centroid tidak lagi berubah secara signifikan.",
+    "chunk_id": "p4_s3_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "## Pengenalan Deep Learning",
+    "chunk_text": "Deep Learning adalah sub-bidang dari machine learning yang didasarkan pada **Jaringan Saraf Tiruan (Artificial Neural Networks - ANN)**. Istilah \"deep\" (dalam) mengacu pada penggunaan banyak lapisan (layer) dalam jaringan, yang memungkinkan model untuk mempelajari hierarki fitur dari data, mulai dari yang sederhana hingga yang sangat kompleks.",
+    "chunk_id": "p4_s4_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "### Jaringan Saraf Tiruan (Artificial Neural Networks)",
+    "chunk_text": "ANN terinspirasi oleh struktur dan fungsi otak manusia. Mereka terdiri dari node-node yang saling terhubung yang disebut **neuron**, yang diatur dalam lapisan-lapisan.\n- **Input Layer:** Menerima data awal.\n- **Hidden Layers:** Lapisan perantara tempat sebagian besar komputasi terjadi. Jaringan dengan lebih dari satu hidden layer dianggap \"deep\".\n- **Output Layer:** Menghasilkan hasil akhir (prediksi atau klasifikasi).\n\nSetiap koneksi antar neuron memiliki **bobot (weight)** yang disesuaikan selama proses pelatihan. Pelatihan ini biasanya dilakukan menggunakan algoritma yang disebut **backpropagation**.",
+    "chunk_id": "p4_s5_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "### 1. Convolutional Neural Networks (CNN)",
+    "chunk_text": "CNN adalah arsitektur yang sangat efektif untuk tugas-tugas yang melibatkan data grid-like, terutama **data gambar (computer vision)**.\n- **Fitur Kunci:** Lapisan Konvolusi (*Convolutional Layer*). Lapisan ini menggunakan filter (atau kernel) untuk memindai gambar dan mendeteksi fitur-fitur spesifik seperti tepi, sudut, tekstur, dan bentuk.\n- **Proses:** CNN secara otomatis belajar hierarki fitur; lapisan awal mendeteksi fitur sederhana seperti garis, dan lapisan yang lebih dalam menggabungkannya untuk mendeteksi fitur kompleks seperti mata, wajah, atau objek utuh.\n- **Aplikasi:** Klasifikasi gambar, deteksi objek, segmentasi gambar.",
+    "chunk_id": "p4_s6_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Machine Learning: Unsupervised Learning & Deep Learning",
+    "original_heading": "### 2. Recurrent Neural Networks (RNN)",
+    "chunk_text": "RNN adalah arsitektur yang dirancang khusus untuk menangani **data sekuensial atau data deret waktu (time series)**.\n- **Fitur Kunci:** Koneksi Berulang (*Recurrent Connections*). RNN memiliki \"memori\" yang memungkinkan informasi untuk bertahan dari satu langkah waktu ke langkah berikutnya. Output dari langkah sebelumnya digunakan sebagai input untuk langkah saat ini.\n- **Kelemahan:** Cenderung mengalami masalah *vanishing gradient* atau *exploding gradient* saat menangani sekuens yang sangat panjang.\n- **Aplikasi:** Pemrosesan bahasa alami (NLP) seperti terjemahan mesin dan analisis sentimen, pengenalan ucapan, dan prediksi pasar saham.\n- **Varian Populer:** Long Short-Term Memory (LSTM) dan Gated Recurrent Unit (GRU) dikembangkan untuk mengatasi kelemahan RNN standar.",
+    "chunk_id": "p4_s7_sc0"
+  }
+]

@@ -12,9 +12,9 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 from sentence_transformers import SentenceTransformer
 from feedback_system import FeedbackCollector
-from gemini_fine_tuning import GeminiFinetuner
-from embedding_fine_tuning import EmbeddingFineTuner
-from rl_training import RLTrainer, create_rl_batches
+# from gemini_fine_tuning import GeminiFinetuner
+# from embedding_fine_tuning import EmbeddingFineTuner
+# from rl_training import RLTrainer, create_rl_batches
 
 # --- 0. Konfigurasi Awal & Pemuatan Variabel Lingkungan ---
 load_dotenv()

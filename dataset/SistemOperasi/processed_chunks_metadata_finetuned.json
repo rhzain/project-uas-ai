@@ -2,393 +2,260 @@
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 1: Foundations & Overview of Operating Systems",
+    "chunk_id": "p1_s0_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Definisi dan Peran Sistem Operasi [1]",
     "chunk_text": "Sistem Operasi (Operating System/OS) adalah sebuah program atau perangkat lunak yang mengontrol eksekusi aplikasi. [1]\nOS bertindak sebagai antarmuka (interface) antara pengguna (user) dan perangkat keras (hardware) komputer. [1]\nOS menyediakan lingkungan di mana pengguna dapat menjalankan program-programnya dengan nyaman dan efisien. [1]",
-    "chunk_id": "p1_s7_sc0"
+    "chunk_id": "p1_s1_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Tujuan Sistem Operasi [1]",
     "chunk_text": "Tujuan utama dari sistem operasi adalah:\n- **Kenyamanan (Convenience):** Membuat sistem komputer lebih mudah untuk digunakan oleh pengguna. [1]\n- **Efisiensi (Efficiency):** Memungkinkan penggunaan sumber daya sistem komputer (seperti CPU, memori, perangkat I/O) secara efisien. [1]",
-    "chunk_id": "p1_s9_sc0"
+    "chunk_id": "p1_s2_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Komponen Sistem Komputer [2]",
     "chunk_text": "Secara umum, sistem komputer terdiri dari beberapa komponen yang saling berinteraksi:\n1.  **Perangkat Keras (Hardware):** Menyediakan sumber daya komputasi dasar (CPU, memori, perangkat I/O).\n2.  **Sistem Operasi (Operating System):** Mengontrol dan mengkoordinasikan penggunaan perangkat keras di antara berbagai program aplikasi untuk berbagai pengguna.\n3.  **Program Sistem (System Programs):** Membantu dalam pengelolaan dan operasi sistem komputer (misalnya, compiler, assembler, editor teks, utilitas sistem).\n4.  **Program Aplikasi (Application Programs):** Program yang digunakan oleh pengguna untuk menyelesaikan tugas-tugas komputasi spesifik (misalnya, word processor, spreadsheet, game, browser web).\nHubungan antar komponen ini menunjukkan OS sebagai lapisan penting yang menjembatani perangkat keras dengan perangkat lunak lainnya. [2]",
-    "chunk_id": "p1_s11_sc0"
+    "chunk_id": "p1_s3_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Layanan Sistem Operasi (OS Services) [2, 3]",
     "chunk_text": "Sistem operasi menyediakan berbagai layanan untuk kenyamanan pengguna dan efisiensi eksekusi program:\n- **Menyediakan Antarmuka Pengguna (User Interface):** Bisa berupa Command-Line Interface (CLI), Batch interface, atau Graphical User Interface (GUI). [2]\n- **Menyediakan Eksekusi Program:** Memuat program ke memori dan menjalankannya, serta menangani terminasi program baik secara normal maupun abnormal. [2]\n- **Menyediakan Operasi Input/Output (I/O):** Pengguna tidak dapat mengontrol perangkat I/O secara langsung, OS menyediakan mekanisme untuk melakukan operasi I/O. [2]\n- **Menyediakan Manipulasi Sistem File:** Membaca, menulis, membuat, dan menghapus file dan direktori, serta mengatur hak akses. [2]\n- **Menyediakan Komunikasi Sistem / Jaringan:** Memungkinkan komunikasi antar proses, baik dalam satu komputer maupun antar komputer melalui jaringan. [2]\n- **Deteksi Error:** OS secara konstan memeriksa kemungkinan error pada CPU, memori, perangkat I/O, atau program pengguna, dan mengam",
-    "chunk_id": "p1_s13_sc0"
-  },
-  {
-    "pertemuan_id": 1,
-    "pertemuan_judul": "Foundations & Overview of Operating Systems",
-    "original_heading": "### Layanan Sistem Operasi (OS Services) [2, 3]",
-    "chunk_text": "ui jaringan. [2]\n- **Deteksi Error:** OS secara konstan memeriksa kemungkinan error pada CPU, memori, perangkat I/O, atau program pengguna, dan mengambil tindakan yang sesuai. [2, 17]\n- **Pembagian Sumber Daya (Resource Sharing):** Mengalokasikan sumber daya seperti CPU cycle, memori, dan perangkat I/O kepada berbagai pengguna atau job yang berjalan bersamaan. [2]\n- **Keamanan (Security):** Melindungi informasi dan sumber daya sistem dari akses yang tidak sah. [2]\n- **Sistem Akuntansi (Accounting System):** Mencatat penggunaan sumber daya oleh pengguna atau job. [3]",
-    "chunk_id": "p1_s13_sc1"
+    "chunk_id": "p1_s4_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Fungsi Dasar Sistem Operasi [3, 4]",
     "chunk_text": "Dua pandangan utama mengenai fungsi OS:\n- **Sebagai 'Mesin yang Diperluas' (Extended Machine) atau 'Mesin Virtual' (Virtual Machine):** [3]\n  OS menyediakan antarmuka yang lebih sederhana dan abstrak kepada pengguna dibandingkan dengan perangkat keras yang sebenarnya. OS menyembunyikan detail dan kompleksitas perangkat keras seperti bagaimana data ditulis ke disk, penanganan interupsi, dan manajemen memori. [3]\n- **Sebagai 'Manajer Sumber Daya' (Resources Manager):** [4]\n  OS bertugas mengelola semua sumber daya komputer. Sumber daya ini meliputi prosesor (CPU), memori utama, timer, disk, printer, antarmuka jaringan, dan lainnya. OS memutuskan bagaimana sumber daya ini dialokasikan ke program dan pengguna secara adil dan efisien. [4]",
-    "chunk_id": "p1_s15_sc0"
+    "chunk_id": "p1_s5_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Sejarah Sistem Operasi (Generasi) [5-7]",
     "chunk_text": "Perkembangan sistem operasi dapat dibagi menjadi beberapa generasi:\n- **Generasi I (1945-1955): Tabung Vakum dan Plugboard** [5]\n  - Karakteristik: Komputer menggunakan tabung vakum, pemrograman dilakukan dengan plugboard atau bahasa mesin murni.\n  - Tidak ada konsep sistem operasi. Pengguna berinteraksi langsung dengan perangkat keras.\n- **Generasi II (1955-1965): Transistor dan Sistem Batch** [5, 6]\n  - Karakteristik: Transistor menggantikan tabung vakum. Muncul sistem batch dimana pekerjaan dengan kebutuhan serupa dikumpulkan dan dijalankan bersama.\n  - Input: Punch card. Bahasa pemrograman: FORTRAN, Assembly. Penyimpanan: Tape drive.\n  - OS Awal: FMS (Fortran Monitor System), IBSYS (IBM's operating system untuk komputer 709x).\n  - Fitur: Off-line printing (data hasil diprint ke tape dulu, baru diprint oleh komputer lain).\n- **Generasi III (1965-1980): IC dan Multiprogramming** [6]\n  - Karakteristik: Penggunaan Integrated Circuits (IC) memungkinkan komputer lebih kecil, cepat, dan m",
-    "chunk_id": "p1_s17_sc0"
-  },
-  {
-    "pertemuan_id": 1,
-    "pertemuan_judul": "Foundations & Overview of Operating Systems",
-    "original_heading": "### Sejarah Sistem Operasi (Generasi) [5-7]",
-    "chunk_text": "III (1965-1980): IC dan Multiprogramming** [6]\n  - Karakteristik: Penggunaan Integrated Circuits (IC) memungkinkan komputer lebih kecil, cepat, dan murah.\n  - Konsep Multiprogramming: Beberapa job disimpan di memori secara bersamaan, dan CPU beralih antar job tersebut untuk meningkatkan utilisasi.\n  - Contoh: IBM System/360 dengan OS/360.\n  - Fitur: Penggunaan disk untuk penyimpanan online, Spooling (Simultaneous Peripheral Operations On-Line), MULTICS (Multiplexed Information and Computing Service) yang menjadi inspirasi UNIX.\n- **Generasi IV (1980 dan seterusnya): Komputer Pribadi dan Jaringan** [7]\n  - Karakteristik: Munculnya Personal Computers (PC) berkat teknologi LSI (Large Scale Integration) dan VLSI (Very Large Scale Integration).\n  - OS Populer: MS-DOS, UNIX (dan variannya), IBM PC dengan PC-DOS.\n  - Prosesor: CISC (Complex Instruction Set Computer) dan RISC (Reduced Instruction Set Computer).\n  - Perkembangan: Sistem Operasi Jaringan (Network OS), Sistem Operasi Terdistribu",
-    "chunk_id": "p1_s17_sc1"
-  },
-  {
-    "pertemuan_id": 1,
-    "pertemuan_judul": "Foundations & Overview of Operating Systems",
-    "original_heading": "### Sejarah Sistem Operasi (Generasi) [5-7]",
-    "chunk_text": "truction Set Computer) dan RISC (Reduced Instruction Set Computer).\n  - Perkembangan: Sistem Operasi Jaringan (Network OS), Sistem Operasi Terdistribusi (Distributed OS), sistem uni/multi prosesor.\n  - Keluarga OS Modern: Microsoft Windows, varian UNIX (Linux, macOS), Mac OS.\n  - Komputasi: Client-Server Computing.\n  - OS untuk Perangkat Mobile: OS untuk Smartphone.",
-    "chunk_id": "p1_s17_sc2"
+    "chunk_id": "p1_s6_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Jenis-Jenis Sistem Operasi [7-11]",
-    "chunk_text": "Sistem operasi dapat diklasifikasikan berdasarkan berbagai kriteria:\n- **Berdasarkan Komputer yang Digunakan:** [7, 8]\n  - Keluarga Microsoft Windows (Windows XP, Vista, 7, 8, 10, 11, Windows Server).\n  - Keluarga Unix (Termasuk Linux, Solaris, FreeBSD, dll.).\n  - Mac OS (Sekarang macOS).\n- **Berdasarkan Platform:** [9]\n  - OS untuk Mikrokomputer (PC).\n  - OS untuk Mainframe.\n  - OS untuk Superkomputer.\n  - OS untuk Workstation/Server.\n  - OS Jaringan.\n  - OS untuk PDA (Personal Digital Assistant).\n  - OS untuk Smartphone.\n- **Berbagai Versi Unix:** [9, 10]\n  AIX (IBM), A/UX (Apple), BSD (Berkeley Software Distribution), HP/UX (Hewlett-Packard), Solaris (Sun Microsystems, sekarang Oracle), IRIX (Silicon Graphics), Linux (berbagai distribusi seperti Ubuntu, Fedora, Debian).\n- **OS Mobile (Sistem Operasi untuk Perangkat Bergerak):** [10, 11]\n  Symbian OS, Windows Mobile (kemudian Windows Phone), Mobile Linux (misalnya Maemo, MeeGo), BlackBerry OS, Palm OS, Java ME, Android (Google), iOS",
-    "chunk_id": "p1_s19_sc0"
-  },
-  {
-    "pertemuan_id": 1,
-    "pertemuan_judul": "Foundations & Overview of Operating Systems",
-    "original_heading": "### Jenis-Jenis Sistem Operasi [7-11]",
-    "chunk_text": "]\n  Symbian OS, Windows Mobile (kemudian Windows Phone), Mobile Linux (misalnya Maemo, MeeGo), BlackBerry OS, Palm OS, Java ME, Android (Google), iOS (Apple).",
-    "chunk_id": "p1_s19_sc1"
+    "chunk_text": "Sistem operasi dapat diklasifikasikan berdasarkan berbagai kriteria:\n- **Berdasarkan Komputer yang Digunakan:** [7, 8]\n  - Keluarga Microsoft Windows (Windows XP, Vista, 7, 8, 10, 11, Windows Server).\n  - Keluarga Unix (Termasuk Linux, Solaris, FreeBSD, dll.).\n  - Mac OS (Sekarang macOS).\n- **Berdasarkan Platform:** [9]\n  - OS untuk Mikrokomputer (PC).\n  - OS untuk Mainframe.\n  - OS untuk Superkomputer.\n  - OS untuk Workstation/Server.\n  - OS Jaringan.\n  - OS untuk PDA (Personal Digital Assistant).\n  - OS untuk Smartphone.\n- **Berbagai Versi Unix:** [9, 10]\n  AIX (IBM), A/UX (Apple), BSD (Berkeley Software Distribution), HP/UX (Hewlett-Packard), Solaris (Sun Microsystems, sekarang Oracle), IRIX (Silicon Graphics), Linux (berbagai distribusi seperti Ubuntu, Fedora, Debian).\n- **OS Mobile (Sistem Operasi untuk Perangkat Bergerak):** [10, 11]\n  Symbian OS, Windows Mobile (kemudian Windows Phone), Mobile Linux (misalnya Maemo, MeeGo), BlackBerry OS, Palm OS, Java ME, Android (Google), iOS ",
+    "chunk_id": "p1_s7_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Jenis Operasi Komputer (Cara OS Menjalankan Program) [12, 13]",
     "chunk_text": "- **Operasi Program Tunggal (Mono-programming):** [12]\n  Hanya satu program yang dapat berjalan pada satu waktu. CPU sering idle menunggu I/O selesai.\n- **Pemrosesan Batch (Batch Processing):** [12]\n  Job-job dengan kebutuhan serupa dikumpulkan dan dijalankan secara berurutan tanpa intervensi pengguna.\n- **Multi-programming / Multi-tasking:** [12]\n  Beberapa program berada di memori pada saat yang sama. CPU beralih dari satu program ke program lain, memberikan ilusi bahwa semua program berjalan bersamaan. Meningkatkan utilisasi CPU.\n- **Multi-access (Time-sharing):** [13]\n  Variasi dari multiprogramming di mana banyak pengguna dapat berinteraksi dengan programnya masing-masing secara bersamaan melalui terminal. Setiap pengguna mendapatkan irisan waktu CPU (time slice).",
-    "chunk_id": "p1_s21_sc0"
+    "chunk_id": "p1_s8_sc0"
   },
   {
     "pertemuan_id": 1,
     "pertemuan_judul": "Foundations & Overview of Operating Systems",
     "original_heading": "### Komponen Struktur OS Ideal (Pengenalan) [13-16]",
     "chunk_text": "Meskipun struktur OS bervariasi, beberapa komponen fungsional inti umumnya ada:\n- **Nukleus (Kernel):** [13, 14] Inti dari sistem operasi yang menangani fungsi paling dasar.\n- **Manajemen Memori:** [13, 14] Mengatur alokasi dan dealokasi ruang memori.\n- **Kontrol I/O:** [13, 14] Mengelola komunikasi dengan perangkat keras I/O.\n- **Manajemen Backing Store (Penyimpanan Sekunder):** [13, 15] Mengatur penyimpanan data permanen di disk.\n- **Alokasi Sumber Daya & Penjadwalan:** [13, 15, 16] Mengalokasikan sumber daya (CPU, memori, dll.) dan menjadwalkan penggunaannya.\n- **Proteksi:** [13, 16] Mengontrol akses ke sumber daya sistem untuk menjaga integritas dan keamanan.",
-    "chunk_id": "p1_s_last_sc0"
+    "chunk_id": "p1_s9_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "OS Components, Services, and Structure",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 2: OS Components, Services, and Structure",
+    "chunk_id": "p2_s0_sc0"
   },
   {
     "pertemuan_id": 2,
     "pertemuan_judul": "OS Components, Services, and Structure",
     "original_heading": "## Komponen Sistem (System Components) [18]",
     "chunk_text": "Sistem operasi mengelola berbagai komponen sistem komputasi. Komponen utama yang sering dibahas meliputi:\n- **Manajemen Proses (Process Management):** Proses adalah program yang sedang dieksekusi. OS bertanggung jawab untuk membuat dan menghapus proses, menunda dan melanjutkan proses, menyediakan mekanisme untuk sinkronisasi proses, komunikasi proses, dan penanganan deadlock.\n- **Manajemen Memori Utama (Main Memory Management):** Memori utama adalah tempat penyimpanan data dan instruksi yang diakses langsung oleh CPU. OS mengelola bagian mana dari memori yang sedang digunakan dan oleh siapa, memutuskan proses mana yang akan dimuat ke memori ketika ada ruang tersedia, serta mengalokasikan dan mendealokasikan ruang memori sesuai kebutuhan.\n- **Manajemen I/O (I/O System Management):** OS menyembunyikan kekhasan perangkat keras tertentu dari pengguna. Sistem I/O terdiri dari sistem buffer-caching, antarmuka device-driver umum, dan driver untuk perangkat keras spesifik.\n- **Manajemen File (",
-    "chunk_id": "p2_s5_sc0"
-  },
-  {
-    "pertemuan_id": 2,
-    "pertemuan_judul": "OS Components, Services, and Structure",
-    "original_heading": "## Komponen Sistem (System Components) [18]",
-    "chunk_text": "pengguna. Sistem I/O terdiri dari sistem buffer-caching, antarmuka device-driver umum, dan driver untuk perangkat keras spesifik.\n- **Manajemen File (File Management):** File adalah kumpulan informasi terkait yang didefinisikan oleh pembuatnya. OS bertanggung jawab untuk membuat dan menghapus file dan direktori, mendukung manipulasi file dan direktori (membaca, menulis, mengganti nama, dll.), memetakan file ke penyimpanan sekunder, dan mencadangkan file pada media penyimpanan yang stabil.",
-    "chunk_id": "p2_s5_sc1"
+    "chunk_id": "p2_s1_sc0"
   },
   {
     "pertemuan_id": 2,
     "pertemuan_judul": "OS Components, Services, and Structure",
     "original_heading": "## Layanan Sistem Operasi (OS Services) [17, 18]",
     "chunk_text": "Sistem operasi menyediakan layanan yang membantu pengguna dan program. Layanan ini dapat dikategorikan sebagai berikut:\n- **Dukungan untuk Programmer (Programmer Support) / Pengembangan Program:** Menyediakan utilitas seperti editor, debugger, compiler, linker, interpreter. [17, 18]\n- **Eksekusi Program (Program Execution):** Memuat program ke memori dan menjalankannya. Program harus dapat mengakhiri eksekusinya, baik secara normal maupun abnormal (menunjukkan error). [17, 18]\n- **Operasi I/O (I/O Operations):** Program yang berjalan mungkin memerlukan I/O, yang melibatkan file atau perangkat I/O. OS harus menyediakan cara untuk melakukan I/O. [17, 18]\n- **Manipulasi Sistem File (File-system Manipulation):** Program perlu membaca dan menulis file dan direktori, membuat dan menghapusnya, mencari mereka, dan mengatur informasi izin. [17, 18]\n- **Komunikasi (Communication):** Pertukaran informasi antara proses, baik pada komputer yang sama atau melalui jaringan. Komunikasi dapat diimpleme",
-    "chunk_id": "p2_s7_sc0"
-  },
-  {
-    "pertemuan_id": 2,
-    "pertemuan_judul": "OS Components, Services, and Structure",
-    "original_heading": "## Layanan Sistem Operasi (OS Services) [17, 18]",
-    "chunk_text": "]\n- **Komunikasi (Communication):** Pertukaran informasi antara proses, baik pada komputer yang sama atau melalui jaringan. Komunikasi dapat diimplementasikan melalui shared memory atau message passing. [17, 18]\n- **Deteksi Error (Error Detection):** OS perlu terus-menerus menyadari kemungkinan error (pada CPU dan memori, perangkat I/O, program pengguna). Untuk setiap jenis error, OS harus mengambil tindakan yang sesuai untuk memastikan komputasi yang benar dan konsisten. [17, 18]",
-    "chunk_id": "p2_s7_sc1"
+    "chunk_id": "p2_s2_sc0"
   },
   {
     "pertemuan_id": 2,
     "pertemuan_judul": "OS Components, Services, and Structure",
     "original_heading": "## System Call [17, 19, 20]",
     "chunk_text": "- **Definisi:** System call adalah antarmuka yang disediakan oleh sistem operasi kepada program yang berjalan. Ini sering dianggap sebagai \"instruksi yang diperluas\" atau API (Application Programming Interface) ke kernel. [17]\n  System call memungkinkan program pengguna untuk meminta layanan dari sistem operasi.\n- **Posisi:** System call berada di antara program yang dapat dieksekusi (executable program) dan kernel sistem operasi. [17]\n  Ketika sebuah program memerlukan layanan kernel, ia melakukan system call, yang menyebabkan trap ke mode kernel, dan kernel kemudian mengeksekusi permintaan tersebut.\n- **Kategori System Call:** System call dapat dikelompokkan ke dalam beberapa kategori utama: [19, 20]\n  1.  **Kontrol Proses (Process Control):** Membuat, mengakhiri, memuat, mengeksekusi proses; mendapatkan/mengatur atribut proses; menunggu waktu atau event; mengalokasikan/membebaskan memori.\n  2.  **Manipulasi File (File Manipulation):** Membuat, menghapus, membuka, menutup, membaca, m",
-    "chunk_id": "p2_s9_sc0"
-  },
-  {
-    "pertemuan_id": 2,
-    "pertemuan_judul": "OS Components, Services, and Structure",
-    "original_heading": "## System Call [17, 19, 20]",
-    "chunk_text": "u waktu atau event; mengalokasikan/membebaskan memori.\n  2.  **Manipulasi File (File Manipulation):** Membuat, menghapus, membuka, menutup, membaca, menulis, memposisikan ulang file; mendapatkan/mengatur atribut file.\n  3.  **Manipulasi Perangkat (Device Manipulation):** Meminta, melepaskan, membaca, menulis, memposisikan ulang perangkat; mendapatkan/mengatur atribut perangkat; melampirkan/melepaskan perangkat secara logis.\n  4.  **Informasi Lingkungan (Environment Information):** Mendapatkan/mengatur waktu atau tanggal; mendapatkan/mengatur data sistem; mendapatkan/mengatur atribut proses, file, atau perangkat.\n  5.  **Komunikasi (Communication):** Membuat/menghapus koneksi komunikasi; mengirim/menerima pesan; mentransfer informasi status; melampirkan/melepaskan perangkat jarak jauh.",
-    "chunk_id": "p2_s9_sc1"
+    "chunk_id": "p2_s3_sc0"
   },
   {
     "pertemuan_id": 2,
     "pertemuan_judul": "OS Components, Services, and Structure",
     "original_heading": "## Model Komunikasi Antar Proses [20, 21]",
     "chunk_text": "Dua model dasar komunikasi antar proses (Inter-Process Communication - IPC):\n- **Model Pertukaran Pesan (Message-passing Model):** [20, 21]\n  Proses berkomunikasi dengan bertukar pesan. Tidak ada variabel bersama. Mudah diimplementasikan tetapi bisa lebih lambat karena melibatkan pemanggilan kernel.\n- **Model Memori Bersama (Shared-memory Model):** [21]\n  Proses berkomunikasi dengan membaca dan menulis ke area memori yang dibagikan. Lebih cepat karena tidak ada pemanggilan kernel setelah setup, tetapi programmer bertanggung jawab atas sinkronisasi untuk menghindari konflik.",
-    "chunk_id": "p2_s11_sc0"
+    "chunk_id": "p2_s4_sc0"
   },
   {
     "pertemuan_id": 2,
     "pertemuan_judul": "OS Components, Services, and Structure",
     "original_heading": "## Program Sistem (System Programs) [21, 22]",
     "chunk_text": "Program sistem menyediakan lingkungan yang nyaman untuk pengembangan dan eksekusi program. Beberapa kategori program sistem adalah:\n- **Manipulasi File:** Membuat, menghapus, menyalin, mengganti nama, mencetak, membuang, mendaftar, dan umumnya memanipulasi file dan direktori.\n- **Informasi Status:** Beberapa program hanya meminta sistem untuk informasi tentang tanggal, waktu, jumlah memori atau disk yang tersedia, jumlah pengguna, atau informasi status serupa.\n- **Modifikasi File:** Beberapa editor teks tersedia untuk membuat dan memodifikasi konten file yang disimpan di disk atau tape.\n- **Dukungan Bahasa Pemrograman:** Compiler, assembler, debugger, dan interpreter untuk bahasa pemrograman umum sering disediakan bersama OS.\n- **Eksekusi Program:** OS menyediakan loader untuk memuat program ke memori dan linker untuk menggabungkan pustaka.\n- **Komunikasi:** Program ini menyediakan mekanisme untuk membuat koneksi virtual di antara proses, pengguna, dan sistem komputer yang berbeda.\n- *",
-    "chunk_id": "p2_s13_sc0"
-  },
-  {
-    "pertemuan_id": 2,
-    "pertemuan_judul": "OS Components, Services, and Structure",
-    "original_heading": "## Program Sistem (System Programs) [21, 22]",
-    "chunk_text": "a.\n- **Komunikasi:** Program ini menyediakan mekanisme untuk membuat koneksi virtual di antara proses, pengguna, dan sistem komputer yang berbeda.\n- **Program Aplikasi:** Selain program sistem, sebagian besar sistem operasi juga dilengkapi dengan program aplikasi yang berguna bagi pengguna (misalnya, browser web, email client, game).",
-    "chunk_id": "p2_s13_sc1"
+    "chunk_id": "p2_s5_sc0"
   },
   {
     "pertemuan_id": 2,
     "pertemuan_judul": "OS Components, Services, and Structure",
     "original_heading": "## Struktur Sistem Operasi [22-30]",
     "chunk_text": "Struktur internal sistem operasi dapat sangat bervariasi:\n- **Struktur Sederhana (Simple Structure):** [22, 23]\n  Banyak sistem operasi komersial tidak memiliki struktur yang terdefinisi dengan baik. Sistem dimulai sebagai sistem kecil, sederhana, dan terbatas, lalu tumbuh melampaui cakupan aslinya.\n  Contoh: MS-DOS (ditulis untuk menyediakan fungsionalitas paling banyak dalam ruang paling sedikit, tidak terlalu terbagi menjadi modul). Kernel Minix, Qemu.\n- **Sistem Monolitik (Monolithic System):** [23-25]\n  Ini adalah struktur yang paling umum. Kernel adalah program besar dan tunggal yang berisi semua layanan OS. Meskipun ada beberapa struktur internal (misalnya, pemisahan rutin layanan, rutin utilitas), semua komponen berjalan dalam mode kernel.\n  Fitur: Menggunakan mode ganda (dual-mode operation) untuk proteksi. System call diimplementasikan menggunakan instruksi trap.\n  Contoh: UNIX tradisional, Linux, MS-DOS (meskipun tidak sepenuhnya monolitik dalam arti modern).\n- **Sistem Berl",
-    "chunk_id": "p2_s_last_sc0"
+    "chunk_id": "p2_s6_sc0"
   },
   {
-    "pertemuan_id": 2,
-    "pertemuan_judul": "OS Components, Services, and Structure",
-    "original_heading": "## Struktur Sistem Operasi [22-30]",
-    "chunk_text": "tasikan menggunakan instruksi trap.\n  Contoh: UNIX tradisional, Linux, MS-DOS (meskipun tidak sepenuhnya monolitik dalam arti modern).\n- **Sistem Berlapis (Layered System):** [25-28]\n  Sistem operasi dibagi menjadi beberapa lapisan (layer), masing-masing dibangun di atas lapisan yang lebih rendah. Lapisan terbawah adalah perangkat keras; lapisan teratas adalah antarmuka pengguna.\n  Keuntungan: Modularitas, penyederhanaan debugging dan verifikasi sistem.\n  Kekurangan: Sulit untuk mendefinisikan lapisan-lapisan dengan benar, cenderung kurang efisien karena overhead antar lapisan.\n  Contoh: Sistem THE (Edsger Dijkstra), MULTICS, VENUS, OS/2.\n- **Mesin Virtual (Virtual Machines):** [28, 29]\n  Pendekatan ini mengambil konsep layered ke kesimpulan logisnya. Ia memperlakukan perangkat keras dan antarmuka kernel seolah-olah keduanya adalah perangkat keras.\n  OS membuat ilusi beberapa proses, masing-masing menjalankan prosesornya sendiri dengan memorinya sendiri (virtual). Setiap pengguna diber",
-    "chunk_id": "p2_s_last_sc1"
-  },
-  {
-    "pertemuan_id": 2,
-    "pertemuan_judul": "OS Components, Services, and Structure",
-    "original_heading": "## Struktur Sistem Operasi [22-30]",
-    "chunk_text": "kat keras.\n  OS membuat ilusi beberapa proses, masing-masing menjalankan prosesornya sendiri dengan memorinya sendiri (virtual). Setiap pengguna diberikan simulasi mesin nyata.\n  Contoh: CP/CMS pada IBM, VM/370, VMware, VirtualBox.\n- **Model Klien-Server (Client-Server Model):** [29, 30]\n  Struktur ini memindahkan sebanyak mungkin fungsionalitas dari kernel ke dalam proses pengguna (server). Kernel hanya menyediakan mekanisme komunikasi dasar antar klien dan server.\n  Klien meminta layanan, dan server menyediakan layanan tersebut. Komunikasi biasanya melalui pertukaran pesan.\n  Keuntungan: Modularitas, kernel lebih kecil (mikrokernel), lebih mudah diperluas.\n  Contoh: Sistem operasi berbasis mikrokernel seperti Mach, QNX.",
-    "chunk_id": "p2_s_last_sc2"
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Process Management",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 3: Process Management",
+    "chunk_id": "p3_s0_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Konsep Proses [31, 32]",
     "chunk_text": "- **Definisi Proses:** Proses adalah program yang sedang dalam eksekusi. [31] Ini lebih dari sekadar kode program (kadang disebut text section); ia juga mencakup aktivitas saat ini, yang direpresentasikan oleh nilai program counter dan isi register prosesor.\n- **Komponen Proses:** Sebuah proses umumnya mencakup: [31]\n  - Program Counter: Menunjukkan instruksi berikutnya yang akan dieksekusi.\n  - Isi Register CPU: Nilai-nilai register saat itu.\n  - Stack Proses: Berisi data sementara (parameter fungsi, alamat kembali, variabel lokal).\n  - Data Section: Berisi variabel global.\n  - Heap: Memori yang dialokasikan secara dinamis selama runtime proses.\n- **Kebutuhan Sumber Daya:** Proses membutuhkan sumber daya tertentu untuk menyelesaikan tugasnya, seperti waktu CPU, memori, file, dan perangkat I/O. [31]\n- **Peran OS dalam Manajemen Proses:** Sistem operasi bertanggung jawab untuk mengelola proses-proses ini dan mengalokasikan sumber daya yang mereka butuhkan. [31]\n- **Prinsip-Prinsip Prose",
-    "chunk_id": "p3_s5_sc0"
-  },
-  {
-    "pertemuan_id": 3,
-    "pertemuan_judul": "Process Management",
-    "original_heading": "## Konsep Proses [31, 32]",
-    "chunk_text": "Sistem operasi bertanggung jawab untuk mengelola proses-proses ini dan mengalokasikan sumber daya yang mereka butuhkan. [31]\n- **Prinsip-Prinsip Proses:** [31, 32]\n  - Proses adalah entitas yang independen.\n  - Pada satu instan waktu, hanya satu program (bagian dari proses) yang dapat dieksekusi pada satu prosesor.",
-    "chunk_id": "p3_s5_sc1"
+    "chunk_id": "p3_s1_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Model Proses [32, 35, 36]",
     "chunk_text": "Model bagaimana OS menangani banyak proses:\n- **Multiprogramming / Multitasking (pada satu prosesor):** [32-34]\n  OS mengelola banyak proses di memori secara bersamaan. CPU beralih antar proses dengan cepat (biasanya puluhan atau ratusan kali per detik). Ini memberikan ilusi paralelisme (pseudoparallelism) pada sistem dengan satu CPU. Tujuannya adalah untuk memaksimalkan utilisasi CPU dengan selalu memiliki sesuatu untuk dijalankan.\n- **Multiprocessing (pada komputer multiprosesor):** [35]\n  OS mengelola banyak proses pada komputer yang memiliki lebih dari satu CPU (multiprocessor). Ini memungkinkan paralelisme sejati, di mana beberapa proses dapat berjalan secara bersamaan pada CPU yang berbeda.\n- **Distributed Processing (Pemrosesan Terdistribusi):** [36]\n  OS mengelola proses-proses yang berjalan pada komputer-komputer yang terpisah secara fisik dan terhubung melalui jaringan.",
-    "chunk_id": "p3_s7_sc0"
+    "chunk_id": "p3_s2_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Status Proses (Process Status) [36]",
     "chunk_text": "Selama eksekusinya, sebuah proses dapat berada dalam salah satu dari beberapa status berikut:\n- **New (Baru):** Proses sedang dibuat.\n- **Running (Berjalan):** Instruksi sedang dieksekusi pada CPU.\n- **Waiting (Menunggu) / Blocked:** Proses sedang menunggu suatu event terjadi (misalnya, penyelesaian I/O atau penerimaan sinyal).\n- **Ready (Siap):** Proses sedang menunggu untuk dialokasikan ke prosesor oleh scheduler.\n- **Terminated (Selesai):** Proses telah selesai dieksekusi.",
-    "chunk_id": "p3_s9_sc0"
+    "chunk_id": "p3_s3_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Transisi Status Proses [36-38]",
     "chunk_text": "Proses berpindah antar status selama siklus hidupnya:\n- **New -> Ready:** Setelah proses dibuat dan OS siap untuk menerimanya, ia masuk ke antrian ready.\n- **Ready -> Running:** Scheduler memilih proses dari antrian ready untuk dieksekusi di CPU.\n- **Running -> Waiting (Blocked):** Proses meminta I/O, atau menunggu event lain.\n- **Running -> Ready:** Jatah waktu (quantum) proses habis (pada sistem time-sharing), atau proses dengan prioritas lebih tinggi datang (pada sistem preemptive).\n- **Running -> Terminated:** Proses selesai eksekusi atau dihentikan oleh OS.\n- **Waiting -> Ready:** Event yang ditunggu oleh proses telah terjadi (misalnya, I/O selesai).",
-    "chunk_id": "p3_s11_sc0"
+    "chunk_id": "p3_s4_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Process Control Block (PCB) [38, 39]",
     "chunk_text": "Setiap proses direpresentasikan dalam sistem operasi oleh Process Control Block (PCB), juga dikenal sebagai Task Control Block. PCB berisi banyak informasi yang terkait dengan proses spesifik, termasuk:\n- **Status Proses:** Status saat ini (New, Ready, Running, Waiting, Terminated). [38]\n- **Program Counter:** Alamat instruksi berikutnya yang akan dieksekusi untuk proses ini. [38]\n- **Register CPU:** Isi semua register CPU yang terkait dengan proses (accumulator, index registers, stack pointers, general-purpose registers, dll.). [38]\n- **Informasi Penjadwalan CPU (CPU-Scheduling Information):** Prioritas proses, pointer ke antrian penjadwalan, dan parameter penjadwalan lainnya. [38]\n- **Informasi Manajemen Memori (Memory-Management Information):** Informasi seperti nilai register batas dan dasar, tabel page, atau tabel segmen, tergantung pada sistem memori yang digunakan oleh OS. [38]\n- **Informasi Akuntansi (Accounting Information):** Jumlah CPU dan waktu riil yang digunakan, batas wa",
-    "chunk_id": "p3_s13_sc0"
-  },
-  {
-    "pertemuan_id": 3,
-    "pertemuan_judul": "Process Management",
-    "original_heading": "## Process Control Block (PCB) [38, 39]",
-    "chunk_text": "pada sistem memori yang digunakan oleh OS. [38]\n- **Informasi Akuntansi (Accounting Information):** Jumlah CPU dan waktu riil yang digunakan, batas waktu, nomor akun, nomor job atau proses, dll. [38]\n- **Informasi Status I/O (I/O Status Information):** Daftar perangkat I/O yang dialokasikan ke proses, daftar file yang terbuka, dll. [38]\nPCB berfungsi sebagai repositori untuk setiap informasi yang mungkin bervariasi dari proses ke proses. [39]",
-    "chunk_id": "p3_s13_sc1"
+    "chunk_id": "p3_s5_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## CPU Switch (Peralihan CPU dari Proses ke Proses) [40]",
     "chunk_text": "Ketika CPU beralih dari satu proses ke proses lain, OS harus menyimpan status proses lama (dari PCB-nya) dan memuat status proses baru yang disimpan (ke PCB-nya). Operasi ini dikenal sebagai context switch.",
-    "chunk_id": "p3_s15_sc0"
+    "chunk_id": "p3_s6_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Dasar-Dasar Penjadwalan Proses [40, 41]",
-    "chunk_text": "- **Antrian Penjadwalan (Scheduling Queues):** [40]\n  - **Job queue:** Semua proses dalam sistem.\n  - **Ready queue:** Proses-proses yang berada di memori utama, siap dan menunggu untuk dieksekusi. Antrian ini umumnya disimpan sebagai linked list.\n  - **Device queues:** Daftar proses yang menunggu perangkat I/O tertentu. Setiap perangkat memiliki antrian perangkatnya sendiri.\n- **Schedulers (Penjadwal):** [41]\n  - **Long-term scheduler (atau job scheduler):** Memilih proses dari job pool (di disk) dan memuatnya ke memori untuk dieksekusi (ke ready queue). Mengontrol tingkat multiprogramming. Jarang dieksekusi.\n  - **Short-term scheduler (atau CPU scheduler):** Memilih proses dari ready queue dan mengalokasikan CPU ke salah satunya. Harus sangat cepat karena sering dieksekusi.\n- **Context Switch:** [41]\n  Proses peralihan CPU ke proses lain memerlukan penyimpanan state proses saat ini dan pemulihan state proses berikutnya. Waktu context switch adalah overhead murni, karena sistem tidak",
-    "chunk_id": "p3_s17_sc0"
-  },
-  {
-    "pertemuan_id": 3,
-    "pertemuan_judul": "Process Management",
-    "original_heading": "## Dasar-Dasar Penjadwalan Proses [40, 41]",
-    "chunk_text": "n memerlukan penyimpanan state proses saat ini dan pemulihan state proses berikutnya. Waktu context switch adalah overhead murni, karena sistem tidak melakukan pekerjaan yang berguna selama peralihan. Kecepatan context switch sangat bervariasi dari mesin ke mesin.",
-    "chunk_id": "p3_s17_sc1"
+    "chunk_text": "- **Antrian Penjadwalan (Scheduling Queues):** [40]\n  - **Job queue:** Semua proses dalam sistem.\n  - **Ready queue:** Proses-proses yang berada di memori utama, siap dan menunggu untuk dieksekusi. Antrian ini umumnya disimpan sebagai linked list.\n  - **Device queues:** Daftar proses yang menunggu perangkat I/O tertentu. Setiap perangkat memiliki antrian perangkatnya sendiri.\n- **Schedulers (Penjadwal):** [41]\n  - **Long-term scheduler (atau job scheduler):** Memilih proses dari job pool (di disk) dan memuatnya ke memori untuk dieksekusi (ke ready queue). Mengontrol tingkat multiprogramming. Jarang dieksekusi.\n  - **Short-term scheduler (atau CPU scheduler):** Memilih proses dari ready queue dan mengalokasikan CPU ke salah satunya. Harus sangat cepat karena sering dieksekusi.\n- **Context Switch:** [41]\n  Proses peralihan CPU ke proses lain memerlukan penyimpanan state proses saat ini dan pemulihan state proses berikutnya. Waktu context switch adalah overhead murni, karena sistem tidak ",
+    "chunk_id": "p3_s7_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Operasi pada Proses: Pembuatan Proses (Process Creation) [41-45]",
-    "chunk_text": "- **Langkah-langkah Pembuatan Proses:** [41, 42]\n  1. Memberikan identitas unik (Process ID).\n  2. Memasukkan proses ke dalam daftar proses sistem.\n  3. Menentukan prioritas awal proses.\n  4. Membuat Process Control Block (PCB).\n  5. Mengalokasikan sumber daya awal untuk proses.\n- **Event yang Menyebabkan Pembuatan Proses:** [42, 43]\n  - Pengiriman job batch baru.\n  - Login pengguna interaktif.\n  - Respons sistem operasi terhadap aplikasi (misalnya, mencetak file, OS membuat proses untuk itu).\n  - Sebuah proses menciptakan proses lain (child process).\n- **Hubungan Parent-Child:** [43-45]\n  Proses yang membuat proses baru disebut parent process, dan proses baru disebut child process. Child process sendiri dapat membuat proses lain, membentuk pohon proses.\n  - **Pembagian Sumber Daya:** Parent dan child dapat berbagi semua sumber daya, atau child hanya berbagi sebagian sumber daya parent, atau tidak berbagi sama sekali.\n  - **Opsi Eksekusi:** Parent melanjutkan eksekusi secara bersamaan",
-    "chunk_id": "p3_s19_sc0"
-  },
-  {
-    "pertemuan_id": 3,
-    "pertemuan_judul": "Process Management",
-    "original_heading": "## Operasi pada Proses: Pembuatan Proses (Process Creation) [41-45]",
-    "chunk_text": "child hanya berbagi sebagian sumber daya parent, atau tidak berbagi sama sekali.\n  - **Opsi Eksekusi:** Parent melanjutkan eksekusi secara bersamaan dengan child, atau parent menunggu hingga child selesai.\n  - **Opsi Ruang Alamat:** Child merupakan duplikat dari parent (memiliki program dan data yang sama), atau child memiliki program baru yang dimuat ke dalamnya.\n  - Contoh di UNIX: System call `fork()` membuat child process yang merupakan duplikat parent. `exec()` kemudian bisa digunakan oleh child untuk mengganti image memorinya dengan program baru. Parent bisa menunggu child selesai dengan `wait()`.\n  - Contoh di MS-DOS: Tidak ada konsep parent-child yang jelas; proses memuat program lain dan memberikan kontrol padanya.",
-    "chunk_id": "p3_s19_sc1"
+    "chunk_text": "- **Langkah-langkah Pembuatan Proses:** [41, 42]\n  1. Memberikan identitas unik (Process ID).\n  2. Memasukkan proses ke dalam daftar proses sistem.\n  3. Menentukan prioritas awal proses.\n  4. Membuat Process Control Block (PCB).\n  5. Mengalokasikan sumber daya awal untuk proses.\n- **Event yang Menyebabkan Pembuatan Proses:** [42, 43]\n  - Pengiriman job batch baru.\n  - Login pengguna interaktif.\n  - Respons sistem operasi terhadap aplikasi (misalnya, mencetak file, OS membuat proses untuk itu).\n  - Sebuah proses menciptakan proses lain (child process).\n- **Hubungan Parent-Child:** [43-45]\n  Proses yang membuat proses baru disebut parent process, dan proses baru disebut child process. Child process sendiri dapat membuat proses lain, membentuk pohon proses.\n  - **Pembagian Sumber Daya:** Parent dan child dapat berbagi semua sumber daya, atau child hanya berbagi sebagian sumber daya parent, atau tidak berbagi sama sekali.\n  - **Opsi Eksekusi:** Parent melanjutkan eksekusi secara bersamaan ",
+    "chunk_id": "p3_s8_sc0"
   },
   {
     "pertemuan_id": 3,
     "pertemuan_judul": "Process Management",
     "original_heading": "## Inter-Process Communication (IPC) [45-48]",
     "chunk_text": "Mekanisme bagi proses untuk berkomunikasi dan mensinkronkan tindakan mereka.\n- **Komunikasi Langsung (Direct Communication):** [45, 46]\n  Setiap proses yang ingin berkomunikasi harus secara eksplisit menamai penerima atau pengirim komunikasi.\n  - `send(P, message)` – kirim pesan ke proses P.\n  - `receive(Q, message)` – terima pesan dari proses Q.\n  - **Properti Koneksi:** Koneksi dibuat secara otomatis, terkait dengan tepat dua proses, dan hanya ada satu koneksi antara setiap pasangan proses.\n- **Komunikasi Tidak Langsung (Indirect Communication):** [46, 47]\n  Pesan dikirim ke dan diterima dari mailbox (juga disebut port). Mailbox adalah objek tempat pesan dapat ditempatkan oleh proses dan dari mana pesan dapat dihapus.\n  - `send(A, message)` – kirim pesan ke mailbox A.\n  - `receive(A, message)` – terima pesan dari mailbox A.\n  - **Properti Koneksi:** Koneksi dibuat hanya jika proses berbagi mailbox bersama, dapat dikaitkan dengan lebih dari dua proses, dan beberapa koneksi berbeda dap",
-    "chunk_id": "p3_s_last_sc0"
+    "chunk_id": "p3_s9_sc0"
   },
   {
-    "pertemuan_id": 3,
-    "pertemuan_judul": "Process Management",
-    "original_heading": "## Inter-Process Communication (IPC) [45-48]",
-    "chunk_text": "ti Koneksi:** Koneksi dibuat hanya jika proses berbagi mailbox bersama, dapat dikaitkan dengan lebih dari dua proses, dan beberapa koneksi berbeda dapat ada antara setiap pasangan proses (masing-masing sesuai dengan satu mailbox).\n  - **Operasi Mailbox:** Membuat mailbox baru, mengirim/menerima pesan melalui mailbox, menghapus mailbox.\n- **Buffering:** [47, 48]\n  Tempat penyimpanan sementara untuk pesan yang dipertukarkan. Implementasi antrian buffer:\n  - **Zero Capacity (Kapasitas Nol):** Pengirim harus menunggu hingga penerima siap (rendezvous). Tidak ada pesan yang di-buffer.\n  - **Bounded Capacity (Kapasitas Terbatas):** Buffer memiliki panjang n. Pengirim dapat mengirim hingga n pesan; jika buffer penuh, pengirim harus menunggu.\n  - **Unbounded Capacity (Kapasitas Tidak Terbatas):** Pengirim tidak pernah menunggu. Buffer secara teoretis tidak terbatas.",
-    "chunk_id": "p3_s_last_sc1"
+    "pertemuan_id": 4,
+    "pertemuan_judul": "CPU Scheduling Algorithms",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 4: CPU Scheduling Concepts and Algorithms",
+    "chunk_id": "p4_s0_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "## Konsep Dasar Penjadwalan CPU [49, 50]",
     "chunk_text": "- **Multiprogramming/Multitasking:** Tujuan utama penjadwalan CPU adalah untuk meningkatkan utilisasi CPU dengan menjaga CPU sesibuk mungkin. Dalam sistem multiprogramming, selalu ada beberapa proses di memori. Ketika satu proses harus menunggu (misalnya, untuk I/O), OS mengambil CPU dari proses itu dan memberikannya ke proses lain. [49]\n- **Siklus CPU-I/O Burst (CPU-I/O Burst Cycle):** Eksekusi proses terdiri dari siklus eksekusi CPU (CPU burst) dan penungguan I/O (I/O burst). Proses bergantian antara dua state ini. Eksekusi proses dimulai dengan CPU burst, diikuti oleh I/O burst, lalu CPU burst lagi, dan seterusnya, hingga CPU burst terakhir yang mengakhiri eksekusi. [49, 50] Durasi CPU burst sangat bervariasi antar proses dan antar program.",
-    "chunk_id": "p4_s5_sc0"
+    "chunk_id": "p4_s1_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "## Penjadwalan CPU (CPU Scheduling) [50, 51]",
     "chunk_text": "- **Peran Short-term Scheduler (CPU Scheduler):** Setiap kali CPU menjadi idle, sistem operasi harus memilih salah satu proses di ready queue untuk dieksekusi. Prosedur pemilihan dilakukan oleh short-term scheduler (atau CPU scheduler). Scheduler memilih dari antara proses-proses di memori yang siap untuk dieksekusi dan mengalokasikan CPU ke salah satunya. [50]\n- **Kapan Penjadwalan Terjadi (Triggers for Scheduling):** Keputusan penjadwalan CPU dapat terjadi dalam keadaan berikut: [50, 51]\n  1.  Ketika sebuah proses beralih dari state Running ke state Waiting (misalnya, sebagai hasil dari permintaan I/O, atau pemanggilan `wait()` untuk terminasi salah satu child process).\n  2.  Ketika sebuah proses beralih dari state Running ke state Ready (misalnya, ketika terjadi interupsi timer).\n  3.  Ketika sebuah proses beralih dari state Waiting ke state Ready (misalnya, pada penyelesaian I/O).\n  4.  Ketika sebuah proses terminasi.",
-    "chunk_id": "p4_s7_sc0"
+    "chunk_id": "p4_s2_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "## Penjadwalan Preemptive dan Non-preemptive [51]",
     "chunk_text": "Berdasarkan kapan keputusan penjadwalan terjadi (merujuk pada 4 trigger di atas):\n- **Non-preemptive Scheduling (Kooperatif):** Jika penjadwalan hanya terjadi pada kondisi 1 dan 4. Sekali CPU telah dialokasikan ke sebuah proses, proses tersebut akan memegang CPU sampai ia melepaskannya, baik dengan terminasi atau dengan beralih ke state Waiting.\n- **Preemptive Scheduling:** Jika penjadwalan dapat terjadi pada keempat kondisi. Ini berarti CPU dapat diambil dari proses yang sedang berjalan (misalnya, karena ada proses dengan prioritas lebih tinggi yang masuk ke ready queue, atau karena jatah waktu proses saat ini habis). Preemption memerlukan mekanisme untuk menangani akses data bersama.",
-    "chunk_id": "p4_s9_sc0"
+    "chunk_id": "p4_s3_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "## Kriteria Penjadwalan (Scheduling Criteria) [51-53]",
     "chunk_text": "Beberapa kriteria berbeda digunakan untuk membandingkan algoritma penjadwalan CPU. Kriteria mana yang dipilih bergantung pada tujuan sistem.\n- **CPU Utilization (Utilisasi CPU):** [51] Menjaga CPU sesibuk mungkin. Secara konseptual, utilisasi CPU dapat berkisar dari 0 hingga 100 persen. Dalam sistem nyata, seharusnya berkisar dari 40% (untuk sistem lightly loaded) hingga 90% (untuk sistem heavily used).\n- **Throughput:** [51] Ukuran kerja yang dilakukan. Jumlah proses yang selesai dieksekusi per unit waktu. Untuk proses panjang, throughput mungkin satu proses per jam; untuk proses pendek, throughput mungkin puluhan proses per detik.\n- **Turnaround Time:** [52] Waktu yang dibutuhkan untuk mengeksekusi proses tertentu. Ini adalah interval dari waktu pengiriman (submission) proses hingga waktu penyelesaian proses. Turnaround time adalah jumlah periode yang dihabiskan untuk menunggu masuk ke memori, menunggu di ready queue, dieksekusi di CPU, dan melakukan I/O.\n- **Waiting Time (Waktu Tung",
-    "chunk_id": "p4_s11_sc0"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "## Kriteria Penjadwalan (Scheduling Criteria) [51-53]",
-    "chunk_text": "ah periode yang dihabiskan untuk menunggu masuk ke memori, menunggu di ready queue, dieksekusi di CPU, dan melakukan I/O.\n- **Waiting Time (Waktu Tunggu):** [52] Jumlah waktu sebuah proses menunggu di ready queue. Algoritma penjadwalan CPU tidak mempengaruhi jumlah waktu proses dieksekusi atau melakukan I/O; ia hanya mempengaruhi jumlah waktu yang dihabiskan proses menunggu di ready queue.\n- **Response Time (Waktu Respons):** [52] Dalam sistem interaktif (time-sharing), turnaround time mungkin bukan metrik terbaik. Metrik yang lebih baik adalah waktu dari pengiriman permintaan hingga respons pertama dihasilkan (bukan output akhir). Ini adalah waktu yang dibutuhkan untuk mulai merespons, bukan waktu yang dibutuhkan untuk mengeluarkan respons tersebut.\n- **Fairness (Keadilan):** [52, 53] Memastikan bahwa setiap proses mendapatkan bagian yang adil dari waktu CPU dan tidak ada proses yang mengalami starvation (tidak pernah dijalankan).\nUmumnya, diinginkan untuk memaksimalkan utilisasi CPU",
-    "chunk_id": "p4_s11_sc1"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "## Kriteria Penjadwalan (Scheduling Criteria) [51-53]",
-    "chunk_text": "g adil dari waktu CPU dan tidak ada proses yang mengalami starvation (tidak pernah dijalankan).\nUmumnya, diinginkan untuk memaksimalkan utilisasi CPU dan throughput, dan meminimalkan turnaround time, waiting time, dan response time. Seringkali, optimasi satu kriteria dapat menurunkan performa kriteria lain.\n- **Average Waiting Time (AWT):** [53] Seringkali menjadi metrik utama untuk evaluasi, yaitu rata-rata waktu tunggu semua proses.",
-    "chunk_id": "p4_s11_sc2"
+    "chunk_id": "p4_s4_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "## Algoritma Penjadwalan Spesifik [53]",
     "chunk_text": "Berikut adalah beberapa algoritma penjadwalan yang umum:\n- First-Come, First-Served (FCFS)\n- Shortest-Job-First (SJF)\n- Priority Scheduling\n- Round-Robin (RR)",
-    "chunk_id": "p4_s13_sc0"
+    "chunk_id": "p4_s5_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "### First-Come, First-Served (FCFS) [53, 54]",
     "chunk_text": "- **Konsep:** Proses yang meminta CPU pertama kali akan dilayani pertama kali. [53, 54] Implementasi paling sederhana menggunakan antrian FIFO (First-In, First-Out). Ketika sebuah proses masuk ke ready queue, PCB-nya ditautkan ke akhir antrian. Ketika CPU bebas, ia dialokasikan ke proses di awal antrian.\n- **Sifat:** Non-preemptive. Sekali CPU diberikan ke suatu proses, proses tersebut akan menjalankannya hingga selesai atau melakukan permintaan I/O.\n- **Kelemahan:** Average waiting time (AWT) seringkali cukup panjang. Efek konvoi (convoy effect) dapat terjadi jika proses dengan burst time panjang datang lebih dulu dan membuat proses-proses pendek di belakangnya menunggu lama. Tidak cocok untuk sistem time-sharing.\n- **Contoh Perhitungan FCFS:** [54]\n  Misalkan proses datang dalam urutan P1, P2, P3 pada waktu 0 dengan burst time:\n  P1: 24 ms\n  P2: 3 ms\n  P3: 3 ms\n  Gantt Chart:\n  | P1 (0-24) | P2 (24-27) | P3 (27-30) |\n  Waiting time: P1 = 0; P2 = 24; P3 = 27\n  Average Waiting Time (AW",
-    "chunk_id": "p4_s15_sc0"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "### First-Come, First-Served (FCFS) [53, 54]",
-    "chunk_text": "ms\n  P2: 3 ms\n  P3: 3 ms\n  Gantt Chart:\n  | P1 (0-24) | P2 (24-27) | P3 (27-30) |\n  Waiting time: P1 = 0; P2 = 24; P3 = 27\n  Average Waiting Time (AWT) = (0 + 24 + 27) / 3 = 17 ms.\n  Jika proses datang dalam urutan P2, P3, P1:\n  Gantt Chart:\n  | P2 (0-3) | P3 (3-6) | P1 (6-30) |\n  Waiting time: P2 = 0; P3 = 3; P1 = 6\n  AWT = (0 + 3 + 6) / 3 = 3 ms. (Hasil jauh lebih baik)",
-    "chunk_id": "p4_s15_sc1"
+    "chunk_id": "p4_s6_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "### Shortest-Job-First (SJF) [54-57]",
-    "chunk_text": "- **Konsep:** Algoritma ini mengasosiasikan setiap proses dengan panjang CPU burst berikutnya. Ketika CPU bebas, ia dialokasikan ke proses yang memiliki CPU burst berikutnya terkecil. Jika dua proses memiliki panjang burst berikutnya yang sama, penjadwalan FCFS digunakan. [54]\n- **Optimalitas:** SJF optimal dalam arti ia memberikan average waiting time minimum untuk sekumpulan proses tertentu.\n- **Skema:** [55]\n  - **Non-preemptive SJF:** Sekali CPU diberikan ke proses, ia tidak dapat di-preempt hingga CPU burst-nya selesai.\n  - **Preemptive SJF (Shortest-Remaining-Time-First - SRTF):** Jika proses baru tiba di ready queue dengan panjang CPU burst berikutnya lebih pendek dari sisa waktu proses yang sedang dieksekusi saat ini, proses yang sedang berjalan di-preempt.\n- **Contoh Perhitungan SJF (Non-preemptive):** [55]\n  Proses | Waktu Kedatangan | Burst Time\n  ------- | ----------------- | ----------\n  P1      | 0.0               | 7\n  P2      | 2.0               | 4\n  P3      | 4.0",
-    "chunk_id": "p4_s17_sc0"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "### Shortest-Job-First (SJF) [54-57]",
-    "chunk_text": "angan | Burst Time\n  ------- | ----------------- | ----------\n  P1      | 0.0               | 7\n  P2      | 2.0               | 4\n  P3      | 4.0               | 1\n  P4      | 5.0               | 4\n  Gantt Chart:\n  | P1 (0-7) | P3 (7-8) | P2 (8-12) | P4 (12-16) |\n  Waiting time: P1=0, P2=(8-2)=6, P3=(7-4)=3, P4=(12-5)=7\n  AWT = (0+6+3+7)/4 = 4 ms.\n- **Contoh Perhitungan SRTF (Preemptive SJF):** [56]\n  Proses | Waktu Kedatangan | Burst Time\n  ------- | ----------------- | ----------\n  P1      | 0                 | 8\n  P2      | 1                 | 4\n  P3      | 2                 | 9\n  P4      | 3                 | 5\n  Gantt Chart:\n  | P1(0-1) | P2(1-5) | P4(5-10) | P1(10-17) | P3(17-26) |\n  Waiting time: P1=(10-1)=9, P2=(1-1)=0, P3=(17-2)=15, P4=(5-3)=2\n  AWT = (9+0+15+2)/4 = 6.5 ms.\n- **Kesulitan Implementasi SJF:** Kesulitan utama adalah mengetahui panjang CPU burst berikutnya. Untuk penjadwalan short-term, tidak ada cara untuk mengetahui panjang CPU burst berikutnya. [56]\n- **Prediks",
-    "chunk_id": "p4_s17_sc1"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "### Shortest-Job-First (SJF) [54-57]",
-    "chunk_text": "mengetahui panjang CPU burst berikutnya. Untuk penjadwalan short-term, tidak ada cara untuk mengetahui panjang CPU burst berikutnya. [56]\n- **Prediksi CPU Burst Berikutnya:** Salah satu pendekatan adalah dengan mencoba memprediksi. Ini dapat dilakukan dengan menggunakan panjang CPU burst sebelumnya. Pendekatan yang umum adalah **exponential average** dari CPU burst sebelumnya. [56, 57]\n  Formula: τ<sub>n+1</sub> = α * t<sub>n</sub> + (1 - α) * τ<sub>n</sub>\n  Di mana t<sub>n</sub> adalah panjang CPU burst ke-n, dan τ<sub>n+1</sub> adalah nilai prediksi untuk CPU burst berikutnya. α adalah parameter (0 ≤ α ≤ 1) yang mengontrol bobot relatif dari histori terkini dan histori masa lalu.",
-    "chunk_id": "p4_s17_sc2"
+    "chunk_text": "- **Konsep:** Algoritma ini mengasosiasikan setiap proses dengan panjang CPU burst berikutnya. Ketika CPU bebas, ia dialokasikan ke proses yang memiliki CPU burst berikutnya terkecil. Jika dua proses memiliki panjang burst berikutnya yang sama, penjadwalan FCFS digunakan. [54]\n- **Optimalitas:** SJF optimal dalam arti ia memberikan average waiting time minimum untuk sekumpulan proses tertentu.\n- **Skema:** [55]\n  - **Non-preemptive SJF:** Sekali CPU diberikan ke proses, ia tidak dapat di-preempt hingga CPU burst-nya selesai.\n  - **Preemptive SJF (Shortest-Remaining-Time-First - SRTF):** Jika proses baru tiba di ready queue dengan panjang CPU burst berikutnya lebih pendek dari sisa waktu proses yang sedang dieksekusi saat ini, proses yang sedang berjalan di-preempt.\n- **Contoh Perhitungan SJF (Non-preemptive):** [55]\n  Proses | Waktu Kedatangan | Burst Time\n  ------- | ----------------- | ----------\n  P1      | 0.0               | 7\n  P2      | 2.0               | 4\n  P3      | 4.0     ",
+    "chunk_id": "p4_s7_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "### Priority Scheduling [57-59]",
-    "chunk_text": "- **Konsep:** Setiap proses diasosiasikan dengan sebuah prioritas, dan CPU dialokasikan ke proses dengan prioritas tertinggi. Proses dengan prioritas sama dijadwalkan dengan FCFS. [57, 58] Prioritas biasanya direpresentasikan dengan angka integer (misalnya, angka kecil = prioritas tinggi).\n- **Skema:** [58]\n  - **Non-preemptive Priority Scheduling.**\n  - **Preemptive Priority Scheduling:** Jika proses baru tiba dengan prioritas lebih tinggi dari proses yang sedang berjalan, CPU akan di-preempt.\n- **Masalah Utama:** Starvation (atau indefinite blocking) – proses dengan prioritas rendah mungkin tidak pernah dieksekusi.\n- **Solusi untuk Starvation:** Aging – secara bertahap meningkatkan prioritas proses yang telah menunggu lama di sistem.\n- **Contoh Perhitungan (Non-preemptive):** [58, 59]\n  Proses | Burst Time | Prioritas\n  ------- | ---------- | ---------\n  P1      | 10         | 3\n  P2      | 1          | 1 (Tertinggi)\n  P3      | 2          | 4\n  P4      | 1          | 5 (Terendah)",
-    "chunk_id": "p4_s19_sc0"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "### Priority Scheduling [57-59]",
-    "chunk_text": "---- | ---------\n  P1      | 10         | 3\n  P2      | 1          | 1 (Tertinggi)\n  P3      | 2          | 4\n  P4      | 1          | 5 (Terendah)\n  P5      | 5          | 2\n  Gantt Chart (P2->P5->P1->P3->P4):\n  | P2(0-1) | P5(1-6) | P1(6-16) | P3(16-18) | P4(18-19) |\n  AWT = (6+0+16+18+1)/5 = 8.2 ms.",
-    "chunk_id": "p4_s19_sc1"
+    "chunk_text": "- **Konsep:** Setiap proses diasosiasikan dengan sebuah prioritas, dan CPU dialokasikan ke proses dengan prioritas tertinggi. Proses dengan prioritas sama dijadwalkan dengan FCFS. [57, 58] Prioritas biasanya direpresentasikan dengan angka integer (misalnya, angka kecil = prioritas tinggi).\n- **Skema:** [58]\n  - **Non-preemptive Priority Scheduling.**\n  - **Preemptive Priority Scheduling:** Jika proses baru tiba dengan prioritas lebih tinggi dari proses yang sedang berjalan, CPU akan di-preempt.\n- **Masalah Utama:** Starvation (atau indefinite blocking) – proses dengan prioritas rendah mungkin tidak pernah dieksekusi.\n- **Solusi untuk Starvation:** Aging – secara bertahap meningkatkan prioritas proses yang telah menunggu lama di sistem.\n- **Contoh Perhitungan (Non-preemptive):** [58, 59]\n  Proses | Burst Time | Prioritas\n  ------- | ---------- | ---------\n  P1      | 10         | 3\n  P2      | 1          | 1 (Tertinggi)\n  P3      | 2          | 4\n  P4      | 1          | 5 (Terendah)\n  ",
+    "chunk_id": "p4_s8_sc0"
   },
   {
     "pertemuan_id": 4,
     "pertemuan_judul": "CPU Scheduling Algorithms",
     "original_heading": "### Round Robin (RR) [60-66]",
     "chunk_text": "- **Konsep Dasar:** Dirancang khusus untuk sistem time-sharing. Mirip FCFS, tetapi preemption ditambahkan untuk beralih antar proses. [60] Sebuah unit waktu kecil, disebut time quantum atau time slice (biasanya 10-100 milidetik), didefinisikan. Ready queue diperlakukan sebagai antrian sirkular. CPU scheduler berkeliling ready queue, mengalokasikan CPU ke setiap proses untuk interval waktu hingga 1 time quantum.\n- **Cara Kerja:** [60, 61]\n  - Proses baru ditambahkan ke akhir ready queue.\n  - CPU scheduler mengambil proses pertama dari ready queue, mengatur timer untuk berinterupsi setelah 1 quantum, dan menjalankan proses.\n  - Dua kemungkinan:\n    1. Proses memiliki CPU burst < 1 quantum: Proses melepaskan CPU secara sukarela. Scheduler melanjutkan ke proses berikutnya di ready queue.\n    2. Proses memiliki CPU burst > 1 quantum: Timer akan mati dan menyebabkan interupsi ke OS. Context switch akan dilakukan, dan proses yang berjalan dipindahkan ke akhir ready queue. Scheduler memilih pr",
-    "chunk_id": "p4_s_last_sc0"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "### Round Robin (RR) [60-66]",
-    "chunk_text": "n mati dan menyebabkan interupsi ke OS. Context switch akan dilakukan, dan proses yang berjalan dipindahkan ke akhir ready queue. Scheduler memilih proses berikutnya.\n- **Kelebihan:** Memberikan waktu respons yang baik untuk pengguna interaktif.\n- **Kekurangan:** Performa sangat bergantung pada ukuran time quantum. [60]\n  - Quantum terlalu besar: RR menjadi seperti FCFS.\n  - Quantum terlalu kecil: Overhead context switch menjadi signifikan.\n- **Aturan Algoritma (untuk menangani burst time vs quantum, dan I/O):** [60, 61] Aturan di atas sudah mencakup ini.\n- **Contoh Perhitungan:** [61, 62]\n  Proses | Burst Time | Quantum = 20 ms\n  ------- | ---------- |\n  P1      | 53         |\n  P2      | 17         |\n  P3      | 68         |\n  P4      | 24         |\n  Gantt Chart:\n  |P1(0-20)|P2(20-37)|P3(37-57)|P4(57-77)|P1(77-97)|P3(97-117)|P4(117-121)|P1(121-134)|P3(134-154)|P3(154-162)|\n  AWT bisa dihitung.\n- **Turnaround Time (TA) dan Quantum:** [62, 63] Turnaround time juga bergantung pada ukur",
-    "chunk_id": "p4_s_last_sc1"
-  },
-  {
-    "pertemuan_id": 4,
-    "pertemuan_judul": "CPU Scheduling Algorithms",
-    "original_heading": "### Round Robin (RR) [60-66]",
-    "chunk_text": ")|P1(121-134)|P3(134-154)|P3(154-162)|\n  AWT bisa dihitung.\n- **Turnaround Time (TA) dan Quantum:** [62, 63] Turnaround time juga bergantung pada ukuran quantum. Rata-rata turnaround time tidak selalu membaik dengan quantum yang lebih kecil. Secara umum, turnaround time lebih baik jika sebagian besar proses menyelesaikan CPU burst berikutnya dalam satu time quantum.\n- **Contoh Perhitungan dengan ATAT (Average Turn Around Time):** [64-66] (Teks asli mungkin merujuk pada tabel atau contoh spesifik yang tidak sepenuhnya ada di sini, tapi prinsipnya adalah menghitung TA = Waktu Selesai - Waktu Kedatangan, lalu dirata-rata).",
-    "chunk_id": "p4_s_last_sc2"
+    "chunk_id": "p4_s9_sc0"
   }
 ]

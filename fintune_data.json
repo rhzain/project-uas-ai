@@ -1,0 +1,682 @@
+[
+{
+    "query": "Apa definisi dan peran utama dari Sistem Operasi?",
+    "positive_passage": "Sistem Operasi (Operating System/OS) adalah sebuah program atau perangkat lunak yang mengontrol eksekusi aplikasi. [1]\nOS bertindak sebagai antarmuka (interface) antara pengguna (user) dan perangkat keras (hardware) komputer. [1]\nOS menyediakan lingkungan di mana pengguna dapat menjalankan program-programnya dengan nyaman dan efisien. [1]",
+    "negative_passage": "Selama eksekusinya, sebuah proses dapat berada dalam salah satu dari beberapa status berikut:\n- New (Baru): Proses sedang dibuat.\n- Running (Berjalan): Instruksi sedang dieksekusi pada CPU.\n- Waiting (Menunggu) / Blocked: Proses sedang menunggu suatu event terjadi (misalnya, penyelesaian I/O atau penerimaan sinyal).\n- Ready (Siap): Proses sedang menunggu untuk dialokasikan ke prosesor oleh scheduler.\n- Terminated (Selesai): Proses telah selesai dieksekusi."
+  },
+  {
+    "query": "Sebutkan dua tujuan utama dari OS.",
+    "positive_passage": "Tujuan utama dari sistem operasi adalah:\n- **Kenyamanan (Convenience):** Membuat sistem komputer lebih mudah untuk digunakan oleh pengguna. [1]\n- **Efisiensi (Efficiency):** Memungkinkan penggunaan sumber daya sistem komputer (seperti CPU, memori, perangkat I/O) secara efisien. [1]",
+    "negative_passage": "Setiap proses direpresentasikan dalam sistem operasi oleh Process Control Block (PCB), juga dikenal sebagai Task Control Block. PCB berisi banyak informasi yang terkait dengan proses spesifik..."
+  },
+  {
+    "query": "Jelaskan peran OS sebagai manajer sumber daya.",
+    "positive_passage": "Sebagai 'Manajer Sumber Daya' (Resources Manager):** [4]\n  OS bertugas mengelola semua sumber daya komputer. Sumber daya ini meliputi prosesor (CPU), memori utama, timer, disk, printer, antarmuka jaringan, dan lainnya. OS memutuskan bagaimana sumber daya ini dialokasikan ke program dan pengguna secara adil dan efisien. [4]",
+    "negative_passage": "Sistem operasi dibagi menjadi beberapa lapisan (layer), masing-masing dibangun di atas lapisan yang lebih rendah. Lapisan terbawah adalah perangkat keras; lapisan teratas adalah antarmuka pengguna."
+  },
+  {
+    "query": "Apa itu Process Control Block (PCB)?",
+    "positive_passage": "Setiap proses direpresentasikan dalam sistem operasi oleh Process Control Block (PCB), juga dikenal sebagai Task Control Block. PCB berisi banyak informasi yang terkait dengan proses spesifik, termasuk:\n- **Status Proses:** Status saat ini (New, Ready, Running, Waiting, Terminated). [38]\n- **Program Counter:** Alamat instruksi berikutnya yang akan dieksekusi untuk proses ini. [38]...",
+    "negative_passage": "Model Pertukaran Pesan (Message-passing Model):** [20, 21]\n  Proses berkomunikasi dengan bertukar pesan. Tidak ada variabel bersama. Mudah diimplementasikan tetapi bisa lebih lambat karena melibatkan pemanggilan kernel."
+  },
+  {
+    "query": "Bagaimana cara kerja penjadwalan non-preemptive?",
+    "positive_passage": "Non-preemptive Scheduling (Kooperatif):** Jika penjadwalan hanya terjadi pada kondisi 1 dan 4. Sekali CPU telah dialokasikan ke sebuah proses, proses tersebut akan memegang CPU sampai ia melepaskannya, baik dengan terminasi atau dengan beralih ke state Waiting.",
+    "negative_passage": "Preemptive Scheduling:** Jika penjadwalan dapat terjadi pada keempat kondisi. Ini berarti CPU dapat diambil dari proses yang sedang berjalan (misalnya, karena ada proses dengan prioritas lebih tinggi yang masuk ke ready queue, atau karena jatah waktu proses saat ini habis). Preemption memerlukan mekanisme untuk menangani akses data bersama."
+  },
+  {
+    "query": "Apa kelemahan dari algoritma FCFS?",
+    "positive_passage": "Kelemahan:** Average waiting time (AWT) seringkali cukup panjang. Efek konvoi (convoy effect) dapat terjadi jika proses dengan burst time panjang datang lebih dulu dan membuat proses-proses pendek di belakangnya menunggu lama. Tidak cocok untuk sistem time-sharing.",
+    "negative_passage": "Konsep:** Algoritma ini mengasosiasikan setiap proses dengan panjang CPU burst berikutnya. Ketika CPU bebas, ia dialokasikan ke proses yang memiliki CPU burst berikutnya terkecil. Jika dua proses memiliki panjang burst berikutnya yang sama, penjadwalan FCFS digunakan. [54]"
+  },
+  {
+    "query": "Sebutkan komponen-komponen utama dalam sistem komputer.",
+    "positive_passage": "Secara umum, sistem komputer terdiri dari beberapa komponen yang saling berinteraksi:\n1.  **Perangkat Keras (Hardware):** Menyediakan sumber daya komputasi dasar (CPU, memori, perangkat I/O).\n2.  **Sistem Operasi (Operating System):** Mengontrol dan mengkoordinasikan penggunaan perangkat keras di antara berbagai program aplikasi untuk berbagai pengguna.\n3.  **Program Sistem (System Programs):** Membantu dalam pengelolaan dan operasi sistem komputer (misalnya, compiler, assembler, editor teks, utilitas sistem).\n4.  **Program Aplikasi (Application Programs):** Program yang digunakan oleh pengguna untuk menyelesaikan tugas-tugas komputasi spesifik (misalnya, word processor, spreadsheet, game, browser web).\nHubungan antar komponen ini menunjukkan OS sebagai lapisan penting yang menjembatani perangkat keras dengan perangkat lunak lainnya. [2]",
+    "negative_passage": "Selama eksekusinya, sebuah proses dapat berada dalam salah satu dari beberapa status berikut:\n- **New (Baru):** Proses sedang dibuat.\n- **Running (Berjalan):** Instruksi sedang dieksekusi pada CPU.\n- **Waiting (Menunggu) / Blocked:** Proses sedang menunggu suatu event terjadi (misalnya, penyelesaian I/O atau penerimaan sinyal).\n- **Ready (Siap):** Proses sedang menunggu untuk dialokasikan ke prosesor oleh scheduler.\n- **Terminated (Selesai):** Proses telah selesai dieksekusi."
+  },
+  {
+    "query": "Apa itu konsep multiprogramming?",
+    "positive_passage": "Konsep Multiprogramming: Beberapa job disimpan di memori secara bersamaan, dan CPU beralih antar job tersebut untuk meningkatkan utilisasi.",
+    "negative_passage": "Dua model dasar komunikasi antar proses (Inter-Process Communication - IPC):\n- **Model Pertukaran Pesan (Message-passing Model):** [20, 21]\n  Proses berkomunikasi dengan bertukar pesan. Tidak ada variabel bersama. Mudah diimplementasikan tetapi bisa lebih lambat karena melibatkan pemanggilan kernel.\n- **Model Memori Bersama (Shared-memory Model):** [21]\n  Proses berkomunikasi dengan membaca dan menulis ke area memori yang dibagikan. Lebih cepat karena tidak ada pemanggilan kernel setelah setup, tetapi programmer bertanggung jawab atas sinkronisasi untuk menghindari konflik."
+  },
+  {
+    "query": "Sebutkan 5 status proses yang mungkin terjadi.",
+    "positive_passage": "Selama eksekusinya, sebuah proses dapat berada dalam salah satu dari beberapa status berikut:\n- **New (Baru):** Proses sedang dibuat.\n- **Running (Berjalan):** Instruksi sedang dieksekusi pada CPU.\n- **Waiting (Menunggu) / Blocked:** Proses sedang menunggu suatu event terjadi (misalnya, penyelesaian I/O atau penerimaan sinyal).\n- **Ready (Siap):** Proses sedang menunggu untuk dialokasikan ke prosesor oleh scheduler.\n- **Terminated (Selesai):** Proses telah selesai dieksekusi.",
+    "negative_passage": "Beberapa kriteria berbeda digunakan untuk membandingkan algoritma penjadwalan CPU. Kriteria mana yang dipilih bergantung pada tujuan sistem.\n- **CPU Utilization (Utilisasi CPU):** [51] Menjaga CPU sesibuk mungkin..."
+  },
+  {
+    "query": "Informasi apa saja yang tersimpan di dalam PCB?",
+    "positive_passage": "Setiap proses direpresentasikan dalam sistem operasi oleh Process Control Block (PCB), juga dikenal sebagai Task Control Block. PCB berisi banyak informasi yang terkait dengan proses spesifik, termasuk:\n- **Status Proses:** Status saat ini (New, Ready, Running, Waiting, Terminated). [38]\n- **Program Counter:** Alamat instruksi berikutnya yang akan dieksekusi untuk proses ini. [38]\n- **Register CPU:** Isi semua register CPU yang terkait dengan proses (accumulator, index registers, stack pointers, general-purpose registers, dll.). [38]\n- **Informasi Penjadwalan CPU (CPU-Scheduling Information):** Prioritas proses, pointer ke antrian penjadwalan, dan parameter penjadwalan lainnya. [38]\n- **Informasi Manajemen Memori (Memory-Management Information):** Informasi seperti nilai register batas dan dasar, tabel page, atau tabel segmen, tergantung pada sistem memori yang digunakan oleh OS. [38]\n- **Informasi Akuntansi (Accounting Information):** Jumlah CPU dan waktu riil yang digunakan, batas wa",
+    "negative_passage": "Sistem operasi dapat diklasifikasikan berdasarkan berbagai kriteria:\n- **Berdasarkan Komputer yang Digunakan:**\n  - Keluarga Microsoft Windows (Windows XP, Vista, 7, 8, 10, 11, Windows Server).\n  - Keluarga Unix (Termasuk Linux, Solaris, FreeBSD, dll.).\n  - Mac OS (Sekarang macOS)."
+  },
+  {
+    "query": "Apa yang dimaksud dengan context switch?",
+    "positive_passage": "Ketika CPU beralih dari satu proses ke proses lain, OS harus menyimpan status proses lama (dari PCB-nya) dan memuat status proses baru yang disimpan (ke PCB-nya). Operasi ini dikenal sebagai context switch.",
+    "negative_passage": "Sistem operasi menyediakan berbagai layanan untuk kenyamanan pengguna dan efisiensi eksekusi program:\n- **Menyediakan Antarmuka Pengguna (User Interface):** Bisa berupa Command-Line Interface (CLI), Batch interface, atau Graphical User Interface (GUI). [2]..."
+  },
+  {
+    "query": "Jelaskan perbedaan antara long-term scheduler dan short-term scheduler.",
+    "positive_passage": "Schedulers (Penjadwal):** [41]\n  - **Long-term scheduler (atau job scheduler):** Memilih proses dari job pool (di disk) dan memuatnya ke memori untuk dieksekusi (ke ready queue). Mengontrol tingkat multiprogramming. Jarang dieksekusi.\n  - **Short-term scheduler (atau CPU scheduler):** Memilih proses dari ready queue dan mengalokasikan CPU ke salah satunya. Harus sangat cepat karena sering dieksekusi.",
+    "negative_passage": "Dua model dasar komunikasi antar proses (Inter-Process Communication - IPC):\n- **Model Pertukaran Pesan (Message-passing Model):** [20, 21]...\n- **Model Memori Bersama (Shared-memory Model):** [21]..."
+  },
+  {
+    "query": "Bagaimana cara kerja algoritma penjadwalan Round Robin (RR)?",
+    "positive_passage": "- **Konsep Dasar:** Dirancang khusus untuk sistem time-sharing. Mirip FCFS, tetapi preemption ditambahkan untuk beralih antar proses. [60] Sebuah unit waktu kecil, disebut time quantum atau time slice (biasanya 10-100 milidetik), didefinisikan. Ready queue diperlakukan sebagai antrian sirkular. CPU scheduler berkeliling ready queue, mengalokasikan CPU ke setiap proses untuk interval waktu hingga 1 time quantum.",
+    "negative_passage": "- **Konsep:** Setiap proses diasosiasikan dengan sebuah prioritas, dan CPU dialokasikan ke proses dengan prioritas tertinggi. Proses dengan prioritas sama dijadwalkan dengan FCFS. [57, 58] Prioritas biasanya direpresentasikan dengan angka integer (misalnya, angka kecil = prioritas tinggi)."
+  },
+  {
+    "query": "Apa masalah utama dalam Priority Scheduling dan solusinya?",
+    "positive_passage": "Masalah Utama:** Starvation (atau indefinite blocking) – proses dengan prioritas rendah mungkin tidak pernah dieksekusi.\n- **Solusi untuk Starvation:** Aging – secara bertahap meningkatkan prioritas proses yang telah menunggu lama di sistem.",
+    "negative_passage": "Kelemahan:** Average waiting time (AWT) seringkali cukup panjang. Efek konvoi (convoy effect) dapat terjadi jika proses dengan burst time panjang datang lebih dulu dan membuat proses-proses pendek di belakangnya menunggu lama. Tidak cocok untuk sistem time-sharing."
+  },
+  {
+    "query": "Jelaskan konsep penjadwalan Shortest-Job-First (SJF).",
+    "positive_passage": "- **Konsep:** Algoritma ini mengasosiasikan setiap proses dengan panjang CPU burst berikutnya. Ketika CPU bebas, ia dialokasikan ke proses yang memiliki CPU burst berikutnya terkecil. Jika dua proses memiliki panjang burst berikutnya yang sama, penjadwalan FCFS digunakan. [54]",
+    "negative_passage": "Proses berkomunikasi dengan membaca dan menulis ke area memori yang dibagikan. Lebih cepat karena tidak ada pemanggilan kernel setelah setup, tetapi programmer bertanggung jawab atas sinkronisasi untuk menghindari konflik."
+  },
+  {
+    "query": "Apa saja layanan yang disediakan OS untuk manipulasi sistem file?",
+    "positive_passage": "Menyediakan Manipulasi Sistem File:** Membaca, menulis, membuat, dan menghapus file dan direktori, serta mengatur hak akses. [2]",
+    "negative_passage": "Setiap proses direpresentasikan dalam sistem operasi oleh Process Control Block (PCB), juga dikenal sebagai Task Control Block. PCB berisi banyak informasi yang terkait dengan proses spesifik, termasuk:\n- **Status Proses:** Status saat ini (New, Ready, Running, Waiting, Terminated). [38]"
+  },
+  {
+    "query": "Jelaskan perbedaan antara model komunikasi message-passing dan shared-memory.",
+    "positive_passage": "Dua model dasar komunikasi antar proses (Inter-Process Communication - IPC):\n- **Model Pertukaran Pesan (Message-passing Model):** [20, 21]\n  Proses berkomunikasi dengan bertukar pesan. Tidak ada variabel bersama. Mudah diimplementasikan tetapi bisa lebih lambat karena melibatkan pemanggilan kernel.\n- **Model Memori Bersama (Shared-memory Model):** [21]\n  Proses berkomunikasi dengan membaca dan menulis ke area memori yang dibagikan. Lebih cepat karena tidak ada pemanggilan kernel setelah setup, tetapi programmer bertanggung jawab atas sinkronisasi untuk menghindari konflik.",
+    "negative_passage": "Struktur internal sistem operasi dapat sangat bervariasi:\n- **Struktur Sederhana (Simple Structure):** [22, 23]\n  Banyak sistem operasi komersial tidak memiliki struktur yang terdefinisi dengan baik..."
+  },
+  {
+    "query": "Apa itu struktur sistem monolitik?",
+    "positive_passage": "Sistem Monolitik (Monolithic System):** [23-25]\n  Ini adalah struktur yang paling umum. Kernel adalah program besar dan tunggal yang berisi semua layanan OS. Meskipun ada beberapa struktur internal (misalnya, pemisahan rutin layanan, rutin utilitas), semua komponen berjalan dalam mode kernel.",
+    "negative_passage": "Mesin Virtual (Virtual Machines):** [28, 29]\n  Pendekatan ini mengambil konsep layered ke kesimpulan logisnya. Ia memperlakukan perangkat keras dan antarmuka kernel seolah-olah keduanya adalah perangkat keras."
+  },
+  {
+    "query": "Apa saja komponen dari sebuah proses?",
+    "positive_passage": "Komponen Proses:** Sebuah proses umumnya mencakup: [31]\n  - Program Counter: Menunjukkan instruksi berikutnya yang akan dieksekusi.\n  - Isi Register CPU: Nilai-nilai register saat itu.\n  - Stack Proses: Berisi data sementara (parameter fungsi, alamat kembali, variabel lokal).\n  - Data Section: Berisi variabel global.\n  - Heap: Memori yang dialokasikan secara dinamis selama runtime proses.",
+    "negative_passage": "Beberapa kriteria berbeda digunakan untuk membandingkan algoritma penjadwalan CPU. Kriteria mana yang dipilih bergantung pada tujuan sistem."
+  },
+  {
+    "query": "Kapan sebuah proses beralih dari state Running ke Ready?",
+    "positive_passage": "Running -> Ready:** Jatah waktu (quantum) proses habis (pada sistem time-sharing), atau proses dengan prioritas lebih tinggi datang (pada sistem preemptive).",
+    "negative_passage": "Running -> Waiting (Blocked):** Proses meminta I/O, atau menunggu event lain."
+  },
+  {
+    "query": "Apa yang dimaksud dengan siklus CPU-I/O Burst?",
+    "positive_passage": "Siklus CPU-I/O Burst (CPU-I/O Burst Cycle):** Eksekusi proses terdiri dari siklus eksekusi CPU (CPU burst) dan penungguan I/O (I/O burst). Proses bergantian antara dua state ini. Eksekusi proses dimulai dengan CPU burst, diikuti oleh I/O burst, lalu CPU burst lagi, dan seterusnya, hingga CPU burst terakhir yang mengakhiri eksekusi. [49, 50] Durasi CPU burst sangat bervariasi antar proses dan antar program.",
+    "negative_passage": "Berdasarkan kapan keputusan penjadwalan terjadi (merujuk pada 4 trigger di atas):\n- **Non-preemptive Scheduling (Kooperatif):** Jika penjadwalan hanya terjadi pada kondisi 1 dan 4..."
+  },
+  {
+    "query": "Sebutkan beberapa kriteria untuk mengevaluasi algoritma penjadwalan.",
+    "positive_passage": "Beberapa kriteria berbeda digunakan untuk membandingkan algoritma penjadwalan CPU. Kriteria mana yang dipilih bergantung pada tujuan sistem.\n- **CPU Utilization (Utilisasi CPU):** [51] Menjaga CPU sesibuk mungkin... - **Throughput:** [51] Ukuran kerja yang dilakukan... - **Turnaround Time:** [52] Waktu yang dibutuhkan untuk mengeksekusi proses tertentu... - **Waiting Time (Waktu Tunggu):** [52] Jumlah waktu sebuah proses menunggu di ready queue... - **Response Time (Waktu Respons):** [52] ...waktu dari pengiriman permintaan hingga respons pertama dihasilkan...",
+    "negative_passage": "Setiap proses direpresentasikan dalam sistem operasi oleh Process Control Block (PCB), juga dikenal sebagai Task Control Block. PCB berisi banyak informasi yang terkait dengan proses spesifik..."
+  },
+  {
+    "query": "Apa itu Shortest-Remaining-Time-First (SRTF)?",
+    "positive_passage": "Preemptive SJF (Shortest-Remaining-Time-First - SRTF):** Jika proses baru tiba di ready queue dengan panjang CPU burst berikutnya lebih pendek dari sisa waktu proses yang sedang dieksekusi saat ini, proses yang sedang berjalan di-preempt.",
+    "negative_passage": "Non-preemptive SJF:** Sekali CPU diberikan ke proses, ia tidak dapat di-preempt hingga CPU burst-nya selesai."
+  },
+  {
+    "query": "Apa definisi dari Kecerdasan Buatan (Artificial Intelligence)?",
+    "positive_passage": "Kecerdasan Buatan (Artificial Intelligence/AI) adalah cabang ilmu komputer yang luas yang berfokus pada pembuatan mesin cerdas yang mampu melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia. [2] AI memungkinkan sistem untuk belajar dari pengalaman, menyesuaikan diri dengan input baru, dan melakukan tugas-tugas seperti manusia. Ruang lingkupnya mencakup berbagai sub-bidang seperti Machine Learning, Natural Language Processing (NLP), Computer Vision, dan Robotika. [4]",
+    "negative_passage": "Sistem Informasi adalah kombinasi terorganisir dari manusia, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi."
+  },
+  {
+    "query": "Jelaskan secara singkat apa itu AI dan apa saja kemampuannya.",
+    "positive_passage": "Kecerdasan Buatan (Artificial Intelligence/AI) adalah cabang ilmu komputer yang luas yang berfokus pada pembuatan mesin cerdas yang mampu melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia. [2] AI memungkinkan sistem untuk belajar dari pengalaman, menyesuaikan diri dengan input baru, dan melakukan tugas-tugas seperti manusia. Ruang lingkupnya mencakup berbagai sub-bidang seperti Machine Learning, Natural Language Processing (NLP), Computer Vision, dan Robotika. [4]",
+    "negative_passage": "Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT."
+  },
+  {
+    "query": "Sebutkan beberapa sub-bidang yang termasuk dalam ruang lingkup Kecerdasan Buatan.",
+    "positive_passage": "Kecerdasan Buatan (Artificial Intelligence/AI) adalah cabang ilmu komputer yang luas yang berfokus pada pembuatan mesin cerdas yang mampu melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia. [2] AI memungkinkan sistem untuk belajar dari pengalaman, menyesuaikan diri dengan input baru, dan melakukan tugas-tugas seperti manusia. Ruang lingkupnya mencakup berbagai sub-bidang seperti Machine Learning, Natural Language Processing (NLP), Computer Vision, dan Robotika. [4]",
+    "negative_passage": "Machine Learning adalah cabang dari Kecerdasan Buatan (AI) yang fokus pada pengembangan algoritma yang memungkinkan komputer untuk belajar dari dan membuat prediksi atau keputusan berdasarkan data."
+  },
+  {
+    "query": "Sebutkan empat pendekatan utama yang sering menjadi acuan dalam pengembangan AI.",
+    "positive_passage": "Ada empat pendekatan utama yang sering menjadi acuan dalam pengembangan AI:\n1.  Thinking Humanly (Berpikir Seperti Manusia)\n2.  Acting Humanly (Bertindak Seperti Manusia)\n3.  Thinking Rationally (Berpikir Rasional)\n4.  Act Rationally (Bertindak Rasional)",
+    "negative_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance)."
+  },
+  {
+    "query": "Apa saja empat kerangka berpikir dalam pengembangan Kecerdasan Buatan?",
+    "positive_passage": "Ada empat pendekatan utama yang sering menjadi acuan dalam pengembangan AI:\n1.  Thinking Humanly (Berpikir Seperti Manusia)\n2.  Acting Humanly (Bertindak Seperti Manusia)\n3.  Thinking Rationally (Berpikir Rasional)\n4.  Act Rationally (Bertindak Rasional)",
+    "negative_passage": "Komponen Sistem Informasi: 1. Perangkat Keras, 2. Perangkat Lunak, 3. Data, 4. Manusia, 5. Proses/Prosedur."
+  },
+  {
+    "query": "Kapan dan di mana istilah 'Artificial Intelligence' pertama kali dicetuskan secara resmi?",
+    "positive_passage": "Istilah \"Artificial Intelligence\" secara resmi dicetuskan pada lokakarya di Dartmouth College (1956), yang dihadiri oleh para pionir AI seperti John McCarthy, Marvin Minsky, dan Claude Shannon.",
+    "negative_passage": "System Development Life Cycle (SDLC) adalah model air terjun (waterfall) yang terdiri dari serangkaian tahapan yang berurutan."
+  },
+  {
+    "query": "Siapa saja pionir AI yang hadir saat istilah tersebut pertama kali dicanangkan?",
+    "positive_passage": "Istilah \"Artificial Intelligence\" secara resmi dicetuskan pada lokakarya di Dartmouth College (1956), yang dihadiri oleh para pionir AI seperti John McCarthy, Marvin Minsky, dan Claude Shannon.",
+    "negative_passage": "Agen cerdas (intelligent agent) adalah entitas apa pun yang dapat mengamati lingkungannya melalui sensor dan bertindak atas lingkungan tersebut melalui aktuator."
+  },
+  {
+    "query": "Sebutkan tiga kategori klasifikasi AI berdasarkan kapabilitasnya.",
+    "positive_passage": "Berdasarkan kapabilitasnya, AI dapat diklasifikasikan menjadi tiga kategori:\n- Artificial Narrow Intelligence (ANI) / AI Lemah\n- Artificial General Intelligence (AGI) / AI Kuat\n- Artificial Superintelligence (ASI) / Super AI",
+    "negative_passage": "Berdasarkan kapabilitasnya, AI dapat diklasifikasikan menjadi tiga kategori:\n- Artificial Narrow Intelligence (ANI) / AI Lemah\n- Artificial General Intelligence (AGI) / AI Kuat\n- Artificial Superintelligence (ASI) / Super AI"
+  },
+  {
+    "query": "Jelaskan perbedaan antara AI Lemah, AI Kuat, dan Super AI.",
+    "positive_passage": "Berdasarkan kapabilitasnya, AI dapat diklasifikasikan menjadi tiga kategori:\n- Artificial Narrow Intelligence (ANI) / AI Lemah\n- Artificial General Intelligence (AGI) / AI Kuat\n- Artificial Superintelligence (ASI) / Super AI",
+    "negative_passage": "Urutan In-order Traversal: Kunjungi subtree kiri, lalu root, lalu subtree kanan. Menghasilkan elemen terurut pada Binary Search Tree."
+  },
+  {
+    "query": "Apa yang dimaksud dengan Machine Learning?",
+    "positive_passage": "Machine Learning adalah cabang dari Kecerdasan Buatan (AI) yang fokus pada pengembangan algoritma yang memungkinkan komputer untuk belajar dari dan membuat prediksi atau keputusan berdasarkan data.",
+    "negative_passage": "ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik), tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan."
+  },
+  {
+    "query": "Bagaimana hubungan antara Machine Learning dan AI?",
+    "positive_passage": "Machine Learning adalah cabang dari Kecerdasan Buatan (AI) yang fokus pada pengembangan algoritma yang memungkinkan komputer untuk belajar dari dan membuat prediksi atau keputusan berdasarkan data.",
+    "negative_passage": "Kecerdasan Buatan (Artificial Intelligence/AI) adalah cabang ilmu komputer yang luas yang berfokus pada pembuatan mesin cerdas yang mampu melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia. [2] AI memungkinkan sistem untuk belajar dari pengalaman, menyesuaikan diri dengan input baru, dan melakukan tugas-tugas seperti manusia. Ruang lingkupnya mencakup berbagai sub-bidang seperti Machine Learning, Natural Language Processing (NLP), Computer Vision, dan Robotika. [4]"
+  },
+  {
+    "query": "Apa itu agen cerdas (intelligent agent)?",
+    "positive_passage": "Agen cerdas (intelligent agent) adalah entitas apa pun yang dapat mengamati lingkungannya melalui sensor dan bertindak atas lingkungan tersebut melalui aktuator.",
+    "negative_passage": "Database Management System (DBMS) adalah perangkat lunak yang berfungsi sebagai antarmuka antara pengguna dan basis data."
+  },
+  {
+    "query": "Jelaskan konsep agen cerdas beserta sensor dan aktuatornya.",
+    "positive_passage": "Agen cerdas (intelligent agent) adalah entitas apa pun yang dapat mengamati lingkungannya melalui sensor dan bertindak atas lingkungan tersebut melalui aktuator.",
+    "negative_passage": "Sistem adalah sekumpulan komponen yang saling terkait dan bekerja sama untuk mencapai tujuan tertentu. Setiap sistem memiliki input, proses, dan output."
+  },
+  {
+    "query": "Sebutkan lima komponen yang mendefinisikan sebuah masalah secara formal dalam AI.",
+    "positive_passage": "Sebuah masalah dapat didefinisikan secara formal oleh lima komponen:\n1.  Initial State\n2.  Actions\n3.  Transition Model\n4.  Goal Test\n5.  Path Cost",
+    "negative_passage": "Komponen Sistem Informasi: 1. Perangkat Keras, 2. Perangkat Lunak, 3. Data, 4. Manusia, 5. Proses/Prosedur."
+  },
+  {
+    "query": "Apa saja elemen-elemen dari formulasi masalah dalam problem solving AI?",
+    "positive_passage": "Sebuah masalah dapat didefinisikan secara formal oleh lima komponen:\n1.  Initial State\n2.  Actions\n3.  Transition Model\n4.  Goal Test\n5.  Path Cost",
+    "negative_passage": "Ada empat pendekatan utama yang sering menjadi acuan dalam pengembangan AI:\n1.  Thinking Humanly (Berpikir Seperti Manusia)\n2.  Acting Humanly (Bertindak Seperti Manusia)\n3.  Thinking Rationally (Berpikir Rasional)\n4.  Act Rationally (Bertindak Rasional)"
+  },
+  {
+    "query": "Jelaskan karakteristik dari algoritma Breadth-First Search (BFS).",
+    "positive_passage": "Karakteristik BFS:\n  - Completeness: Lengkap (dijamin menemukan solusi jika ada).\n  - Optimality: Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - Time & Space Complexity: Keduanya adalah O(b^d)...",
+    "negative_passage": "Karakteristik DFS:\n  - Completeness: Tidak lengkap jika ada loop tak terbatas.\n  - Optimality: Tidak optimal.\n  - Time Complexity: O(b^m)\n  - Space Complexity: O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS."
+  },
+  {
+    "query": "Bagaimana properti kelengkapan dan optimalitas pada BFS?",
+    "positive_passage": "Karakteristik BFS:\n  - Completeness: Lengkap (dijamin menemukan solusi jika ada).\n  - Optimality: Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - Time & Space Complexity: Keduanya adalah O(b^d)...",
+    "negative_passage": "Karakteristik Array:\n  - Ukuran Tetap (Statis)\n  - Akses Cepat (O(1))\n  - Tipe Data Homogen"
+  },
+  {
+    "query": "Bagaimana kompleksitas waktu dan ruang dari algoritma BFS?",
+    "positive_passage": "Karakteristik BFS:\n  - Completeness: Lengkap (dijamin menemukan solusi jika ada).\n  - Optimality: Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - Time & Space Complexity: Keduanya adalah O(b^d)...",
+    "negative_passage": "Karakteristik DFS:\n  - Completeness: Tidak lengkap jika ada loop tak terbatas.\n  - Optimality: Tidak optimal.\n  - Time Complexity: O(b^m)\n  - Space Complexity: O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS."
+  },
+  {
+    "query": "Apa saja karakteristik dari Depth-First Search (DFS)?",
+    "positive_passage": "Karakteristik DFS:\n  - Completeness: Tidak lengkap jika ada loop tak terbatas.\n  - Optimality: Tidak optimal.\n  - Time Complexity: O(b^m)\n  - Space Complexity: O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS.",
+    "negative_passage": "Karakteristik BFS:\n  - Completeness: Lengkap (dijamin menemukan solusi jika ada).\n  - Optimality: Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - Time & Space Complexity: Keduanya adalah O(b^d)..."
+  },
+  {
+    "query": "Mengapa DFS tidak selalu optimal dan bisa jadi tidak lengkap?",
+    "positive_passage": "Karakteristik DFS:\n  - Completeness: Tidak lengkap jika ada loop tak terbatas.\n  - Optimality: Tidak optimal.\n  - Time Complexity: O(b^m)\n  - Space Complexity: O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS.",
+    "negative_passage": "Karakteristik BFS:\n  - Completeness: Lengkap (dijamin menemukan solusi jika ada).\n  - Optimality: Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - Time & Space Complexity: Keduanya adalah O(b^d)..."
+  },
+  {
+    "query": "Bandingkan efisiensi penggunaan memori antara DFS dan BFS.",
+    "positive_passage": "Karakteristik DFS:\n  - Completeness: Tidak lengkap jika ada loop tak terbatas.\n  - Optimality: Tidak optimal.\n  - Time Complexity: O(b^m)\n  - Space Complexity: O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS.",
+    "negative_passage": "Perbedaan Array vs. Linked List:\n- Array: Ukuran statis, akses cepat (O(1)), penyisipan lambat (O(n)).\n- Linked List: Ukuran dinamis, akses lambat (O(n)), penyisipan cepat (O(1))."
+  },
+  {
+    "query": "Bagaimana formula fungsi evaluasi untuk pencarian A* (A-star)?",
+    "positive_passage": "Fungsi Evaluasi A* Search: f(n) = g(n) + h(n), di mana g(n) adalah biaya sebenarnya dan h(n) adalah biaya estimasi heuristik.",
+    "negative_passage": "F1-Score adalah Rata-rata harmonik dari Presisi dan Recall. Metrik yang baik untuk dataset yang tidak seimbang."
+  },
+  {
+    "query": "Jelaskan komponen f(n), g(n), dan h(n) dalam algoritma A*.",
+    "positive_passage": "Fungsi Evaluasi A* Search: f(n) = g(n) + h(n), di mana g(n) adalah biaya sebenarnya dan h(n) adalah biaya estimasi heuristik.",
+    "negative_passage": "Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik)."
+  },
+  {
+    "query": "Apa tujuan utama dari algoritma Minimax?",
+    "positive_passage": "Minimax Algorithm adalah algoritma dasar untuk permainan dua pemain dengan giliran. Tujuannya adalah untuk menemukan langkah optimal dengan meminimalkan kemungkinan kerugian maksimum.",
+    "negative_passage": "Tujuan Unsupervised Learning adalah untuk menemukan struktur atau pola tersembunyi dalam data yang tidak memiliki label."
+  },
+  {
+    "query": "Dalam konteks masalah seperti apa algoritma Minimax digunakan?",
+    "positive_passage": "Minimax Algorithm adalah algoritma dasar untuk permainan dua pemain dengan giliran. Tujuannya adalah untuk menemukan langkah optimal dengan meminimalkan kemungkinan kerugian maksimum.",
+    "negative_passage": "Tujuan dari Decision Support System (DSS) adalah membantu pengambilan keputusan untuk masalah semi-terstruktur."
+  },
+  {
+    "query": "Sebutkan dua tahap utama dalam proses Supervised Learning.",
+    "positive_passage": "Proses Supervised Learning melibatkan dua tahap utama: Training (Pelatihan) dan Testing (Pengujian).",
+    "negative_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance)."
+  },
+  {
+    "query": "Jelaskan proses pelatihan dan pengujian dalam pembelajaran terarah.",
+    "positive_passage": "Proses Supervised Learning melibatkan dua tahap utama: Training (Pelatihan) dan Testing (Pengujian).",
+    "negative_passage": "Cara Kerja K-Means Clustering:\n  1.  Inisialisasi: Pilih 'k' titik data secara acak sebagai centroid.\n  2.  Assignment Step: Tetapkan setiap titik data ke centroid terdekat.\n  3.  Update Step: Hitung ulang posisi centroid.\n  4.  Iterasi hingga konvergen."
+  },
+  {
+    "query": "Apa perbedaan tujuan antara klasifikasi dan regresi dalam supervised learning?",
+    "positive_passage": "Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik).",
+    "negative_passage": "Perbedaan Array vs. Linked List:\n- Array: Ukuran statis, akses cepat (O(1)), penyisipan lambat (O(n)).\n- Linked List: Ukuran dinamis, akses lambat (O(n)), penyisipan cepat (O(1))."
+  },
+  {
+    "query": "Kapan kita seharusnya menggunakan model klasifikasi dan kapan menggunakan model regresi?",
+    "positive_passage": "Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik).",
+    "negative_passage": "- **Data:** Fakta mentah atau angka-angka yang belum diolah.\n- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna."
+  },
+  {
+    "query": "Apa itu F1-Score?",
+    "positive_passage": "F1-Score adalah Rata-rata harmonik dari Presisi dan Recall. Metrik yang baik untuk dataset yang tidak seimbang.",
+    "negative_passage": "Fungsi Evaluasi A* Search: f(n) = g(n) + h(n), di mana g(n) adalah biaya sebenarnya dan h(n) adalah biaya estimasi heuristik."
+  },
+  {
+    "query": "Mengapa F1-Score merupakan metrik yang baik untuk dataset yang tidak seimbang (imbalanced)?",
+    "positive_passage": "F1-Score adalah Rata-rata harmonik dari Presisi dan Recall. Metrik yang baik untuk dataset yang tidak seimbang.",
+    "negative_passage": "Karakteristik Informasi Berkualitas: Akurat, Tepat Waktu (Timely), Relevan, Lengkap (Complete), Dapat Dipercaya (Reliable)."
+  },
+  {
+    "query": "Apa tujuan utama dari Unsupervised Learning?",
+    "positive_passage": "Tujuan Unsupervised Learning adalah untuk menemukan struktur atau pola tersembunyi dalam data yang tidak memiliki label.",
+    "negative_passage": "Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik)."
+  },
+  {
+    "query": "Apa ciri khas dari data yang digunakan dalam Unsupervised Learning?",
+    "positive_passage": "Tujuan Unsupervised Learning adalah untuk menemukan struktur atau pola tersembunyi dalam data yang tidak memiliki label.",
+    "negative_passage": "Proses Supervised Learning melibatkan dua tahap utama: Training (Pelatihan) dan Testing (Pengujian)."
+  },
+  {
+    "query": "Jelaskan langkah-langkah cara kerja algoritma K-Means Clustering.",
+    "positive_passage": "Cara Kerja K-Means Clustering:\n  1.  Inisialisasi: Pilih 'k' titik data secara acak sebagai centroid.\n  2.  Assignment Step: Tetapkan setiap titik data ke centroid terdekat.\n  3.  Update Step: Hitung ulang posisi centroid.\n  4.  Iterasi hingga konvergen.",
+    "negative_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance)."
+  },
+  {
+    "query": "Bagaimana K-Means mengelompokkan titik data ke dalam cluster?",
+    "positive_passage": "Cara Kerja K-Means Clustering:\n  1.  Inisialisasi: Pilih 'k' titik data secara acak sebagai centroid.\n  2.  Assignment Step: Tetapkan setiap titik data ke centroid terdekat.\n  3.  Update Step: Hitung ulang posisi centroid.\n  4.  Iterasi hingga konvergen.",
+    "negative_passage": "Urutan In-order Traversal: Kunjungi subtree kiri, lalu root, lalu subtree kanan. Menghasilkan elemen terurut pada Binary Search Tree."
+  },
+  {
+    "query": "Apa yang dimaksud dengan 'update step' dalam algoritma K-Means?",
+    "positive_passage": "Cara Kerja K-Means Clustering:\n  1.  Inisialisasi: Pilih 'k' titik data secara acak sebagai centroid.\n  2.  Assignment Step: Tetapkan setiap titik data ke centroid terdekat.\n  3.  Update Step: Hitung ulang posisi centroid.\n  4.  Iterasi hingga konvergen.",
+    "negative_passage": "Proses Supervised Learning melibatkan dua tahap utama: Training (Pelatihan) dan Testing (Pengujian)."
+  },
+  {
+    "query": "Apa arti dari istilah 'deep' dalam konteks Deep Learning?",
+    "positive_passage": "Istilah \"deep\" dalam Deep Learning mengacu pada penggunaan banyak lapisan (layer) dalam jaringan saraf tiruan.",
+    "negative_passage": "Tree adalah struktur data non-linear yang merepresentasikan data dalam bentuk hierarki."
+  },
+  {
+    "query": "Mengapa penggunaan banyak lapisan (multiple layers) penting dalam arsitektur Deep Learning?",
+    "positive_passage": "Istilah \"deep\" dalam Deep Learning mengacu pada penggunaan banyak lapisan (layer) dalam jaringan saraf tiruan.",
+    "negative_passage": "System Development Life Cycle (SDLC) adalah model air terjun (waterfall) yang terdiri dari serangkaian tahapan yang berurutan."
+  },
+  {
+    "query": "Apa saja varian populer dari arsitektur RNN?",
+    "positive_passage": "Varian populer dari RNN adalah Long Short-Term Memory (LSTM) dan Gated Recurrent Unit (GRU) yang dikembangkan untuk mengatasi kelemahan RNN standar.",
+    "negative_passage": "Binary Tree adalah jenis tree di mana setiap node dapat memiliki paling banyak dua child, yang disebut sebagai left child dan right child."
+  },
+  {
+    "query": "Mengapa varian seperti LSTM dan GRU dikembangkan untuk RNN?",
+    "positive_passage": "Varian populer dari RNN adalah Long Short-Term Memory (LSTM) dan Gated Recurrent Unit (GRU) yang dikembangkan untuk mengatasi kelemahan RNN standar.",
+    "negative_passage": "Berdasarkan kapabilitasnya, AI dapat diklasifikasikan menjadi tiga kategori:\n- Artificial Narrow Intelligence (ANI) / AI Lemah\n- Artificial General Intelligence (AGI) / AI Kuat\n- Artificial Superintelligence (ASI) / Super AI"
+  },
+  {
+    "query": "Apa definisi dari sebuah sistem?",
+    "positive_passage": "Sistem adalah sekumpulan komponen yang saling terkait dan bekerja sama untuk mencapai tujuan tertentu. Setiap sistem memiliki input, proses, dan output.",
+    "negative_passage": "Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT."
+  },
+  {
+    "query": "Sebutkan tiga komponen dasar yang dimiliki oleh setiap sistem.",
+    "positive_passage": "Sistem adalah sekumpulan komponen yang saling terkait dan bekerja sama untuk mencapai tujuan tertentu. Setiap sistem memiliki input, proses, dan output.",
+    "negative_passage": "Sebuah masalah dapat didefinisikan secara formal oleh lima komponen:\n1.  Initial State\n2.  Actions\n3.  Transition Model\n4.  Goal Test\n5.  Path Cost"
+  },
+  {
+    "query": "Jelaskan perbedaan mendasar antara data dan informasi.",
+    "positive_passage": "- **Data:** Fakta mentah atau angka-angka yang belum diolah.\n- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna.",
+    "negative_passage": "Perbedaan Array vs. Linked List:\n- Array: Ukuran statis, akses cepat (O(1)), penyisipan lambat (O(n)).\n- Linked List: Ukuran dinamis, akses lambat (O(n)), penyisipan cepat (O(1))."
+  },
+  {
+    "query": "Apa yang mengubah data menjadi informasi yang bermakna?",
+    "positive_passage": "- **Data:** Fakta mentah atau angka-angka yang belum diolah.\n- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna.",
+    "negative_passage": "Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik)."
+  },
+  {
+    "query": "Bagaimana Anda membedakan antara fakta mentah dan data yang sudah diolah?",
+    "positive_passage": "- **Data:** Fakta mentah atau angka-angka yang belum diolah.\n- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna.",
+    "negative_passage": "ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik), tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan."
+  },
+  {
+    "query": "Apa yang dimaksud dengan Sistem Informasi (SI)?",
+    "positive_passage": "Sistem Informasi adalah kombinasi terorganisir dari manusia, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi.",
+    "negative_passage": "Kecerdasan Buatan (Artificial Intelligence/AI) adalah cabang ilmu komputer yang luas yang berfokus pada pembuatan mesin cerdas yang mampu melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia. [2] AI memungkinkan sistem untuk belajar dari pengalaman, menyesuaikan diri dengan input baru, dan melakukan tugas-tugas seperti manusia. Ruang lingkupnya mencakup berbagai sub-bidang seperti Machine Learning, Natural Language Processing (NLP), Computer Vision, dan Robotika. [4]"
+  },
+  {
+    "query": "Apa saja unsur-unsur yang dikombinasikan dalam sebuah Sistem Informasi?",
+    "positive_passage": "Sistem Informasi adalah kombinasi terorganisir dari manusia, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi.",
+    "negative_passage": "Komponen Sistem Informasi: 1. Perangkat Keras, 2. Perangkat Lunak, 3. Data, 4. Manusia, 5. Proses/Prosedur."
+  },
+  {
+    "query": "Jelaskan fungsi utama dari sebuah Sistem Informasi dalam konteks organisasi.",
+    "positive_passage": "Sistem Informasi adalah kombinasi terorganisir dari manusia, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi.",
+    "negative_passage": "Peran strategis SI meliputi: Efisiensi Operasional, Pengambilan Keputusan, Inovasi Produk dan Layanan, dan Mendukung Strategi Kompetitif."
+  },
+  {
+    "query": "Sebutkan lima komponen utama dalam sebuah Sistem Informasi.",
+    "positive_passage": "Komponen Sistem Informasi: 1. Perangkat Keras, 2. Perangkat Lunak, 3. Data, 4. Manusia, 5. Proses/Prosedur.",
+    "negative_passage": "Sebuah masalah dapat didefinisikan secara formal oleh lima komponen:\n1.  Initial State\n2.  Actions\n3.  Transition Model\n4.  Goal Test\n5.  Path Cost"
+  },
+  {
+    "query": "Jelaskan masing-masing dari lima komponen sistem informasi.",
+    "positive_passage": "Komponen Sistem Informasi: 1. Perangkat Keras, 2. Perangkat Lunak, 3. Data, 4. Manusia, 5. Proses/Prosedur.",
+    "negative_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance)."
+  },
+  {
+    "query": "Apa peran elemen 'Manusia' dan 'Proses' dalam Sistem Informasi?",
+    "positive_passage": "Komponen Sistem Informasi: 1. Perangkat Keras, 2. Perangkat Lunak, 3. Data, 4. Manusia, 5. Proses/Prosedur.",
+    "negative_passage": "Agen cerdas (intelligent agent) adalah entitas apa pun yang dapat mengamati lingkungannya melalui sensor dan bertindak atas lingkungan tersebut melalui aktuator."
+  },
+  {
+    "query": "Sebutkan karakteristik-karakteristik yang membuat informasi dianggap berkualitas.",
+    "positive_passage": "Karakteristik Informasi Berkualitas: Akurat, Tepat Waktu (Timely), Relevan, Lengkap (Complete), Dapat Dipercaya (Reliable).",
+    "negative_passage": "Karakteristik Array:\n  - Ukuran Tetap (Statis)\n  - Akses Cepat (O(1))\n  - Tipe Data Homogen"
+  },
+  {
+    "query": "Mengapa akurasi dan relevansi menjadi syarat informasi yang berkualitas?",
+    "positive_passage": "Karakteristik Informasi Berkualitas: Akurat, Tepat Waktu (Timely), Relevan, Lengkap (Complete), Dapat Dipercaya (Reliable).",
+    "negative_passage": "Karakteristik BFS:\n  - Completeness: Lengkap (dijamin menemukan solusi jika ada).\n  - Optimality: Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - Time & Space Complexity: Keduanya adalah O(b^d)..."
+  },
+  {
+    "query": "Apa yang dimaksud dengan informasi yang 'Lengkap' dan 'Dapat Dipercaya'?",
+    "positive_passage": "Karakteristik Informasi Berkualitas: Akurat, Tepat Waktu (Timely), Relevan, Lengkap (Complete), Dapat Dipercaya (Reliable).",
+    "negative_passage": "F1-Score adalah Rata-rata harmonik dari Presisi dan Recall. Metrik yang baik untuk dataset yang tidak seimbang."
+  },
+  {
+    "query": "Jelaskan beberapa peran strategis dari sistem informasi dalam sebuah organisasi.",
+    "positive_passage": "Peran strategis SI meliputi: Efisiensi Operasional, Pengambilan Keputusan, Inovasi Produk dan Layanan, dan Mendukung Strategi Kompetitif.",
+    "negative_passage": "Aplikasi Queue: Penjadwalan Tugas CPU, Antrian Cetak (Print Queue), Sistem Pesan, Breadth-First Search (BFS)."
+  },
+  {
+    "query": "Bagaimana sistem informasi dapat digunakan untuk mencapai efisiensi operasional?",
+    "positive_passage": "Peran strategis SI meliputi: Efisiensi Operasional, Pengambilan Keputusan, Inovasi Produk dan Layanan, dan Mendukung Strategi Kompetitif.",
+    "negative_passage": "Tujuan dari Decision Support System (DSS) adalah membantu pengambilan keputusan untuk masalah semi-terstruktur."
+  },
+  {
+    "query": "Bagaimana SI membantu dalam pengambilan keputusan dan inovasi produk?",
+    "positive_passage": "Peran strategis SI meliputi: Efisiensi Operasional, Pengambilan Keputusan, Inovasi Produk dan Layanan, dan Mendukung Strategi Kompetitif.",
+    "negative_passage": "Fungsi dari Transaction Processing System (TPS) adalah untuk merekam dan memproses data transaksi rutin."
+  },
+  {
+    "query": "Apa fungsi dari Transaction Processing System (TPS) dan di level organisasi mana ia digunakan?",
+    "positive_passage": "Transaction Processing System (TPS) digunakan di level operasional untuk merekam dan memproses data transaksi rutin harian.",
+    "negative_passage": "Management Information System (MIS) digunakan di level manajerial untuk menyediakan laporan dan ringkasan dari data yang berasal dari TPS."
+  },
+  {
+    "query": "Siapa pengguna utama dari sistem TPS?",
+    "positive_passage": "Transaction Processing System (TPS) digunakan di level operasional untuk merekam dan memproses data transaksi rutin harian.",
+    "negative_passage": "Executive Support System (ESS) digunakan di level strategis untuk menyediakan ringkasan informasi tingkat tinggi bagi eksekutif senior."
+  },
+  {
+    "query": "Untuk tugas apa Transaction Processing System (TPS) dirancang?",
+    "positive_passage": "Transaction Processing System (TPS) digunakan di level operasional untuk merekam dan memproses data transaksi rutin harian.",
+    "negative_passage": "Decision Support System (DSS) digunakan di level manajerial untuk membantu pengambilan keputusan masalah semi-terstruktur dengan analisis \"what-if\"."
+  },
+  {
+    "query": "Untuk apa Management Information System (MIS) digunakan?",
+    "positive_passage": "Management Information System (MIS) digunakan di level manajerial untuk menyediakan laporan dan ringkasan dari data yang berasal dari TPS.",
+    "negative_passage": "Decision Support System (DSS) digunakan di level manajerial untuk membantu pengambilan keputusan masalah semi-terstruktur dengan analisis \"what-if\"."
+  },
+  {
+    "query": "Siapa pengguna MIS di dalam struktur organisasi dan apa sumber datanya?",
+    "positive_passage": "Management Information System (MIS) digunakan di level manajerial untuk menyediakan laporan dan ringkasan dari data yang berasal dari TPS.",
+    "negative_passage": "Transaction Processing System (TPS) digunakan di level operasional untuk merekam dan memproses data transaksi rutin harian."
+  },
+  {
+    "query": "Apa peran MIS bagi manajer tingkat menengah?",
+    "positive_passage": "Management Information System (MIS) digunakan di level manajerial untuk menyediakan laporan dan ringkasan dari data yang berasal dari TPS.",
+    "negative_passage": "Executive Support System (ESS) digunakan di level strategis untuk menyediakan ringkasan informasi tingkat tinggi bagi eksekutif senior."
+  },
+  {
+    "query": "Jelaskan tujuan dari Decision Support System (DSS).",
+    "positive_passage": "Decision Support System (DSS) digunakan di level manajerial untuk membantu pengambilan keputusan masalah semi-terstruktur dengan analisis \"what-if\".",
+    "negative_passage": "Executive Support System (ESS) digunakan di level strategis untuk menyediakan ringkasan informasi tingkat tinggi bagi eksekutif senior."
+  },
+  {
+    "query": "Untuk jenis masalah apa DSS dirancang?",
+    "positive_passage": "Decision Support System (DSS) digunakan di level manajerial untuk membantu pengambilan keputusan masalah semi-terstruktur dengan analisis \"what-if\".",
+    "negative_passage": "Management Information System (MIS) digunakan di level manajerial untuk menyediakan laporan dan ringkasan dari data yang berasal dari TPS."
+  },
+  {
+    "query": "Apa fitur khas dari DSS seperti analisis 'what-if'?",
+    "positive_passage": "Decision Support System (DSS) digunakan di level manajerial untuk membantu pengambilan keputusan masalah semi-terstruktur dengan analisis \"what-if\".",
+    "negative_passage": "Peran strategis SI meliputi: Efisiensi Operasional, Pengambilan Keputusan, Inovasi Produk dan Layanan, dan Mendukung Strategi Kompetitif."
+  },
+  {
+    "query": "Siapa pengguna dan apa tujuan dari Executive Support System (ESS)?",
+    "positive_passage": "Executive Support System (ESS) digunakan di level strategis untuk menyediakan ringkasan informasi tingkat tinggi bagi eksekutif senior.",
+    "negative_passage": "Transaction Processing System (TPS) digunakan di level operasional untuk merekam dan memproses data transaksi rutin harian."
+  },
+  {
+    "query": "Informasi seperti apa yang disediakan oleh ESS untuk para eksekutif?",
+    "positive_passage": "Executive Support System (ESS) digunakan di level strategis untuk menyediakan ringkasan informasi tingkat tinggi bagi eksekutif senior.",
+    "negative_passage": "Management Information System (MIS) digunakan di level manajerial untuk menyediakan laporan dan ringkasan dari data yang berasal dari TPS."
+  },
+  {
+    "query": "Mengapa ESS penting untuk pengambilan keputusan strategis?",
+    "positive_passage": "Executive Support System (ESS) digunakan di level strategis untuk menyediakan ringkasan informasi tingkat tinggi bagi eksekutif senior.",
+    "negative_passage": "Decision Support System (DSS) digunakan di level manajerial untuk membantu pengambilan keputusan masalah semi-terstruktur dengan analisis \"what-if\"."
+  },
+  {
+    "query": "Apa yang dimaksud dengan System Development Life Cycle (SDLC)?",
+    "positive_passage": "System Development Life Cycle (SDLC) adalah model air terjun (waterfall) yang terdiri dari serangkaian tahapan yang berurutan.",
+    "negative_passage": "Istilah \"Artificial Intelligence\" secara resmi dicetuskan pada lokakarya di Dartmouth College (1956), yang dihadiri oleh para pionir AI seperti John McCarthy, Marvin Minsky, dan Claude Shannon."
+  },
+  {
+    "query": "Model pengembangan apa yang sering diidentikkan dengan SDLC?",
+    "positive_passage": "System Development Life Cycle (SDLC) adalah model air terjun (waterfall) yang terdiri dari serangkaian tahapan yang berurutan.",
+    "negative_passage": "Minimax Algorithm adalah algoritma dasar untuk permainan dua pemain dengan giliran. Tujuannya adalah untuk menemukan langkah optimal dengan meminimalkan kemungkinan kerugian maksimum."
+  },
+  {
+    "query": "Sebutkan lima tahapan dalam System Development Life Cycle (SDLC).",
+    "positive_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance).",
+    "negative_passage": "Cara Kerja K-Means Clustering:\n  1.  Inisialisasi: Pilih 'k' titik data secara acak sebagai centroid.\n  2.  Assignment Step: Tetapkan setiap titik data ke centroid terdekat.\n  3.  Update Step: Hitung ulang posisi centroid.\n  4.  Iterasi hingga konvergen."
+  },
+  {
+    "query": "Jelaskan urutan proses dalam model waterfall SDLC.",
+    "positive_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance).",
+    "negative_passage": "Ada empat pendekatan utama yang sering menjadi acuan dalam pengembangan AI:\n1.  Thinking Humanly (Berpikir Seperti Manusia)\n2.  Acting Humanly (Bertindak Seperti Manusia)\n3.  Thinking Rationally (Berpikir Rasional)\n4.  Act Rationally (Bertindak Rasional)"
+  },
+  {
+    "query": "Tahap mana dalam SDLC yang berfokus pada studi kelayakan dan perencanaan proyek?",
+    "positive_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance).",
+    "negative_passage": "Proses Supervised Learning melibatkan dua tahap utama: Training (Pelatihan) dan Testing (Pengujian)."
+  },
+  {
+    "query": "Apa yang dilakukan pada tahap Perancangan (Design) dalam SDLC?",
+    "positive_passage": "Tahapan SDLC: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance).",
+    "negative_passage": "Komponen Sistem Informasi: 1. Perangkat Keras, 2. Perangkat Lunak, 3. Data, 4. Manusia, 5. Proses/Prosedur."
+  },
+  {
+    "query": "Apa fungsi utama dari sebuah Database Management System (DBMS)?",
+    "positive_passage": "Database Management System (DBMS) adalah perangkat lunak yang berfungsi sebagai antarmuka antara pengguna dan basis data.",
+    "negative_passage": "Agen cerdas (intelligent agent) adalah entitas apa pun yang dapat mengamati lingkungannya melalui sensor dan bertindak atas lingkungan tersebut melalui aktuator."
+  },
+  {
+    "query": "Bagaimana DBMS memfasilitasi interaksi antara pengguna dan database?",
+    "positive_passage": "Database Management System (DBMS) adalah perangkat lunak yang berfungsi sebagai antarmuka antara pengguna dan basis data.",
+    "negative_passage": "Sistem Informasi adalah kombinasi terorganisir dari manusia, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi."
+  },
+  {
+    "query": "Apa itu Abstract Data Type (ADT)?",
+    "positive_passage": "ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik), tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan.",
+    "negative_passage": "Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT."
+  },
+  {
+    "query": "Bagaimana ADT mendefinisikan tipe data tanpa melihat detail implementasinya?",
+    "positive_passage": "ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik), tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan.",
+    "negative_passage": "Machine Learning adalah cabang dari Kecerdasan Buatan (AI) yang fokus pada pengembangan algoritma yang memungkinkan komputer untuk belajar dari dan membuat prediksi atau keputusan berdasarkan data."
+  },
+  {
+    "query": "Apa fokus utama dari definisi sebuah Abstract Data Type?",
+    "positive_passage": "ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik), tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan.",
+    "negative_passage": "- **Data:** Fakta mentah atau angka-angka yang belum diolah.\n- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna."
+  },
+  {
+    "query": "Jelaskan apa yang dimaksud dengan struktur data.",
+    "positive_passage": "Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT.",
+    "negative_passage": "Sistem adalah sekumpulan komponen yang saling terkait dan bekerja sama untuk mencapai tujuan tertentu. Setiap sistem memiliki input, proses, dan output."
+  },
+  {
+    "query": "Apa tujuan utama dari penggunaan struktur data yang efisien?",
+    "positive_passage": "Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT.",
+    "negative_passage": "Peran strategis SI meliputi: Efisiensi Operasional, Pengambilan Keputusan, Inovasi Produk dan Layanan, dan Mendukung Strategi Kompetitif."
+  },
+  {
+    "query": "Apa hubungan antara Struktur Data dan Abstract Data Type (ADT)?",
+    "positive_passage": "Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT.",
+    "negative_passage": "ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik), tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan."
+  },
+  {
+    "query": "Sebutkan karakteristik utama dari struktur data Array.",
+    "positive_passage": "Karakteristik Array:\n  - Ukuran Tetap (Statis)\n  - Akses Cepat (O(1))\n  - Tipe Data Homogen",
+    "negative_passage": "Karakteristik Informasi Berkualitas: Akurat, Tepat Waktu (Timely), Relevan, Lengkap (Complete), Dapat Dipercaya (Reliable)."
+  },
+  {
+    "query": "Apa yang dimaksud dengan akses cepat O(1) dan tipe data homogen pada array?",
+    "positive_passage": "Karakteristik Array:\n  - Ukuran Tetap (Statis)\n  - Akses Cepat (O(1))\n  - Tipe Data Homogen",
+    "negative_passage": "Perbedaan Array vs. Linked List:\n- Array: Ukuran statis, akses cepat (O(1)), penyisipan lambat (O(n)).\n- Linked List: Ukuran dinamis, akses lambat (O(n)), penyisipan cepat (O(1))."
+  },
+  {
+    "query": "Mengapa array disebut memiliki ukuran yang statis?",
+    "positive_passage": "Karakteristik Array:\n  - Ukuran Tetap (Statis)\n  - Akses Cepat (O(1))\n  - Tipe Data Homogen",
+    "negative_passage": "Karakteristik DFS:\n  - Completeness: Tidak lengkap jika ada loop tak terbatas.\n  - Optimality: Tidak optimal.\n  - Time Complexity: O(b^m)\n  - Space Complexity: O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS."
+  },
+  {
+    "query": "Apa itu Stack dan prinsip apa yang digunakannya?",
+    "positive_passage": "Stack adalah struktur data linear yang mengikuti prinsip LIFO (Last-In, First-Out). Elemen terakhir yang masuk adalah yang pertama keluar.",
+    "negative_passage": "Queue adalah struktur data linear yang mengikuti prinsip FIFO (First-In, First-Out). Elemen pertama yang masuk adalah yang pertama keluar."
+  },
+  {
+    "query": "Jelaskan prinsip LIFO pada struktur data Stack.",
+    "positive_passage": "Stack adalah struktur data linear yang mengikuti prinsip LIFO (Last-In, First-Out). Elemen terakhir yang masuk adalah yang pertama keluar.",
+    "negative_passage": "Tree adalah struktur data non-linear yang merepresentasikan data dalam bentuk hierarki."
+  },
+  {
+    "query": "Jelaskan tentang struktur data Queue dan prinsip kerjanya.",
+    "positive_passage": "Queue adalah struktur data linear yang mengikuti prinsip FIFO (First-In, First-Out). Elemen pertama yang masuk adalah yang pertama keluar.",
+    "negative_passage": "Stack adalah struktur data linear yang mengikuti prinsip LIFO (Last-In, First-Out). Elemen terakhir yang masuk adalah yang pertama keluar."
+  },
+  {
+    "query": "Apa yang dimaksud dengan prinsip FIFO dalam konteks Queue?",
+    "positive_passage": "Queue adalah struktur data linear yang mengikuti prinsip FIFO (First-In, First-Out). Elemen pertama yang masuk adalah yang pertama keluar.",
+    "negative_passage": "Aplikasi Queue: Penjadwalan Tugas CPU, Antrian Cetak (Print Queue), Sistem Pesan, Breadth-First Search (BFS)."
+  },
+  {
+    "query": "Berikan beberapa contoh aplikasi dari struktur data Stack.",
+    "positive_passage": "Aplikasi Stack: Fungsi Undo/Redo, Navigasi Browser (tombol back), Call Stack, Pengecekan Tanda Kurung Seimbang.",
+    "negative_passage": "Aplikasi Queue: Penjadwalan Tugas CPU, Antrian Cetak (Print Queue), Sistem Pesan, Breadth-First Search (BFS)."
+  },
+  {
+    "query": "Bagaimana Stack digunakan untuk fitur Undo/Redo atau tombol 'back' browser?",
+    "positive_passage": "Aplikasi Stack: Fungsi Undo/Redo, Navigasi Browser (tombol back), Call Stack, Pengecekan Tanda Kurung Seimbang.",
+    "negative_passage": "Peran strategis SI meliputi: Efisiensi Operasional, Pengambilan Keputusan, Inovasi Produk dan Layanan, dan Mendukung Strategi Kompetitif."
+  },
+  {
+    "query": "Apa itu Call Stack dalam pemrograman dan bagaimana hubungannya dengan struktur data Stack?",
+    "positive_passage": "Aplikasi Stack: Fungsi Undo/Redo, Navigasi Browser (tombol back), Call Stack, Pengecekan Tanda Kurung Seimbang.",
+    "negative_passage": "Aplikasi Queue: Penjadwalan Tugas CPU, Antrian Cetak (Print Queue), Sistem Pesan, Breadth-First Search (BFS)."
+  },
+  {
+    "query": "Di mana saja struktur data Queue biasanya diaplikasikan?",
+    "positive_passage": "Aplikasi Queue: Penjadwalan Tugas CPU, Antrian Cetak (Print Queue), Sistem Pesan, Breadth-First Search (BFS).",
+    "negative_passage": "Aplikasi Stack: Fungsi Undo/Redo, Navigasi Browser (tombol back), Call Stack, Pengecekan Tanda Kurung Seimbang."
+  },
+  {
+    "query": "Bagaimana Queue digunakan dalam penjadwalan tugas CPU atau antrian cetak?",
+    "positive_passage": "Aplikasi Queue: Penjadwalan Tugas CPU, Antrian Cetak (Print Queue), Sistem Pesan, Breadth-First Search (BFS).",
+    "negative_passage": "Transaction Processing System (TPS) digunakan di level operasional untuk merekam dan memproses data transaksi rutin harian."
+  },
+  {
+    "query": "Sebutkan contoh penggunaan Queue dalam algoritma pencarian.",
+    "positive_passage": "Aplikasi Queue: Penjadwalan Tugas CPU, Antrian Cetak (Print Queue), Sistem Pesan, Breadth-First Search (BFS).",
+    "negative_passage": "Karakteristik BFS:\n  - Completeness: Lengkap (dijamin menemukan solusi jika ada).\n  - Optimality: Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).\n  - Time & Space Complexity: Keduanya adalah O(b^d)..."
+  },
+  {
+    "query": "Bandingkan perbedaan utama antara Array dan Linked List dari segi ukuran dan kecepatan akses.",
+    "positive_passage": "Perbedaan Array vs. Linked List:\n- Array: Ukuran statis, akses cepat (O(1)), penyisipan lambat (O(n)).\n- Linked List: Ukuran dinamis, akses lambat (O(n)), penyisipan cepat (O(1)).",
+    "negative_passage": "- **Data:** Fakta mentah atau angka-angka yang belum diolah.\n- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna."
+  },
+  {
+    "query": "Kapan sebaiknya menggunakan Linked List daripada Array, terutama terkait penyisipan data?",
+    "positive_passage": "Perbedaan Array vs. Linked List:\n- Array: Ukuran statis, akses cepat (O(1)), penyisipan lambat (O(n)).\n- Linked List: Ukuran dinamis, akses lambat (O(n)), penyisipan cepat (O(1)).",
+    "negative_passage": "Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik)."
+  },
+  {
+    "query": "Jelaskan trade-off antara kecepatan akses dan fleksibilitas ukuran pada Array dan Linked List.",
+    "positive_passage": "Perbedaan Array vs. Linked List:\n- Array: Ukuran statis, akses cepat (O(1)), penyisipan lambat (O(n)).\n- Linked List: Ukuran dinamis, akses lambat (O(n)), penyisipan cepat (O(1)).",
+    "negative_passage": "Karakteristik Array:\n  - Ukuran Tetap (Statis)\n  - Akses Cepat (O(1))\n  - Tipe Data Homogen"
+  },
+  {
+    "query": "Apa kelebihan utama dari Doubly Linked List dibandingkan Singly Linked List?",
+    "positive_passage": "Doubly Linked List memungkinkan navigasi dua arah (maju dan mundur) karena setiap node memiliki pointer `next` dan `prev`.",
+    "negative_passage": "Circular Linked List adalah variasi di mana pointer `next` dari node terakhir menunjuk kembali ke node pertama (head)."
+  },
+  {
+    "query": "Pointer apa saja yang ada pada setiap node dalam Doubly Linked List?",
+    "positive_passage": "Doubly Linked List memungkinkan navigasi dua arah (maju dan mundur) karena setiap node memiliki pointer `next` dan `prev`.",
+    "negative_passage": "Urutan Pre-order Traversal: Kunjungi root, lalu subtree kiri, lalu subtree kanan. Digunakan untuk menyalin tree."
+  },
+  {
+    "query": "Apa ciri khas dari sebuah Circular Linked List?",
+    "positive_passage": "Circular Linked List adalah variasi di mana pointer `next` dari node terakhir menunjuk kembali ke node pertama (head).",
+    "negative_passage": "Doubly Linked List memungkinkan navigasi dua arah (maju dan mundur) karena setiap node memiliki pointer `next` dan `prev`."
+  },
+  {
+    "query": "Bagaimana node terakhir terhubung dalam sebuah Circular Linked List?",
+    "positive_passage": "Circular Linked List adalah variasi di mana pointer `next` dari node terakhir menunjuk kembali ke node pertama (head).",
+    "negative_passage": "Binary Tree adalah jenis tree di mana setiap node dapat memiliki paling banyak dua child, yang disebut sebagai left child dan right child."
+  },
+  {
+    "query": "Bagaimana struktur data Tree didefinisikan?",
+    "positive_passage": "Tree adalah struktur data non-linear yang merepresentasikan data dalam bentuk hierarki.",
+    "negative_passage": "Stack adalah struktur data linear yang mengikuti prinsip LIFO (Last-In, First-Out). Elemen terakhir yang masuk adalah yang pertama keluar."
+  },
+  {
+    "query": "Mengapa Tree disebut sebagai struktur data non-linear?",
+    "positive_passage": "Tree adalah struktur data non-linear yang merepresentasikan data dalam bentuk hierarki.",
+    "negative_passage": "Queue adalah struktur data linear yang mengikuti prinsip FIFO (First-In, First-Out). Elemen pertama yang masuk adalah yang pertama keluar."
+  },
+  {
+    "query": "Apa itu Binary Tree?",
+    "positive_passage": "Binary Tree adalah jenis tree di mana setiap node dapat memiliki paling banyak dua child, yang disebut sebagai left child dan right child.",
+    "negative_passage": "Varian populer dari RNN adalah Long Short-Term Memory (LSTM) dan Gated Recurrent Unit (GRU) yang dikembangkan untuk mengatasi kelemahan RNN standar."
+  },
+  {
+    "query": "Berapa jumlah maksimal anak (child) yang bisa dimiliki oleh sebuah node dalam Binary Tree?",
+    "positive_passage": "Binary Tree adalah jenis tree di mana setiap node dapat memiliki paling banyak dua child, yang disebut sebagai left child dan right child.",
+    "negative_passage": "Tree adalah struktur data non-linear yang merepresentasikan data dalam bentuk hierarki."
+  },
+  {
+    "query": "Jelaskan urutan kunjungan node pada metode In-order Traversal.",
+    "positive_passage": "Urutan In-order Traversal: Kunjungi subtree kiri, lalu root, lalu subtree kanan. Menghasilkan elemen terurut pada Binary Search Tree.",
+    "negative_passage": "Urutan Pre-order Traversal: Kunjungi root, lalu subtree kiri, lalu subtree kanan. Digunakan untuk menyalin tree."
+  },
+  {
+    "query": "Apa hasil yang didapatkan dari In-order Traversal jika diterapkan pada Binary Search Tree?",
+    "positive_passage": "Urutan In-order Traversal: Kunjungi subtree kiri, lalu root, lalu subtree kanan. Menghasilkan elemen terurut pada Binary Search Tree.",
+    "negative_passage": "Urutan Post-order Traversal: Kunjungi subtree kiri, lalu subtree kanan, lalu root. Digunakan untuk menghapus tree."
+  },
+  {
+    "query": "Bagaimana urutan kunjungan node pada Pre-order Traversal dan apa kegunaannya?",
+    "positive_passage": "Urutan Pre-order Traversal: Kunjungi root, lalu subtree kiri, lalu subtree kanan. Digunakan untuk menyalin tree.",
+    "negative_passage": "Urutan Post-order Traversal: Kunjungi subtree kiri, lalu subtree kanan, lalu root. Digunakan untuk menghapus tree."
+  },
+  {
+    "query": "Jelaskan langkah-langkah dalam Pre-order Traversal.",
+    "positive_passage": "Urutan Pre-order Traversal: Kunjungi root, lalu subtree kiri, lalu subtree kanan. Digunakan untuk menyalin tree.",
+    "negative_passage": "Urutan In-order Traversal: Kunjungi subtree kiri, lalu root, lalu subtree kanan. Menghasilkan elemen terurut pada Binary Search Tree."
+  },
+  {
+    "query": "Jelaskan urutan kunjungan node pada Post-order Traversal.",
+    "positive_passage": "Urutan Post-order Traversal: Kunjungi subtree kiri, lalu subtree kanan, lalu root. Digunakan untuk menghapus tree.",
+    "negative_passage": "Urutan In-order Traversal: Kunjungi subtree kiri, lalu root, lalu subtree kanan. Menghasilkan elemen terurut pada Binary Search Tree."
+  },
+  {
+    "query": "Untuk keperluan apa Post-order Traversal sering digunakan?",
+    "positive_passage": "Urutan Post-order Traversal: Kunjungi subtree kiri, lalu subtree kanan, lalu root. Digunakan untuk menghapus tree.",
+    "negative_passage": "Urutan Pre-order Traversal: Kunjungi root, lalu subtree kiri, lalu subtree kanan. Digunakan untuk menyalin tree."
+  }
+]

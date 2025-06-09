@@ -1,0 +1,31 @@
+# Pertemuan 1: Pengenalan Struktur Data, Tipe Data, dan Array
+
+## Konsep Dasar
+
+### Tipe Data Abstrak (Abstract Data Type - ADT)
+ADT adalah model matematis untuk tipe data. ADT mendefinisikan sebuah tipe data berdasarkan perilakunya (semantik) dari sudut pandang pengguna, yaitu dalam hal operasi yang mungkin dilakukan pada data tersebut, tanpa mempertimbangkan bagaimana operasi-operasi ini diimplementasikan. Contoh: ADT List mendefinisikan operasi seperti `add_item`, `remove_item`, `get_item`, tanpa menjelaskan bagaimana data disimpan (misalnya dalam array atau linked list).
+
+### Struktur Data
+Struktur data adalah cara spesifik untuk menyimpan dan mengorganisir data di dalam komputer sehingga data tersebut dapat digunakan secara efisien. Struktur data adalah implementasi konkret dari satu atau lebih ADT. Pilihan struktur data yang tepat dapat membuat program berjalan lebih cepat dan menggunakan lebih sedikit memori.
+
+### Algoritma
+Algoritma adalah serangkaian instruksi atau langkah-langkah terbatas yang didefinisikan dengan baik untuk menyelesaikan suatu masalah atau melakukan suatu tugas. Efisiensi sebuah algoritma seringkali sangat bergantung pada struktur data yang digunakan.
+
+## Tipe Data
+- **Primitif:** Tipe data dasar yang disediakan oleh bahasa pemrograman (contoh: integer, float, char, boolean).
+- **Komposit:** Tipe data yang dibentuk dari tipe data primitif atau komposit lainnya (contoh: struct, class, array).
+
+## Array
+Array adalah struktur data linear yang menyimpan kumpulan elemen dengan tipe data yang sama dalam lokasi memori yang berdekatan. Setiap elemen diidentifikasi oleh sebuah indeks (atau kunci).
+
+- **Karakteristik:**
+  - **Ukuran Tetap (Statis):** Ukuran array ditentukan saat deklarasi dan tidak dapat diubah.
+  - **Akses Cepat:** Elemen dapat diakses langsung menggunakan indeksnya dalam waktu konstan, O(1).
+  - **Tipe Data Homogen:** Semua elemen harus memiliki tipe data yang sama.
+
+- **Operasi Dasar pada Array:**
+  1.  **Traversal:** Mengunjungi setiap elemen dalam array, biasanya untuk menampilkan atau memprosesnya. Kompleksitas: O(n).
+  2.  **Insertion (Penyisipan):** Menambahkan elemen baru ke dalam array. Jika array penuh, ini tidak mungkin dilakukan. Jika menyisipkan di tengah, elemen-elemen setelahnya harus digeser. Kompleksitas: O(n).
+  3.  **Deletion (Penghapusan):** Menghapus elemen dari array. Elemen-elemen setelahnya mungkin perlu digeser untuk mengisi ruang kosong. Kompleksitas: O(n).
+  4.  **Search (Pencarian):** Mencari elemen tertentu. Pencarian linear memiliki kompleksitas O(n), sementara pencarian biner (pada array yang terurut) memiliki kompleksitas O(log n).
+  5.  **Update (Pembaruan):** Mengubah nilai elemen pada indeks tertentu. Kompleksitas: O(1).

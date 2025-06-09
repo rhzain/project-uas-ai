@@ -1,0 +1,38 @@
+# Pertemuan 1: Fondasi & Pengenalan Kecerdasan Buatan
+
+## Pengenalan Kecerdasan Buatan (Artificial Intelligence)
+
+### Definisi dan Ruang Lingkup AI [1]
+Kecerdasan Buatan (Artificial Intelligence/AI) adalah cabang ilmu komputer yang luas yang berfokus pada pembuatan mesin cerdas yang mampu melakukan tugas-tugas yang biasanya membutuhkan kecerdasan manusia. [2] AI memungkinkan sistem untuk belajar dari pengalaman, menyesuaikan diri dengan input baru, dan melakukan tugas-tugas seperti manusia. Ruang lingkupnya mencakup berbagai sub-bidang seperti Machine Learning, Natural Language Processing (NLP), Computer Vision, dan Robotika. [4]
+
+### Tujuan dan Pendekatan AI [2]
+Secara umum, tujuan AI adalah untuk menciptakan teknologi yang dapat berpikir dan bertindak secara cerdas. Ada empat pendekatan utama yang sering menjadi acuan dalam pengembangan AI:
+1.  **Thinking Humanly (Berpikir Seperti Manusia):** Pendekatan ini berfokus pada pemodelan kognitif. Tujuannya adalah membuat sistem yang meniru cara manusia berpikir, misalnya melalui Jaringan Saraf Tiruan (Artificial Neural Networks).
+2.  **Acting Humanly (Bertindak Seperti Manusia):** Pendekatan ini dikenal sebagai "Turing Test". Sebuah sistem dianggap cerdas jika mampu berinteraksi dan tidak bisa dibedakan dari manusia. Contohnya termasuk chatbot canggih dan pemrosesan bahasa alami.
+3.  **Thinking Rationally (Berpikir Rasional):** Pendekatan ini menggunakan "hukum pemikiran" atau logika. Sistem dibangun untuk melakukan penalaran logis yang benar untuk sampai pada kesimpulan yang tepat. Contohnya adalah sistem pakar (expert systems).
+4.  **Act Rationally (Bertindak Rasional):** Ini adalah pendekatan dominan dalam AI modern. Sistem dirancang sebagai "agen rasional" yang bertindak untuk mencapai hasil terbaik atau, dalam kondisi ketidakpastian, hasil terbaik yang diharapkan. Contohnya adalah mobil otonom yang harus membuat keputusan optimal di jalan. [2]
+
+### Sejarah Singkat Perkembangan AI [21, 22]
+Perkembangan AI adalah perjalanan panjang yang penuh dengan optimisme dan tantangan:
+- **Awal Mula (1943-1955):** Fondasi awal diletakkan dengan model neuron buatan oleh McCulloch dan Pitts. Alan Turing menerbitkan artikel "Computing Machinery and Intelligence" (1950) yang mengusulkan Uji Turing.
+- **Kelahiran AI (1956):** Istilah "Artificial Intelligence" secara resmi dicetuskan pada lokakarya di Dartmouth College, yang dihadiri oleh para pionir AI seperti John McCarthy, Marvin Minsky, dan Claude Shannon.
+- **Era Emas (1956-1974):** Periode optimisme besar dengan pengembangan program-program awal yang mengesankan. Pemerintah memberikan dana besar untuk penelitian.
+- **Musim Dingin AI Pertama (1974-1980):** Kemajuan melambat, dan janji-janji besar tidak terwujud. Keterbatasan komputasi menjadi kendala utama, yang menyebabkan pemotongan dana penelitian secara signifikan.
+- **Kebangkitan & Sistem Pakar (1980-1987):** AI bangkit kembali dengan kesuksesan komersial sistem pakar, yaitu program AI yang meniru kemampuan pengambilan keputusan seorang ahli manusia.
+- **Musim Dingin AI Kedua (1987-1993):** Pasar sistem pakar runtuh dan pendanaan kembali mengering.
+- **Era Modern (1993-Sekarang):** AI mencapai tonggak-tonggak penting. Komputer Deep Blue dari IBM mengalahkan juara catur dunia Garry Kasparov (1997). Sejak 2010-an, kemajuan dalam *deep learning*, ketersediaan *big data*, dan kekuatan komputasi (GPU) telah memicu ledakan AI dalam aplikasi sehari-hari. [23]
+
+### Jenis-Jenis Kecerdasan Buatan [31, 32]
+Berdasarkan kapabilitasnya, AI dapat diklasifikasikan menjadi tiga kategori:
+- **Artificial Narrow Intelligence (ANI) / AI Lemah:** Ini adalah satu-satunya jenis AI yang berhasil direalisasikan hingga saat ini. ANI dirancang untuk melakukan tugas spesifik dengan sangat baik, seperti pengenalan suara (Siri), sistem rekomendasi (Netflix), atau mengemudikan mobil. AI ini beroperasi dalam jangkauan yang terbatas dan tidak memiliki kesadaran. [31]
+- **Artificial General Intelligence (AGI) / AI Kuat:** Ini adalah AI setingkat manusia yang dapat memahami, belajar, dan menerapkan kecerdasannya untuk menyelesaikan masalah apa pun yang dapat dilakukan manusia. AGI masih bersifat teoretis dan menjadi tujuan utama para peneliti AI. [32]
+- **Artificial Superintelligence (ASI) / Super AI:** Ini adalah AI hipotetis yang kecerdasannya jauh melampaui manusia terpintar dalam hampir semua bidang, termasuk kreativitas, pemecahan masalah, dan kearifan sosial. Konsep ini sering dieksplorasi dalam fiksi ilmiah.
+
+### Cabang dan Aplikasi AI [61, 62]
+AI telah diterapkan di hampir setiap industri melalui berbagai cabangnya:
+- **Machine Learning (ML):** Memberi sistem kemampuan untuk belajar dan meningkatkan kinerja dari data tanpa diprogram secara eksplisit.
+- **Deep Learning:** Sub-bidang ML yang menggunakan jaringan saraf berlapis untuk menganalisis berbagai faktor dalam data. Ini adalah kekuatan di balik aplikasi AI yang paling canggih.
+- **Natural Language Processing (NLP):** Memungkinkan mesin untuk memahami dan merespons bahasa manusia. Digunakan dalam chatbot, terjemahan, dan analisis sentimen.
+- **Computer Vision:** Melatih komputer untuk menafsirkan dan memahami dunia visual. Digunakan dalam pengenalan wajah, analisis citra medis, dan mobil otonom.
+- **Robotika:** Merancang dan membangun robot yang dapat melakukan tugas di dunia fisik.
+- **Aplikasi Sehari-hari:** Mesin pencari (Google), asisten virtual (Siri, Alexa), M-Banking (deteksi penipuan), dan algoritma media sosial. [61, 62]

@@ -1,0 +1,27 @@
+# Pertemuan 1: Konsep Dasar Sistem, Informasi, dan Sistem Informasi
+
+## Definisi Dasar
+
+### Apa itu Sistem?
+Sistem adalah sekumpulan komponen yang saling terkait dan bekerja sama untuk mencapai tujuan tertentu. Setiap sistem memiliki input, proses, dan output. Contoh: sistem pencernaan, sistem tata surya.
+
+### Perbedaan Data dan Informasi
+- **Data:** Fakta mentah atau angka-angka yang belum diolah dan tidak memiliki konteks. Contoh: 170, "Budi", 85.
+- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna dan berguna bagi penerimanya untuk pengambilan keputusan. Contoh: "Tinggi badan Budi adalah 170 cm dan mendapatkan nilai ujian 85".
+
+## Sistem Informasi (SI)
+Sistem Informasi adalah kombinasi terorganisir dari manusia, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi.
+
+### Komponen Sistem Informasi:
+1.  **Perangkat Keras (Hardware):** Komponen fisik komputer dan perangkat terkait (CPU, monitor, keyboard, printer).
+2.  **Perangkat Lunak (Software):** Program dan instruksi yang memerintahkan hardware untuk bekerja. Terdiri dari Perangkat Lunak Sistem (OS) dan Perangkat Lunak Aplikasi.
+3.  **Data:** Sumber daya mentah yang diolah menjadi informasi.
+4.  **Manusia (People):** Pengguna akhir (end-user) dan para spesialis SI (analis sistem, programmer, administrator).
+5.  **Proses/Prosedur:** Aturan dan langkah-langkah yang diikuti dalam menggunakan sistem informasi.
+
+### Karakteristik Informasi Berkualitas:
+- **Akurat:** Bebas dari kesalahan.
+- **Tepat Waktu (Timely):** Tersedia saat dibutuhkan.
+- **Relevan:** Sesuai dengan kebutuhan pengguna.
+- **Lengkap (Complete):** Mengandung semua fakta penting.
+- **Dapat Dipercaya (Reliable):** Sumber datanya dapat dipertanggungjawabkan.

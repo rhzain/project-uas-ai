@@ -1,0 +1,33 @@
+# Pertemuan 2: Stack (Tumpukan) dan Queue (Antrian)
+
+## Stack (Tumpukan)
+Stack adalah struktur data linear yang mengikuti prinsip **LIFO (Last-In, First-Out)**. Artinya, elemen terakhir yang dimasukkan adalah elemen pertama yang akan dikeluarkan. Analogi di dunia nyata adalah tumpukan piring; piring terakhir yang diletakkan di atas adalah yang pertama kali diambil.
+
+### Operasi Dasar Stack:
+1.  **push(elemen):** Menambahkan sebuah elemen ke puncak (top) dari stack.
+2.  **pop():** Menghapus dan mengembalikan elemen dari puncak stack. Error terjadi jika stack kosong (underflow).
+3.  **peek() atau top():** Mengembalikan nilai elemen di puncak stack tanpa menghapusnya.
+4.  **isEmpty():** Memeriksa apakah stack kosong.
+5.  **isFull():** (Jika diimplementasikan dengan array) Memeriksa apakah stack penuh.
+
+### Aplikasi Stack:
+- **Fungsi Undo/Redo:** Menyimpan status sebelumnya dalam stack.
+- **Navigasi Browser:** Tombol "back" menyimpan URL sebelumnya di stack.
+- **Pemanggilan Fungsi (Call Stack):** Melacak fungsi yang sedang aktif dalam sebuah program.
+- **Pengecekan Tanda Kurung Seimbang:** `{[()]}`, `()[]`.
+
+## Queue (Antrian)
+Queue adalah struktur data linear yang mengikuti prinsip **FIFO (First-In, First-Out)**. Artinya, elemen pertama yang dimasukkan adalah elemen pertama yang akan dikeluarkan. Analogi di dunia nyata adalah antrian orang di loket tiket.
+
+### Operasi Dasar Queue:
+1.  **enqueue(elemen):** Menambahkan sebuah elemen ke bagian belakang (rear/tail) dari antrian.
+2.  **dequeue():** Menghapus dan mengembalikan elemen dari bagian depan (front/head) dari antrian. Error terjadi jika antrian kosong.
+3.  **peek() atau front():** Mengembalikan nilai elemen di depan antrian tanpa menghapusnya.
+4.  **isEmpty():** Memeriksa apakah antrian kosong.
+5.  **isFull():** (Jika diimplementasikan dengan array) Memeriksa apakah antrian penuh.
+
+### Aplikasi Queue:
+- **Penjadwalan Tugas:** Penjadwalan proses CPU.
+- **Antrian Cetak (Print Queue):** Mengelola dokumen yang akan dicetak.
+- **Sistem Pesan:** Mengelola pesan yang masuk secara berurutan.
+- **Breadth-First Search (BFS):** Algoritma pencarian pada graph atau tree.

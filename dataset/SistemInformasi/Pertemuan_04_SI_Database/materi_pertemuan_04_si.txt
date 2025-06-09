@@ -1,0 +1,34 @@
+# Pertemuan 4: Manajemen Data dan Basis Data
+
+## Pentingnya Manajemen Data
+Data adalah aset berharga bagi organisasi. Manajemen data adalah praktik mengorganisir dan memelihara data agar akurat, aman, dan mudah diakses. Tanpa manajemen data yang baik, organisasi akan kesulitan menghasilkan informasi yang berkualitas.
+
+## Konsep Dasar Basis Data (Database)
+Basis data adalah kumpulan data yang terorganisir, terstruktur, dan saling berhubungan yang disimpan secara elektronik. Tujuannya adalah untuk mengelola data dalam jumlah besar secara efisien dan mengurangi redundansi (pengulangan) data.
+
+### Hirarki Data:
+1.  **Bit:** Unit data terkecil (0 atau 1).
+2.  **Byte:** Sekumpulan bit yang merepresentasikan satu karakter.
+3.  **Field (Kolom):** Sekumpulan karakter yang memiliki arti tertentu (misalnya, Nama, NIM). Disebut juga atribut.
+4.  **Record (Baris):** Kumpulan field yang saling berhubungan yang menjelaskan satu entitas.
+5.  **File (Tabel):** Kumpulan record yang sejenis.
+6.  **Database:** Kumpulan file/tabel yang saling berhubungan.
+
+## Konsep Model Relasional
+Model basis data yang paling umum digunakan adalah model relasional.
+
+- **Entitas (Entity):** Objek di dunia nyata yang datanya ingin disimpan (misalnya, Mahasiswa, MataKuliah, Dosen). Biasanya direpresentasikan sebagai tabel.
+- **Atribut (Attribute):** Karakteristik atau properti dari sebuah entitas (misalnya, entitas Mahasiswa memiliki atribut NIM, Nama, Alamat). Direpresentasikan sebagai kolom dalam tabel.
+- **Relasi (Relationship):** Hubungan atau asosiasi antara dua atau lebih entitas. Contoh: Mahasiswa "mengambil" MataKuliah.
+
+## Sistem Manajemen Basis Data (DBMS)
+Database Management System (DBMS) adalah perangkat lunak yang berfungsi sebagai antarmuka antara pengguna dan basis data. DBMS memungkinkan pengguna untuk membuat, membaca, memperbarui, dan menghapus data (operasi CRUD - Create, Read, Update, Delete) di dalam basis data.
+
+### Fungsi Utama DBMS:
+- **Definisi Data (Data Definition):** Mendefinisikan struktur data dan relasinya.
+- **Manipulasi Data (Data Manipulation):** Menyediakan bahasa (seperti SQL) untuk mengakses dan memanipulasi data.
+- **Keamanan dan Integritas:** Mengontrol akses pengguna dan memastikan data tetap konsisten.
+- **Manajemen Konkurensi:** Mengatur akses data oleh banyak pengguna secara bersamaan.
+- **Backup dan Recovery:** Menyediakan mekanisme untuk pemulihan data jika terjadi kegagalan.
+
+**Contoh DBMS Populer:** MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server.

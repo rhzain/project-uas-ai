@@ -1,0 +1,37 @@
+# Pertemuan 3: Linked List (Senarai Berantai)
+
+## Pengenalan Linked List
+Linked List adalah struktur data linear yang terdiri dari serangkaian node, di mana setiap node berisi data dan sebuah pointer (atau referensi) ke node berikutnya dalam urutan. Berbeda dengan array, linked list tidak menyimpan elemen di lokasi memori yang berdekatan.
+
+### Perbandingan Array vs. Linked List:
+- **Array:** Ukuran statis, alokasi memori berurutan, akses elemen cepat (O(1)), penyisipan/penghapusan lambat (O(n)).
+- **Linked List:** Ukuran dinamis, alokasi memori acak, akses elemen lambat (O(n)), penyisipan/penghapusan cepat (O(1) jika posisi node diketahui).
+
+## Jenis-jenis Linked List
+
+### 1. Singly Linked List (Senarai Berantai Tunggal)
+Setiap node memiliki dua bagian: data dan sebuah pointer `next` yang menunjuk ke node berikutnya. Node terakhir menunjuk ke NULL. Navigasi hanya bisa dilakukan ke satu arah (maju).
+
+### 2. Doubly Linked List (Senarai Berantai Ganda)
+Setiap node memiliki tiga bagian: data, pointer `next` ke node berikutnya, dan pointer `prev` ke node sebelumnya. Ini memungkinkan navigasi dua arah (maju dan mundur).
+
+### 3. Circular Linked List (Senarai Berantai Melingkar)
+Variasi dari singly atau doubly linked list di mana pointer `next` dari node terakhir menunjuk kembali ke node pertama (head), membentuk sebuah lingkaran. Tidak ada node yang menunjuk ke NULL.
+
+## Operasi Dasar pada Linked List
+
+### 1. Traversal (Penelusuran)
+Mengunjungi setiap node dalam list, mulai dari head hingga akhir (NULL).
+
+### 2. Insertion (Penyisipan)
+- **Di Awal (Insert at Beginning):** Node baru menjadi head baru, dan pointernya menunjuk ke head lama.
+- **Di Akhir (Insert at End):** Lakukan traversal hingga node terakhir, lalu ubah pointer `next`-nya untuk menunjuk ke node baru.
+- **Di Tengah (Insert at Middle):** Menyisipkan node baru setelah node tertentu.
+
+### 3. Deletion (Penghapusan)
+- **Dari Awal:** Menggeser head ke node kedua.
+- **Dari Akhir:** Lakukan traversal ke node kedua dari belakang, lalu atur pointer `next`-nya ke NULL.
+- **Dari Tengah:** Menghapus node dengan nilai tertentu dengan mengubah pointer dari node sebelumnya.
+
+### 4. Search (Pencarian)
+Mencari sebuah elemen dengan melakukan traversal dari head dan membandingkan nilai setiap node.

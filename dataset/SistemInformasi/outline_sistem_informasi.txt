@@ -1,0 +1,21 @@
+MATAKULIAH: Sistem Informasi
+
+PERTEMUAN: 1
+JUDUL: Konsep Dasar Sistem, Informasi, dan Sistem Informasi
+DESKRIPSI: Membahas definisi sistem, data, dan informasi. Menguraikan komponen-komponen pembentuk Sistem Informasi (Hardware, Software, Data, Manusia, Proses), serta karakteristik informasi yang berkualitas.
+FILE_MATERI: Pertemuan_01_SI_Intro/materi_pertemuan_01_si.txt
+
+PERTEMUAN: 2
+JUDUL: Peran Strategis dan Jenis Sistem Informasi dalam Organisasi
+DESKRIPSI: Menjelaskan peran strategis SI untuk keunggulan kompetitif. Membedah jenis-jenis SI berdasarkan level manajerial: TPS (Transaction Processing System), MIS (Management Information System), DSS (Decision Support System), dan ESS (Executive Support System).
+FILE_MATERI: Pertemuan_02_SI_Organizational/materi_pertemuan_02_si.txt
+
+PERTEMUAN: 3
+JUDUL: Pengembangan Sistem Informasi (SDLC)
+DESKRIPSI: Pengenalan metodologi pengembangan sistem. Fokus pada Siklus Hidup Pengembangan Sistem (System Development Life Cycle - SDLC) dan tahapan-tahapannya: Perencanaan (Planning), Analisis (Analysis), Perancangan (Design), Implementasi (Implementation), dan Pemeliharaan (Maintenance).
+FILE_MATERI: Pertemuan_03_SI_SDLC/materi_pertemuan_03_si.txt
+
+PERTEMUAN: 4
+JUDUL: Manajemen Data dan Basis Data
+DESKRIPSI: Membahas pentingnya manajemen data. Pengenalan konsep Basis Data (Database), entitas, atribut, dan relasi. Menjelaskan peran Sistem Manajemen Basis Data (Database Management System - DBMS) dan model basis data relasional.
+FILE_MATERI: Pertemuan_04_SI_Database/materi_pertemuan_04_si.txt

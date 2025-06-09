@@ -1,0 +1,198 @@
+[
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Konsep Dasar Sistem, Informasi, dan Sistem Informasi",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 1: Konsep Dasar Sistem, Informasi, dan Sistem Informasi",
+    "chunk_id": "p1_s0_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Konsep Dasar Sistem, Informasi, dan Sistem Informasi",
+    "original_heading": "### Apa itu Sistem?",
+    "chunk_text": "Sistem adalah sekumpulan komponen yang saling terkait dan bekerja sama untuk mencapai tujuan tertentu. Setiap sistem memiliki input, proses, dan output. Contoh: sistem pencernaan, sistem tata surya.",
+    "chunk_id": "p1_s1_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Konsep Dasar Sistem, Informasi, dan Sistem Informasi",
+    "original_heading": "### Perbedaan Data dan Informasi",
+    "chunk_text": "- **Data:** Fakta mentah atau angka-angka yang belum diolah dan tidak memiliki konteks. Contoh: 170, \"Budi\", 85.\n- **Informasi:** Data yang telah diolah, diorganisir, dan diberi konteks sehingga menjadi bermakna dan berguna bagi penerimanya untuk pengambilan keputusan. Contoh: \"Tinggi badan Budi adalah 170 cm dan mendapatkan nilai ujian 85\".",
+    "chunk_id": "p1_s2_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Konsep Dasar Sistem, Informasi, dan Sistem Informasi",
+    "original_heading": "## Sistem Informasi (SI)",
+    "chunk_text": "Sistem Informasi adalah kombinasi terorganisir dari manusia, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi.",
+    "chunk_id": "p1_s3_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Konsep Dasar Sistem, Informasi, dan Sistem Informasi",
+    "original_heading": "### Komponen Sistem Informasi:",
+    "chunk_text": "1.  **Perangkat Keras (Hardware):** Komponen fisik komputer dan perangkat terkait (CPU, monitor, keyboard, printer).\n2.  **Perangkat Lunak (Software):** Program dan instruksi yang memerintahkan hardware untuk bekerja. Terdiri dari Perangkat Lunak Sistem (OS) dan Perangkat Lunak Aplikasi.\n3.  **Data:** Sumber daya mentah yang diolah menjadi informasi.\n4.  **Manusia (People):** Pengguna akhir (end-user) dan para spesialis SI (analis sistem, programmer, administrator).\n5.  **Proses/Prosedur:** Aturan dan langkah-langkah yang diikuti dalam menggunakan sistem informasi.",
+    "chunk_id": "p1_s4_sc0"
+  },
+  {
+    "pertemuan_id": 1,
+    "pertemuan_judul": "Konsep Dasar Sistem, Informasi, dan Sistem Informasi",
+    "original_heading": "### Karakteristik Informasi Berkualitas:",
+    "chunk_text": "- **Akurat:** Bebas dari kesalahan.\n- **Tepat Waktu (Timely):** Tersedia saat dibutuhkan.\n- **Relevan:** Sesuai dengan kebutuhan pengguna.\n- **Lengkap (Complete):** Mengandung semua fakta penting.\n- **Dapat Dipercaya (Reliable):** Sumber datanya dapat dipertanggungjawabkan.",
+    "chunk_id": "p1_s5_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 2: Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "chunk_id": "p2_s0_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "original_heading": "## Peran Strategis Sistem Informasi",
+    "chunk_text": "Di era digital, sistem informasi bukan hanya alat bantu operasional, tetapi juga merupakan aset strategis untuk mencapai keunggulan kompetitif. Peran strategis SI meliputi:\n- **Efisiensi Operasional:** Mengotomatisasi proses bisnis untuk mengurangi biaya dan waktu.\n- **Pengambilan Keputusan:** Menyediakan informasi yang akurat dan tepat waktu untuk manajer.\n- **Inovasi Produk dan Layanan:** Menciptakan produk baru berbasis teknologi (misalnya, mobile banking).\n- **Mendukung Strategi Kompetitif:** Membantu perusahaan bersaing melalui strategi seperti biaya rendah (low-cost leadership) atau diferensiasi produk.",
+    "chunk_id": "p2_s1_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "original_heading": "## Jenis-jenis Sistem Informasi Berdasarkan Level Organisasi",
+    "chunk_text": "Sistem informasi dapat diklasifikasikan berdasarkan level manajerial yang dilayaninya, membentuk sebuah piramida.",
+    "chunk_id": "p2_s2_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "original_heading": "### 1. Transaction Processing System (TPS)",
+    "chunk_text": "- **Level:** Operasional.\n- **Pengguna:** Staf operasional, pekerja garis depan.\n- **Tujuan:** Merekam dan memproses data transaksi rutin harian yang penting untuk menjalankan bisnis.\n- **Contoh:** Sistem kasir (Point-of-Sale), sistem pemesanan tiket, sistem absensi.",
+    "chunk_id": "p2_s3_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "original_heading": "### 2. Management Information System (MIS)",
+    "chunk_text": "- **Level:** Manajerial / Taktis.\n- **Pengguna:** Manajer menengah.\n- **Tujuan:** Menyediakan laporan dan ringkasan dari data yang berasal dari TPS untuk memantau kinerja dan memprediksi tren. Laporan bersifat periodik dan terstruktur.\n- **Contoh:** Laporan penjualan bulanan, analisis anggaran tahunan.",
+    "chunk_id": "p2_s4_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "original_heading": "### 3. Decision Support System (DSS)",
+    "chunk_text": "- **Level:** Manajerial / Taktis.\n- **Pengguna:** Manajer, analis bisnis.\n- **Tujuan:** Membantu pengambilan keputusan untuk masalah yang bersifat semi-terstruktur atau tidak rutin. DSS memungkinkan analisis \"what-if\" dengan model analitis.\n- **Contoh:** Sistem simulasi untuk menentukan lokasi gudang baru, analisis dampak kenaikan harga.",
+    "chunk_id": "p2_s5_sc0"
+  },
+  {
+    "pertemuan_id": 2,
+    "pertemuan_judul": "Peran Strategis dan Jenis Sistem Informasi dalam Organisasi",
+    "original_heading": "### 4. Executive Support System (ESS) atau Executive Information System (EIS)",
+    "chunk_text": "- **Level:** Strategis / Eksekutif.\n- **Pengguna:** Eksekutif senior (CEO, CFO).\n- **Tujuan:** Menyediakan ringkasan informasi tingkat tinggi dari berbagai sumber internal dan eksternal untuk mendukung pengambilan keputusan strategis jangka panjang. Fokus pada visualisasi (grafik, dashboard).\n- **Contoh:** Dashboard yang menampilkan Key Performance Indicators (KPI) perusahaan, analisis pesaing, dan tren pasar global.",
+    "chunk_id": "p2_s6_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 3: Pengembangan Sistem Informasi (SDLC)",
+    "chunk_id": "p3_s0_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "## Pengenalan Pengembangan Sistem",
+    "chunk_text": "Pengembangan sistem informasi adalah proses terstruktur untuk membuat atau memodifikasi sistem informasi guna memenuhi kebutuhan bisnis. Salah satu pendekatan klasik dan paling fundamental adalah **System Development Life Cycle (SDLC)** atau Siklus Hidup Pengembangan Sistem.",
+    "chunk_id": "p3_s1_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "## Tahapan-tahapan SDLC",
+    "chunk_text": "SDLC adalah model air terjun (waterfall) yang terdiri dari serangkaian tahapan yang berurutan.",
+    "chunk_id": "p3_s2_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "### 1. Perencanaan (Planning)",
+    "chunk_text": "Tahap awal untuk mengidentifikasi kebutuhan akan sistem baru.\n- **Aktivitas:**\n  - Identifikasi masalah atau peluang bisnis.\n  - Studi kelayakan (feasibility study): teknis, ekonomis, operasional.\n  - Mendefinisikan ruang lingkup proyek.\n  - Membuat rencana proyek (jadwal, anggaran, sumber daya).\n- **Output:** Dokumen proposal proyek.",
+    "chunk_id": "p3_s3_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "### 2. Analisis (Analysis)",
+    "chunk_text": "Tahap untuk memahami kebutuhan pengguna dan sistem secara mendalam.\n- **Aktivitas:**\n  - Pengumpulan kebutuhan pengguna (wawancara, kuesioner, observasi).\n  - Menganalisis sistem yang ada.\n  - Membuat model proses (misalnya dengan Data Flow Diagram - DFD).\n  - Mendokumentasikan kebutuhan fungsional dan non-fungsional.\n- **Output:** Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SKPL) atau Software Requirements Specification (SRS).",
+    "chunk_id": "p3_s4_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "### 3. Perancangan (Design)",
+    "chunk_text": "Tahap untuk merancang \"bagaimana\" sistem akan bekerja berdasarkan hasil analisis.\n- **Aktivitas:**\n  - **Perancangan Logis:** Merancang model data (ERD), alur proses.\n  - **Perancangan Fisik:** Merancang struktur database, arsitektur perangkat keras dan lunak.\n  - Merancang antarmuka pengguna (User Interface - UI) dan pengalaman pengguna (User Experience - UX).\n- **Output:** Dokumen Desain Sistem.",
+    "chunk_id": "p3_s5_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "### 4. Implementasi (Implementation)",
+    "chunk_text": "Tahap untuk membangun dan menguji sistem, serta menyiapkannya untuk digunakan.\n- **Aktivitas:**\n  - Pengembangan dan penulisan kode program (coding).\n  - Pengujian unit (unit testing), pengujian integrasi (integration testing), pengujian sistem (system testing).\n  - Instalasi perangkat keras dan lunak.\n  - Konversi data dari sistem lama ke sistem baru.\n  - Pelatihan pengguna.\n- **Output:** Sistem yang berfungsi dan siap digunakan.",
+    "chunk_id": "p3_s6_sc0"
+  },
+  {
+    "pertemuan_id": 3,
+    "pertemuan_judul": "Pengembangan Sistem Informasi (SDLC)",
+    "original_heading": "### 5. Pemeliharaan (Maintenance)",
+    "chunk_text": "Tahap terpanjang dalam SDLC, di mana sistem digunakan dan didukung.\n- **Aktivitas:**\n  - **Corrective Maintenance:** Memperbaiki bug atau error.\n  - **Adaptive Maintenance:** Mengadaptasi sistem terhadap perubahan lingkungan (misalnya, OS baru, peraturan baru).\n  - **Perfective Maintenance:** Menambahkan fitur baru atau meningkatkan kinerja.\n- **Output:** Sistem yang terus diperbarui dan berjalan dengan baik.",
+    "chunk_id": "p3_s7_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Manajemen Data dan Basis Data",
+    "original_heading": "Umum",
+    "chunk_text": "# Pertemuan 4: Manajemen Data dan Basis Data",
+    "chunk_id": "p4_s0_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Manajemen Data dan Basis Data",
+    "original_heading": "## Pentingnya Manajemen Data",
+    "chunk_text": "Data adalah aset berharga bagi organisasi. Manajemen data adalah praktik mengorganisir dan memelihara data agar akurat, aman, dan mudah diakses. Tanpa manajemen data yang baik, organisasi akan kesulitan menghasilkan informasi yang berkualitas.",
+    "chunk_id": "p4_s1_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Manajemen Data dan Basis Data",
+    "original_heading": "## Konsep Dasar Basis Data (Database)",
+    "chunk_text": "Basis data adalah kumpulan data yang terorganisir, terstruktur, dan saling berhubungan yang disimpan secara elektronik. Tujuannya adalah untuk mengelola data dalam jumlah besar secara efisien dan mengurangi redundansi (pengulangan) data.",
+    "chunk_id": "p4_s2_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Manajemen Data dan Basis Data",
+    "original_heading": "### Hirarki Data:",
+    "chunk_text": "1.  **Bit:** Unit data terkecil (0 atau 1).\n2.  **Byte:** Sekumpulan bit yang merepresentasikan satu karakter.\n3.  **Field (Kolom):** Sekumpulan karakter yang memiliki arti tertentu (misalnya, Nama, NIM). Disebut juga atribut.\n4.  **Record (Baris):** Kumpulan field yang saling berhubungan yang menjelaskan satu entitas.\n5.  **File (Tabel):** Kumpulan record yang sejenis.\n6.  **Database:** Kumpulan file/tabel yang saling berhubungan.",
+    "chunk_id": "p4_s3_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Manajemen Data dan Basis Data",
+    "original_heading": "## Konsep Model Relasional",
+    "chunk_text": "Model basis data yang paling umum digunakan adalah model relasional.\n\n- **Entitas (Entity):** Objek di dunia nyata yang datanya ingin disimpan (misalnya, Mahasiswa, MataKuliah, Dosen). Biasanya direpresentasikan sebagai tabel.\n- **Atribut (Attribute):** Karakteristik atau properti dari sebuah entitas (misalnya, entitas Mahasiswa memiliki atribut NIM, Nama, Alamat). Direpresentasikan sebagai kolom dalam tabel.\n- **Relasi (Relationship):** Hubungan atau asosiasi antara dua atau lebih entitas. Contoh: Mahasiswa \"mengambil\" MataKuliah.",
+    "chunk_id": "p4_s4_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Manajemen Data dan Basis Data",
+    "original_heading": "## Sistem Manajemen Basis Data (DBMS)",
+    "chunk_text": "Database Management System (DBMS) adalah perangkat lunak yang berfungsi sebagai antarmuka antara pengguna dan basis data. DBMS memungkinkan pengguna untuk membuat, membaca, memperbarui, dan menghapus data (operasi CRUD - Create, Read, Update, Delete) di dalam basis data.",
+    "chunk_id": "p4_s5_sc0"
+  },
+  {
+    "pertemuan_id": 4,
+    "pertemuan_judul": "Manajemen Data dan Basis Data",
+    "original_heading": "### Fungsi Utama DBMS:",
+    "chunk_text": "- **Definisi Data (Data Definition):** Mendefinisikan struktur data dan relasinya.\n- **Manipulasi Data (Data Manipulation):** Menyediakan bahasa (seperti SQL) untuk mengakses dan memanipulasi data.\n- **Keamanan dan Integritas:** Mengontrol akses pengguna dan memastikan data tetap konsisten.\n- **Manajemen Konkurensi:** Mengatur akses data oleh banyak pengguna secara bersamaan.\n- **Backup dan Recovery:** Menyediakan mekanisme untuk pemulihan data jika terjadi kegagalan.\n\n**Contoh DBMS Populer:** MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server.",
+    "chunk_id": "p4_s6_sc0"
+  }
+]

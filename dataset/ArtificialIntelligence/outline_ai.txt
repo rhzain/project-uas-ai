@@ -1,0 +1,21 @@
+MATAKULIAH: Kecerdasan Buatan
+
+PERTEMUAN: 1
+JUDUL: Fondasi & Pengenalan Kecerdasan Buatan
+DESKRIPSI: Mencakup definisi, tujuan, dan ruang lingkup AI. Membahas pendekatan AI (Berpikir dan Bertindak seperti manusia, Berpikir dan Bertindak rasional). Sejarah perkembangan AI dari era awal hingga modern (Dartmouth Conference, AI Winter, Deep Learning). Memperkenalkan jenis-jenis utama AI (AI Lemah/Narrow AI, AI Kuat/General AI, Super AI), serta pengenalan cabang-cabang utama AI.
+FILE_MATERI: Pertemuan_01_AI_Intro/materi_pertemuan_01_ai.txt
+
+PERTEMUAN: 2
+JUDUL: Pemecahan Masalah dengan Pencarian (Problem Solving & Search)
+DESKRIPSI: Membahas konsep agen cerdas dan lingkungannya. Teknik pencarian buta (Blind Search) seperti Breadth-First Search (BFS) dan Depth-First Search (DFS). Pengenalan teknik pencarian heuristik (Informed Search) seperti Greedy Best-First Search dan A* Search. Konsep dan aplikasi dalam pemecahan masalah dan permainan (Game Playing).
+FILE_MATERI: Pertemuan_02_AI_Search/materi_pertemuan_02_ai.txt
+
+PERTEMUAN: 3
+JUDUL: Machine Learning: Supervised Learning
+DESKRIPSI: Meliputi konsep dasar Machine Learning dan jenis-jenisnya. Fokus pada Supervised Learning, yaitu proses training model menggunakan data berlabel. Membahas algoritma klasifikasi (seperti K-Nearest Neighbors, Decision Tree, Support Vector Machine) dan algoritma regresi (seperti Regresi Linear dan Polinomial). Termasuk metrik evaluasi model (Akurasi, Presisi, Recall, F1-Score).
+FILE_MATERI: Pertemuan_03_AI_Supervised/materi_pertemuan_03_ai.txt
+
+PERTEMUAN: 4
+JUDUL: Machine Learning: Unsupervised Learning & Deep Learning
+DESKRIPSI: Membahas konsep Unsupervised Learning untuk menemukan pola dari data tanpa label, dengan fokus pada algoritma clustering (misalnya K-Means). Pengenalan Deep Learning sebagai bagian dari Machine Learning yang menggunakan Jaringan Saraf Tiruan (Neural Networks) dengan banyak lapisan. Memperkenalkan arsitektur dasar seperti Convolutional Neural Networks (CNN) untuk pengenalan gambar dan Recurrent Neural Networks (RNN) untuk data sekuensial.
+FILE_MATERI: Pertemuan_04_AI_Unsupervised_Deep/materi_pertemuan_04_ai.txt

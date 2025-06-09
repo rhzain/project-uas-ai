@@ -1,0 +1,65 @@
+# Pertemuan 2: Pemecahan Masalah dengan Pencarian (Problem Solving & Search)
+
+## Agen Cerdas (Intelligent Agents)
+
+Agen cerdas (intelligent agent) adalah entitas apa pun yang dapat mengamati lingkungannya melalui sensor dan bertindak atas lingkungan tersebut melalui aktuator.
+
+- **Sensor:** Komponen yang digunakan agen untuk menerima input dari lingkungan (misalnya, kamera, mikrofon, sensor suhu).
+- **Aktuator:** Komponen yang digunakan agen untuk melakukan tindakan (misalnya, lengan robot, motor, layar tampilan).
+- **Lingkungan (Environment):** Dunia tempat agen beroperasi.
+- **Rasionalitas:** Agen yang rasional adalah agen yang bertindak untuk memaksimalkan ukuran kinerjanya, berdasarkan bukti yang diberikan oleh histori persepsinya dan pengetahuan bawaan yang dimiliki agen.
+
+## Formulasi Masalah
+Sebelum sebuah agen dapat mulai mencari solusi, masalah harus didefinisikan dengan baik. Sebuah masalah dapat didefinisikan secara formal oleh lima komponen:
+1.  **Initial State:** Keadaan awal tempat agen memulai.
+2.  **Actions:** Kumpulan tindakan yang mungkin dilakukan oleh agen.
+3.  **Transition Model:** Deskripsi tentang apa yang dilakukan setiap tindakan.
+4.  **Goal Test:** Tes untuk menentukan apakah suatu keadaan adalah keadaan tujuan (goal state).
+5.  **Path Cost:** Fungsi yang memberikan biaya numerik untuk setiap jalur.
+
+## Teknik Pencarian Tak-Informasi (Uninformed/Blind Search)
+Teknik pencarian ini tidak memiliki informasi tambahan tentang masalah selain dari definisi masalah itu sendiri. Strategi ini hanya dapat menghasilkan suksesor dan membedakan keadaan tujuan dari keadaan non-tujuan.
+
+### 1. Breadth-First Search (BFS)
+BFS melakukan pencarian dengan mengunjungi semua node pada level kedalaman yang sama sebelum melanjutkan ke level berikutnya.
+- **Proses:** Menggunakan antrian (queue) dengan struktur FIFO (First-In, First-Out).
+- **Karakteristik:**
+  - **Completeness:** Lengkap (dijamin menemukan solusi jika ada).
+  - **Optimality:** Optimal (menemukan solusi dengan biaya terendah jika biaya setiap langkah sama).
+  - **Time & Space Complexity:** Keduanya adalah O(b^d), di mana 'b' adalah faktor percabangan (branching factor) dan 'd' adalah kedalaman solusi. Ini membutuhkan banyak memori.
+
+### 2. Depth-First Search (DFS)
+DFS menjelajahi sejauh mungkin di sepanjang setiap cabang sebelum melakukan backtracking.
+- **Proses:** Menggunakan tumpukan (stack) dengan struktur LIFO (Last-In, First-Out).
+- **Karakteristik:**
+  - **Completeness:** Tidak lengkap jika ada loop tak terbatas. Lengkap pada ruang keadaan yang terbatas.
+  - **Optimality:** Tidak optimal.
+  - **Time Complexity:** O(b^m), di mana 'm' adalah kedalaman maksimum dari ruang keadaan.
+  - **Space Complexity:** O(b*m), jauh lebih efisien dalam hal memori dibandingkan BFS.
+
+## Teknik Pencarian Terinformasi (Informed/Heuristic Search)
+Teknik pencarian ini menggunakan pengetahuan spesifik tentang masalah di luar definisi masalah itu sendiri untuk memandu pencarian secara lebih efisien. Pengetahuan ini diberikan dalam bentuk **fungsi heuristik h(n)**, yang mengestimasi biaya dari keadaan 'n' ke tujuan.
+
+### 1. Greedy Best-First Search
+Algoritma ini mencoba memperluas node yang paling dekat dengan tujuan, berdasarkan estimasi fungsi heuristik h(n).
+- **Proses:** Memilih node yang memiliki nilai h(n) terendah untuk dieksplorasi selanjutnya.
+- **Karakteristik:**
+  - **Completeness:** Tidak lengkap (bisa terjebak dalam loop).
+  - **Optimality:** Tidak optimal.
+  - **Kelebihan:** Cenderung menemukan solusi dengan cepat, meskipun bukan yang paling optimal.
+
+### 2. A* Search
+A* Search adalah algoritma pencarian terbaik dan paling populer. Algoritma ini menggabungkan keunggulan dari Uniform Cost Search (biaya sebenarnya) dan Greedy Best-First Search (biaya estimasi).
+- **Fungsi Evaluasi:** f(n) = g(n) + h(n)
+  - **g(n):** Biaya jalur dari keadaan awal ke keadaan 'n'.
+  - **h(n):** Estimasi biaya heuristik dari keadaan 'n' ke tujuan.
+- **Karakteristik:**
+  - **Completeness:** Lengkap.
+  - **Optimality:** Optimal, jika fungsi heuristik h(n) bersifat *admissible* (tidak pernah melebih-lebihkan biaya sebenarnya untuk mencapai tujuan) dan konsisten.
+  - **Kelemahan:** Membutuhkan banyak memori karena menyimpan semua node yang telah digenerasi.
+
+## Aplikasi dalam Game (Game Playing)
+Algoritma pencarian adalah inti dari AI untuk permainan (misalnya catur, Go, tic-tac-toe).
+- **Adversarial Search:** Jenis pencarian di mana agen bersaing satu sama lain.
+- **Minimax Algorithm:** Algoritma dasar untuk permainan dua pemain dengan giliran. Tujuannya adalah untuk menemukan langkah optimal dengan meminimalkan kemungkinan kerugian maksimum (memilih langkah yang memaksimalkan nilai untuk MAX dan meminimalkan nilai untuk MIN).
+- **Alpha-Beta Pruning:** Optimalisasi dari algoritma Minimax. Ini mengurangi jumlah node yang perlu dievaluasi dalam pohon pencarian dengan "memangkas" cabang-cabang yang tidak akan memengaruhi keputusan akhir.

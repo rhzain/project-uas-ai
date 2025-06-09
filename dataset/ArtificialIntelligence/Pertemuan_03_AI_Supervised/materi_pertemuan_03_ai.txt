@@ -1,0 +1,47 @@
+# Pertemuan 3: Machine Learning: Supervised Learning
+
+## Konsep Dasar Machine Learning
+Machine Learning adalah cabang dari Kecerdasan Buatan (AI) yang fokus pada pengembangan algoritma yang memungkinkan komputer untuk belajar dari dan membuat prediksi atau keputusan berdasarkan data. Terdapat tiga jenis utama pembelajaran mesin:
+
+1.  **Supervised Learning (Pembelajaran Terarah):** Model belajar dari data yang telah diberi label.
+2.  **Unsupervised Learning (Pembelajaran Tak Terarah):** Model belajar dari data yang tidak memiliki label.
+3.  **Reinforcement Learning (Pembelajaran Penguatan):** Model belajar melalui sistem coba-coba dengan umpan balik berupa hadiah (rewards) dan hukuman (punishments).
+
+## Supervised Learning
+Dalam supervised learning, kita memberikan algoritma data input (fitur) beserta output yang benar (label). Tujuan algoritma adalah untuk mempelajari "aturan" atau fungsi pemetaan yang dapat memprediksi output dari data input baru.
+
+Prosesnya melibatkan dua tahap utama:
+1.  **Training (Pelatihan):** Model "belajar" dari dataset pelatihan (training dataset) untuk membangun fungsi prediksi.
+2.  **Testing (Pengujian):** Kinerja model dievaluasi menggunakan dataset pengujian (testing dataset) yang belum pernah dilihat sebelumnya.
+
+Masalah dalam supervised learning dapat dibagi menjadi dua kategori utama: **Klasifikasi** dan **Regresi**.
+
+## Klasifikasi (Classification)
+Tujuan klasifikasi adalah untuk memprediksi label kategori diskrit. Contoh: memprediksi apakah email adalah "spam" atau "bukan spam", atau mengidentifikasi gambar sebagai "kucing", "anjing", atau "burung".
+
+### Algoritma Klasifikasi Populer:
+1.  **K-Nearest Neighbors (KNN):** Algoritma yang sangat sederhana namun kuat. KNN mengklasifikasikan titik data baru berdasarkan mayoritas label dari 'K' tetangga terdekatnya dalam ruang fitur.
+2.  **Decision Tree (Pohon Keputusan):** Model seperti diagram alur di mana setiap node internal merepresentasikan "tes" pada sebuah atribut, setiap cabang merepresentasikan hasil tes, dan setiap daun merepresentasikan label kelas. Sangat mudah untuk diinterpretasikan.
+3.  **Support Vector Machine (SVM):** Algoritma yang mencari *hyperplane* atau batas keputusan terbaik yang memisahkan data ke dalam kelas-kelas yang berbeda dengan margin semaksimal mungkin. Sangat efektif dalam ruang berdimensi tinggi.
+
+## Regresi (Regression)
+Tujuan regresi adalah untuk memprediksi nilai output yang kontinu (numerik). Contoh: memprediksi harga rumah berdasarkan luas tanah dan jumlah kamar, atau memperkirakan suhu besok.
+
+### Algoritma Regresi Populer:
+1.  **Regresi Linear (Linear Regression):** Algoritma paling dasar yang mencoba menemukan hubungan linear antara variabel input (independen) dan variabel output (dependen) dengan mencocokkan garis lurus terbaik ke data.
+2.  **Regresi Polinomial (Polynomial Regression):** Perluasan dari regresi linear yang memodelkan hubungan antara variabel input dan output sebagai polinomial derajat 'n'. Ini memungkinkan model untuk menangkap hubungan yang lebih kompleks dan non-linear.
+
+## Metrik Evaluasi Model
+Untuk mengetahui seberapa baik kinerja sebuah model, kita perlu menggunakan metrik evaluasi.
+
+### Metrik untuk Klasifikasi:
+- **Confusion Matrix:** Tabel yang merangkum hasil prediksi model klasifikasi.
+- **Akurasi (Accuracy):** Persentase prediksi yang benar dari total prediksi. `(TP+TN)/(TP+TN+FP+FN)`. Tidak cocok untuk dataset yang tidak seimbang (imbalanced).
+- **Presisi (Precision):** Dari semua yang diprediksi positif, berapa banyak yang benar-benar positif. `TP/(TP+FP)`. Penting ketika biaya False Positive tinggi.
+- **Recall (Sensitivity):** Dari semua yang sebenarnya positif, berapa banyak yang berhasil diprediksi positif. `TP/(TP+FN)`. Penting ketika biaya False Negative tinggi.
+- **F1-Score:** Rata-rata harmonik dari Presisi dan Recall. Metrik yang baik untuk dataset yang tidak seimbang. `2 * (Precision * Recall) / (Precision + Recall)`.
+
+### Metrik untuk Regresi:
+- **Mean Absolute Error (MAE):** Rata-rata dari nilai absolut selisih antara nilai aktual dan prediksi.
+- **Mean Squared Error (MSE):** Rata-rata dari kuadrat selisih antara nilai aktual dan prediksi. Memberi bobot lebih besar pada kesalahan besar.
+- **Root Mean Squared Error (RMSE):** Akar kuadrat dari MSE. Kembali ke unit yang sama dengan variabel output.

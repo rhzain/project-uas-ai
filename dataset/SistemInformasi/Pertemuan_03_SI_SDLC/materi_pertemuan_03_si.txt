@@ -1,0 +1,51 @@
+# Pertemuan 3: Pengembangan Sistem Informasi (SDLC)
+
+## Pengenalan Pengembangan Sistem
+Pengembangan sistem informasi adalah proses terstruktur untuk membuat atau memodifikasi sistem informasi guna memenuhi kebutuhan bisnis. Salah satu pendekatan klasik dan paling fundamental adalah **System Development Life Cycle (SDLC)** atau Siklus Hidup Pengembangan Sistem.
+
+## Tahapan-tahapan SDLC
+SDLC adalah model air terjun (waterfall) yang terdiri dari serangkaian tahapan yang berurutan.
+
+### 1. Perencanaan (Planning)
+Tahap awal untuk mengidentifikasi kebutuhan akan sistem baru.
+- **Aktivitas:**
+  - Identifikasi masalah atau peluang bisnis.
+  - Studi kelayakan (feasibility study): teknis, ekonomis, operasional.
+  - Mendefinisikan ruang lingkup proyek.
+  - Membuat rencana proyek (jadwal, anggaran, sumber daya).
+- **Output:** Dokumen proposal proyek.
+
+### 2. Analisis (Analysis)
+Tahap untuk memahami kebutuhan pengguna dan sistem secara mendalam.
+- **Aktivitas:**
+  - Pengumpulan kebutuhan pengguna (wawancara, kuesioner, observasi).
+  - Menganalisis sistem yang ada.
+  - Membuat model proses (misalnya dengan Data Flow Diagram - DFD).
+  - Mendokumentasikan kebutuhan fungsional dan non-fungsional.
+- **Output:** Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SKPL) atau Software Requirements Specification (SRS).
+
+### 3. Perancangan (Design)
+Tahap untuk merancang "bagaimana" sistem akan bekerja berdasarkan hasil analisis.
+- **Aktivitas:**
+  - **Perancangan Logis:** Merancang model data (ERD), alur proses.
+  - **Perancangan Fisik:** Merancang struktur database, arsitektur perangkat keras dan lunak.
+  - Merancang antarmuka pengguna (User Interface - UI) dan pengalaman pengguna (User Experience - UX).
+- **Output:** Dokumen Desain Sistem.
+
+### 4. Implementasi (Implementation)
+Tahap untuk membangun dan menguji sistem, serta menyiapkannya untuk digunakan.
+- **Aktivitas:**
+  - Pengembangan dan penulisan kode program (coding).
+  - Pengujian unit (unit testing), pengujian integrasi (integration testing), pengujian sistem (system testing).
+  - Instalasi perangkat keras dan lunak.
+  - Konversi data dari sistem lama ke sistem baru.
+  - Pelatihan pengguna.
+- **Output:** Sistem yang berfungsi dan siap digunakan.
+
+### 5. Pemeliharaan (Maintenance)
+Tahap terpanjang dalam SDLC, di mana sistem digunakan dan didukung.
+- **Aktivitas:**
+  - **Corrective Maintenance:** Memperbaiki bug atau error.
+  - **Adaptive Maintenance:** Mengadaptasi sistem terhadap perubahan lingkungan (misalnya, OS baru, peraturan baru).
+  - **Perfective Maintenance:** Menambahkan fitur baru atau meningkatkan kinerja.
+- **Output:** Sistem yang terus diperbarui dan berjalan dengan baik.
