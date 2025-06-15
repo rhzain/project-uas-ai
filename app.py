@@ -94,7 +94,7 @@ def discover_available_courses():
             "model_type": model_type,
             "has_finetuned": use_finetuned_artifacts,
             "base_model_name": 'all-MiniLM-L6-v2',
-            "is_custom_pth": is_custom_pth  # NEW FLAG
+            "is_custom_pth": is_custom_pth
         }
         
     return courses
@@ -134,7 +134,6 @@ def load_course_resources(course_id):
     
     config = AVAILABLE_COURSES[course_name]
     
-    # Initialize resources
     resources = { 
         "config": config,
         "course_name": course_name,
@@ -147,7 +146,7 @@ def load_course_resources(course_id):
             embedding_model_path = config["embedding_model_path"]
             
             if config.get("is_custom_pth", False):
-                # Load custom .pth model (NEW PATH)
+                # Load custom .pth model
                 st.info(f"🎯 Loading custom PyTorch model: {os.path.basename(embedding_model_path)}")
                 custom_loader = get_custom_model_loader()
                 resources["embedding_model"] = custom_loader.load_custom_pth_model(embedding_model_path)
@@ -357,8 +356,8 @@ def search_relevant_chunks_with_reranking(query_text, resources, top_k=5, simila
                 'scores': {
                     'final_score': metadata['faiss_score'],
                     'semantic_similarity': metadata['faiss_score'],
-                    'keyword_relevance': 0.5,  # Default value
-                    'content_quality': 0.7   # Default value
+                    'keyword_relevance': 0.5,
+                    'content_quality': 0.7
                 },
                 'relevance_grade': "🟡 FAISS Similarity",
                 'metadata': metadata
@@ -421,12 +420,11 @@ Berikan penjelasan yang komprehensif berdasarkan HANYA konteks materi di atas. J
 JAWABAN ANDA:"""
 
     try:
-        # Konfigurasi untuk respons yang lebih konsisten dan terfokus pada konteks
         generation_config = genai.types.GenerationConfig(
-            temperature=0.2,  # Rendah untuk konsistensi dan mengurangi kreativitas
-            top_p=0.8,        # Batasi variasi token
-            top_k=40,         # Batasi pilihan token
-            max_output_tokens=1500,  # Batas maksimal untuk jawaban yang fokus
+            temperature=0.2,  
+            top_p=0.8,        
+            top_k=40,         
+            max_output_tokens=1500,  
         )
         
         response = llm_model.generate_content(
@@ -435,10 +433,8 @@ JAWABAN ANDA:"""
         )
         
         if response.text:
-            # Tambahkan disclaimer jika perlu
             answer = response.text
             
-            # Cek apakah jawaban mengindikasikan penggunaan pengetahuan luar
             problematic_phrases = [
                 "secara umum", "biasanya", "umumnya", "pada umumnya",
                 "menurut teori", "dalam praktek umum", "secara teoritis"
@@ -460,7 +456,6 @@ JAWABAN ANDA:"""
 def generate_mcq(pertemuan_id, resources, num_questions=3):
     """Generate MCQ berdasarkan HANYA materi dalam dataset untuk pertemuan tertentu."""
     
-    # Ambil chunks yang relevan untuk pertemuan ini
     relevant_chunks = [
         c["chunk_text"] for c in resources["chunks_data"] 
         if str(c.get("pertemuan_id")) == str(pertemuan_id)
@@ -469,9 +464,8 @@ def generate_mcq(pertemuan_id, resources, num_questions=3):
     if not relevant_chunks: 
         return []
     
-    # Gabungkan konteks dengan batasan panjang
-    context = "\n\n".join(relevant_chunks[:5])  # Ambil maksimal 5 chunks
-    context = context[:10000]  # Batasi panjang konteks untuk efisiensi
+    context = "\n\n".join(relevant_chunks[:5])
+    context = context[:10000]
     
     prompt = f"""Berdasarkan HANYA materi pembelajaran berikut, buatkan {num_questions} soal pilihan ganda (MCQ).
 
@@ -505,9 +499,8 @@ Format output dalam JSON list yang valid:
 HANYA kembalikan JSON list, tidak ada teks lain."""
 
     try:
-        # Konfigurasi untuk output yang lebih terprediksi
         generation_config = genai.types.GenerationConfig(
-            temperature=0.3,  # Sedikit lebih tinggi untuk variasi soal
+            temperature=0.3,
             top_p=0.9,
             top_k=50,
             max_output_tokens=2000,
@@ -518,21 +511,18 @@ HANYA kembalikan JSON list, tidak ada teks lain."""
             generation_config=generation_config
         )
         
-        # Extract JSON dari response
         json_match = re.search(r'\[.*\]', response.text, re.DOTALL)
         if json_match:
             questions = json.loads(json_match.group(0))
             
-            # Validasi bahwa soal berdasarkan materi
             valid_questions = []
             for q in questions:
                 if all(key in q for key in ["pertanyaan", "opsi", "jawaban_benar", "pembahasan"]):
-                    # Tambahan validasi: cek apakah pembahasan merujuk pada materi
                     if "berdasarkan materi" in q.get("pembahasan", "").lower() or \
                        any(keyword in context.lower() for keyword in q["pertanyaan"].lower().split()[:3]):
                         valid_questions.append(q)
             
-            return valid_questions[:num_questions]  # Batasi sesuai permintaan
+            return valid_questions[:num_questions]
         return []
         
     except Exception as e:
@@ -552,18 +542,323 @@ def initialize_session_state():
     for key, value in states.items():
         if key not in st.session_state: st.session_state[key] = value
 
+def create_course_card(name, config):
+    """Create styled course selection card"""
+    return f"""
+    <div class="course-card">
+        <h3 style="margin-top: 0; color: #2c3e50;">{name}</h3>
+        <p style="color: #6c757d; margin-bottom: 0;">
+            📚 ID: {config['id']}<br>
+        </p>
+    </div>
+    """
+
+def create_status_indicator(status, text, icon=""):
+    """Create beautiful status indicators"""
+    colors = {
+        "success": "#4caf50",
+        "warning": "#ff9800", 
+        "error": "#f44336",
+        "info": "#2196f3"
+    }
+    
+    return f"""
+    <div style="
+        background: linear-gradient(135deg, {colors.get(status, '#6c757d')}15, {colors.get(status, '#6c757d')}05);
+        border-left: 4px solid {colors.get(status, '#6c757d')};
+        padding: 0.75rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    ">
+        <span style="color: {colors.get(status, '#6c757d')}; font-weight: 600;">
+            {icon} {text}
+        </span>
+    </div>
+    """
+
+st.markdown(create_status_indicator("success", "Enhanced Reranker", "✅"), unsafe_allow_html=True)
+st.markdown(create_status_indicator("info", "Custom Model Loaded", "🎯"), unsafe_allow_html=True)
+
+# Tambahkan styling khusus untuk chat input
+st.markdown("""
+<style>
+.stChatInput > div > div > textarea {
+    border-radius: 25px !important;
+    border: 2px solid #323232 !important;
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.stChatInput > div > div > textarea:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.stChatInput button {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    border-radius: 50% !important;
+    border: none !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 def ui_main():
     """Fungsi utama untuk menjalankan seluruh logika UI."""
     initialize_session_state()
 
+    # CSS
+    st.markdown("""
+    <style>
+    /* ===== MAIN LAYOUT STYLING ===== */
+    .main > div {
+        padding-top: 2rem;
+    }
+
+    /* ===== SIDEBAR STYLING ===== */
+    .css-1d391kg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .sidebar .sidebar-content {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    /* Sidebar text styling */
+    .css-1d391kg h2, .css-1d391kg h3 {
+        color: white !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .css-1d391kg .stMarkdown p {
+        color: rgba(255,255,255,0.9) !important;
+    }
+
+    /* ===== HEADER STYLING ===== */
+    h1 {
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    h2, h3 {
+        color: #2c3e50;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 0.5rem;
+    }
+
+    /* ===== BUTTON STYLING ===== */
+    .stButton > button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Primary button styling */
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    }
+
+    /* ===== CHAT STYLING ===== */
+    .stChatMessage {
+        background: #323232;
+        border-radius: 12px;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-left: 4px solid #667eea;
+    }
+
+    .stChatMessage[data-testid="chat-message-user"] {
+        background: linear-gradient(135deg, #667eea15, #764ba215);
+        border-left-color: #667eea;
+    }
+
+    .stChatMessage[data-testid="chat-message-assistant"] {
+        background: linear-gradient(135deg, #00d2ff15, #3a7bd515);
+        border-left-color: #00d2ff;
+    }
+
+    /* ===== EXPANDER STYLING ===== */
+    .streamlit-expanderHeader {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 8px;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .streamlit-expanderContent {
+        background: #fafbfc;
+        border-radius: 0 0 8px 8px;
+        border: 1px solid #e9ecef;
+    }
+
+    /* ===== METRIC STYLING ===== */
+    [data-testid="metric-container"] {
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        border: 1px solid #e9ecef;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* ===== PROGRESS BAR STYLING ===== */
+    .stProgress > div > div > div > div {
+        background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+
+    /* ===== INFO/SUCCESS/WARNING/ERROR STYLING ===== */
+    .stInfo {
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        border-left: 4px solid #2196f3;
+    }
+
+    .stSuccess {
+        background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+        border-left: 4px solid #4caf50;
+    }
+
+    .stWarning {
+        background: linear-gradient(135deg, #fff3e0, #ffcc02);
+        border-left: 4px solid #ff9800;
+    }
+
+    .stError {
+        background: linear-gradient(135deg, #ffebee, #ffcdd2);
+        border-left: 4px solid #f44336;
+    }
+
+    /* ===== TAB STYLING ===== */
+    .stTabs [data-baseweb="tab-list"] {
+        background: linear-gradient(135deg, #323232, #303030);
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .stTabs [data-baseweb="tab"]:hover {
+        background-color: rgba(102, 126, 234, 0.1);
+    }
+
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+    }
+
+    /* ===== QUIZ STYLING ===== */
+    .stRadio > div {
+        background: #323232;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid #e9ecef;
+    }
+
+    /* ===== SPINNER STYLING ===== */
+    .stSpinner {
+        text-align: center;
+    }
+
+    /* ===== COURSE SELECTION STYLING ===== */
+    .course-card {
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 0.5rem 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .course-card:hover {
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
+        .main > div {
+            padding-top: 1rem;
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+        }
+        
+        .stButton > button {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stMarkdown, .stChatMessage, [data-testid="metric-container"] {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    /* ===== CUSTOM SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #5a6fd8, #6a42a0);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
     if st.session_state.current_view == "course_selection":
-        st.title("🎓 Chatbot Mata Kuliah"); st.subheader("Pilih Mata Kuliah untuk Memulai")
+        st.title("🎓 LearnMate AI")
+        st.subheader("Pilih Mata Kuliah untuk Memulai")
+        
         if not AVAILABLE_COURSES:
-            st.error("Tidak ada mata kuliah ditemukan."); return
-        for name, config in AVAILABLE_COURSES.items():
-            if st.button(f"{name}", key=f"course_{config['id']}", use_container_width=True):
-                st.session_state.current_view = "meeting_view"; st.session_state.selected_course_id = config["id"]
-                st.rerun()
+            st.error("Tidak ada mata kuliah ditemukan.")
+            return
+        
+        cols = st.columns(2)  # Create 2 columns for better layout
+        
+        for idx, (name, config) in enumerate(AVAILABLE_COURSES.items()):
+            with cols[idx % 2]:
+                # Display course card
+                st.markdown(create_course_card(name, config), unsafe_allow_html=True)
+                
+                # Button below card
+                if st.button(f"Pilih {name}", key=f"course_{config['id']}", use_container_width=True):
+                    st.session_state.current_view = "meeting_view"
+                    st.session_state.selected_course_id = config["id"]
+                    st.rerun()
 
     elif st.session_state.current_view == "meeting_view":
         course_id = st.session_state.selected_course_id
