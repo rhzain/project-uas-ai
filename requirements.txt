@@ -1,18 +1,9 @@
-# Core Framework
 streamlit
-
-# AI/ML Libraries
 torch
 sentence-transformers
 faiss-cpu
 transformers
-
-# Google AI
 google-generativeai
-
-# Data Processing
 numpy
 pandas
-
-# Environment Management
 python-dotenv
