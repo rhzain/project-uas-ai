@@ -744,7 +744,7 @@ def ui_main():
     .stTabs [data-baseweb="tab-list"] {
         background: linear-gradient(135deg, #323232, #303030);
         border-radius: 10px;
-        padding: 1rem 0.5rem;
+        padding: 0.5rem;
     }
 
     .stTabs [data-baseweb="tab"] {
@@ -760,6 +760,7 @@ def ui_main():
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, #667eea, #764ba2);
         color: white;
+        padding: 1rem 0.5rem;
     }
 
     /* ===== QUIZ STYLING ===== */
