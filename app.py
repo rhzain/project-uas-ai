@@ -744,7 +744,7 @@ def ui_main():
     .stTabs [data-baseweb="tab-list"] {
         background: linear-gradient(135deg, #323232, #303030);
         border-radius: 10px;
-        padding: 0.5rem;
+        padding: 1rem 0.5rem;
     }
 
     .stTabs [data-baseweb="tab"] {
