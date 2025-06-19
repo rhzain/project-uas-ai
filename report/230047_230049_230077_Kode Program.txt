@@ -1,0 +1,19 @@
+Karena ukuran penyimpanan folder proyek kami cukup besar, kami memutuskan untuk membagikannya melalui link GitHub berikut:
+
+GitHub Proyek:
+https://github.com/rhzain/project-uas-ai
+
+Untuk menjalankan program, Anda dapat langsung mengaksesnya melalui tautan berikut:
+https://learnmate-ai-project.streamlit.app
+
+Namun, jika ingin menjalankan aplikasi secara lokal, silakan ikuti langkah-langkah berikut:
+
+1. Siapkan file .env dengan isi sebagai berikut:
+   # Silakan masukkan API KEY dari Gemini
+   GEMINI_API_KEY=""
+
+2. Jalankan perintah berikut untuk menginstal semua dependensi yang dibutuhkan:
+   pip install -r requirements.txt
+
+3. Setelah itu, jalankan aplikasi dengan perintah dan web akan :
+   streamlit run app.py
